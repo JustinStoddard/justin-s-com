@@ -1,3 +1,9 @@
+ACTIVATION:
+Go to justinstoddard.com and enjoy the site!!
+
+NOTES
+This is my personal website that highlights my skills as a Frontend Developer.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
