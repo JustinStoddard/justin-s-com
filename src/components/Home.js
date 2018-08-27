@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Segment, Container, Grid, Divider, Header } from 'semantic-ui-react';
+import ResumeImage from '../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
+import { Segment, Container, Grid, Divider, Header, Image } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {
@@ -18,7 +19,7 @@ class Home extends Component {
                 <Header as="h1">Resumé</Header>
               </Segment>
                 <Divider hidden />
-                  Content
+                  <Image src={ResumeImage} size="large"/>
               </Segment>
             </Grid.Column>
             
