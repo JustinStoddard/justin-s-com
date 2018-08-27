@@ -6,23 +6,29 @@ class Home extends Component {
     return(
       <Container>
         <br />
-        <Segment textAlign="center">Not Broken</Segment>
+        <Segment textAlign="center">
+          <Header as="h1">Home</Header>
+        </Segment>
         <br />
         <Grid>
           <Grid.Row> {/* Second Row */}
             <Grid.Column width={8}>
               <Segment textAlign="center">
-                <Header as="h1">Para 1</Header>
+              <Segment inverted>
+                <Header as="h1">Resumé</Header>
+              </Segment>
                 <Divider hidden />
-                <Segment>Content</Segment>
+                  Content
               </Segment>
             </Grid.Column>
             
             <Grid.Column width={8}>
               <Segment textAlign="center">
-                <Header as="h1">Para 2</Header>
+                <Segment inverted>
+                  <Header as="h1">Cover Letter</Header>
+                </Segment>
                 <Divider hidden />
-                <Segment>Content</Segment>
+                  <a href="https://github.com/JustinStoddard/New-Cover-Letter">Click Me!</a>
               </Segment>
             </Grid.Column>
           </Grid.Row>
@@ -30,9 +36,11 @@ class Home extends Component {
           <Grid.Row> {/* Third Row */}
             <Grid.Column>
               <Segment textAlign="center">
+              <Segment inverted>
                 <Header as="h1">Content 1</Header>
+              </Segment>
                 <Divider hidden />
-                <Segment>Main Content</Segment>
+                  Main Content
               </Segment>
             </Grid.Column>
           </Grid.Row>
