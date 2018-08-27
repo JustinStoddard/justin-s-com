@@ -20,11 +20,11 @@ class Home extends Component {
                 <Header as="h1">Resumé</Header>
               </Segment>
                 <Divider hidden />
-                  <Image src={ResumeImage} size="large"/>
+                  <Image src={ResumeImage} size="large" style={styles.paddingLeft1}/>
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
-                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing">Download</a>
+                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing">Check Out Source</a>
               </Segment>
             </Grid.Column>
             
@@ -34,8 +34,13 @@ class Home extends Component {
                   <Header as="h1">Cover Letter</Header>
                 </Segment>
                 <Divider hidden />
-                <Image src={CoverImage} size="medium"/>
-                  <a href="https://github.com/JustinStoddard/New-Cover-Letter">Check Out Source</a>
+                <Image src={CoverImage} size="medium" style={styles.paddingLeft2}/>
+                <Divider hidden />
+                <Divider hidden />
+                <Divider hidden />
+                <Divider hidden />
+                <Divider hidden />
+                <a href="https://github.com/JustinStoddard/New-Cover-Letter">Check Out Source</a>
               </Segment>
             </Grid.Column>
           </Grid.Row>
@@ -55,6 +60,12 @@ class Home extends Component {
       </Container>
     )
   }
-}   
+} 
+const styles = {
+  paddingLeft2: {
+    paddingLeft: '50px'
+  },
+}
+
 
 export default Home;
