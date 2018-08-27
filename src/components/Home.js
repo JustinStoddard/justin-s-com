@@ -1,45 +1,52 @@
-import React, { Component } from  'react';
-import { Segment, Container, Grid, Divider } from 'semantic-ui-react';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Segment, Container, Grid, Divider, Header, Button } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {
     return(
       <Container>
         <br />
-        <Segment inverted>Not Broken</Segment>
+        <Segment textAlign="center">Not Broken</Segment>
         <br />
         <Grid>
 
           <Grid.Row> {/* First Row */}
             <Grid.Column width={4}>
-              <Segment inverted>
+              <Segment textAlign="center">
                 <Divider hidden />
-                  First Column
+                <Link to="/home">
+                  <Button color="black" size="large">Home</Button>
+                </Link>
+                <Divider hidden />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">
+                <Divider hidden />
+                <Link to="/projects">
+                  <Button color="black" size="large">Projects</Button>
+                </Link>
                 <Divider hidden />
               </Segment>
             </Grid.Column>
 
             <Grid.Column width={4}>
-              <Segment inverted>
+              <Segment textAlign="center">
                 <Divider hidden />
-                  Second Column
-                <Divider hidden />
-              </Segment>
-            </Grid.Column>
-
-            <Grid.Column width={4}>
-              <Segment inverted>
-                <Divider hidden />
-                  Third Column
+                <Link to="/about">
+                  <Button color="black" size="large">About</Button>
+                </Link>
                 <Divider hidden />
               </Segment>
             </Grid.Column>
 
             <Grid.Column width={4}>
-              <Segment inverted>
+              <Segment textAlign="center">
                 <Divider hidden />
-                  Fourth Column
+                <Link to="/contact">
+                  <Button color="black" size="large">Contact</Button>
+                </Link>
                 <Divider hidden />
               </Segment>
             </Grid.Column>
@@ -47,28 +54,28 @@ class Home extends Component {
 
           <Grid.Row> {/* Second Row */}
             <Grid.Column width={8}>
-              <Segment>
+              <Segment textAlign="center">
+                <Header as="h3">Para 1</Header>
                 <Divider hidden />
-                  Para 1
-                <Divider hidden />
+                <Segment>Content</Segment>
               </Segment>
             </Grid.Column>
             
             <Grid.Column width={8}>
-              <Segment>
+              <Segment textAlign="center">
+                <Header as="h3">Para 2</Header>
                 <Divider hidden />
-                  Para 2
-                <Divider hidden />
+                <Segment>Content</Segment>
               </Segment>
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row> {/* Third Row */}
             <Grid.Column>
-              <Segment>
+              <Segment textAlign="center">
+                <Header as="h1">Content 1</Header>
                 <Divider hidden />
-                  Content 1
-                <Divider hidden />
+                <Segment>Main Content</Segment>
               </Segment>
             </Grid.Column>
           </Grid.Row>
