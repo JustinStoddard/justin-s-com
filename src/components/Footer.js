@@ -6,6 +6,7 @@ const Footer = () => {
     <Container>
       <Divider hidden />
       <Segment inverted textAlign="center">Footer</Segment>
+      <Divider hidden />
     </Container>
   )
 }

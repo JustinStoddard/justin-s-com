@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResumeImage from '../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
+import CoverImage from '../Images/New cover picture';
 import { Segment, Container, Grid, Divider, Header, Image } from 'semantic-ui-react';
 
 class Home extends Component {
@@ -20,6 +21,10 @@ class Home extends Component {
               </Segment>
                 <Divider hidden />
                   <Image src={ResumeImage} size="large"/>
+                  <Divider hidden />
+                  <Divider hidden />
+                  <Divider hidden />
+                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing">Download</a>
               </Segment>
             </Grid.Column>
             
@@ -29,7 +34,8 @@ class Home extends Component {
                   <Header as="h1">Cover Letter</Header>
                 </Segment>
                 <Divider hidden />
-                  <a href="https://github.com/JustinStoddard/New-Cover-Letter">Click Me!</a>
+                <Image src={CoverImage} size="medium"/>
+                  <a href="https://github.com/JustinStoddard/New-Cover-Letter">Check Out Source</a>
               </Segment>
             </Grid.Column>
           </Grid.Row>
