@@ -24,7 +24,7 @@ class Home extends Component {
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
-                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing">Check Out Source</a>
+                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank">Check Out Source</a>
               </Segment>
             </Grid.Column>
             
@@ -40,7 +40,7 @@ class Home extends Component {
                 <Divider hidden />
                 <Divider hidden />
                 <Divider hidden />
-                <a href="https://github.com/JustinStoddard/New-Cover-Letter">Check Out Source</a>
+                <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank">Check Out Source</a>
               </Segment>
             </Grid.Column>
           </Grid.Row>
