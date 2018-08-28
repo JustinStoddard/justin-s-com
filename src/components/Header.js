@@ -6,40 +6,40 @@ const HeaderComp = () => {
   return(
     <Container>
       <Divider hidden />
-      <Segment inverted textAlign="center">Header</Segment>
+      <Segment textAlign="center" inverted>Header</Segment>
       <Divider hidden />
       <Grid>
         <Grid.Row> {/* First Row */}
           <Grid.Column width={4}>
-            <Segment textAlign="center">
-              <Link to="/">
-                <Button circular color="black" size="large">Home</Button>
-              </Link>
-            </Segment>
+            <Link to="/">
+              <Segment textAlign="center" inverted>
+                <Button color="black" size="large">Home</Button>
+              </Segment>
+            </Link>
           </Grid.Column>
           
           <Grid.Column width={4}>
-            <Segment textAlign="center">
-              <Link to="/projects">
-                <Button circular color="black" size="large">Projects</Button>
-              </Link>
-            </Segment>
+            <Link to="/projects">
+              <Segment textAlign="center" inverted>
+                <Button color="black" size="large">Projects</Button>
+              </Segment>
+            </Link>
           </Grid.Column>
 
           <Grid.Column width={4}>
-            <Segment textAlign="center">
-              <Link to="/about">
-                <Button circular color="black" size="large">About</Button>
-              </Link>
-            </Segment>
+            <Link to="/about">
+              <Segment textAlign="center" inverted>
+                <Button color="black" size="large">About</Button>
+              </Segment>
+            </Link>
           </Grid.Column>
 
           <Grid.Column width={4}>
-            <Segment textAlign="center">
-              <Link to="/contact">
-                <Button circular color="black" size="large">Contact</Button>
-              </Link>
-            </Segment>
+            <Link to="/contact">
+              <Segment textAlign="center" inverted>
+                <Button color="black" size="large">Contact</Button>
+              </Segment>
+            </Link>
           </Grid.Column>
         </Grid.Row>
       </Grid>

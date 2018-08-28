@@ -8,39 +8,38 @@ class Home extends Component {
     return(
       <Container>
         <br />
-        <Segment textAlign="center">
+        <Segment textAlign="center" inverted>
           <Header as="h1">Home</Header>
         </Segment>
         <br />
         <Grid>
           <Grid.Row> {/* Second Row */}
             <Grid.Column width={8}>
-              <Segment textAlign="center">
-              <Segment inverted>
+              <Segment textAlign="center" inverted>
+              <Segment>
                 <Header as="h1">Resumé</Header>
               </Segment>
                 <Divider hidden />
-                  <Image src={ResumeImage} size="large" style={styles.paddingLeft1}/>
+                <Segment>
+                  <Image src={ResumeImage} size="large"/>
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
-                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank">Check Out Source</a>
+                </Segment>
+                <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
             </Grid.Column>
             
             <Grid.Column width={8}>
-              <Segment textAlign="center">
-                <Segment inverted>
+              <Segment textAlign="center" inverted>
+                <Segment>
                   <Header as="h1">Cover Letter</Header>
                 </Segment>
                 <Divider hidden />
-                <Image src={CoverImage} size="medium" style={styles.paddingLeft2}/>
-                <Divider hidden />
-                <Divider hidden />
-                <Divider hidden />
-                <Divider hidden />
-                <Divider hidden />
-                <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank">Check Out Source</a>
+                <Segment>
+                  <Image src={CoverImage} size="medium"/>
+                </Segment>
+                <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
             </Grid.Column>
           </Grid.Row>
@@ -61,11 +60,5 @@ class Home extends Component {
     )
   }
 } 
-const styles = {
-  paddingLeft2: {
-    paddingLeft: '50px'
-  },
-}
-
 
 export default Home;
