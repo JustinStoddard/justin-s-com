@@ -31,8 +31,9 @@ const Projects = () => {
                 <Segment inverted>
                   NOTES
                 </Segment>
-                <Divider hidden/>
-
+                <Segment textAlign="left">
+                  <strong>During</strong> my time at DevPoint Labs we worked on many projects. This project was the culmination of my teams experience during the course. We used React.Js with redux to create an App that would serve as a way for coaches affiliated with the junior Jazz, to more effecitvly communicate with parents and League managers. It features the ability to make different Teams, Leagues, and Games. It also allows a coach to make a post to their teams personal page. Check out the repo and follow the README.md to discover the full functionality.
+                </Segment>
               </Segment>
               <a href="https://github.com/JustinStoddard/Ball-Is-Life" target="_blank" rel="noopener noreferrer">Check Out Source</a>
             </Segment>
@@ -56,8 +57,9 @@ const Projects = () => {
                 <Segment inverted>
                   NOTES
                 </Segment>
-                <Divider hidden/>
-
+                <Segment textAlign="left">
+                  <strong>This</strong> Web Application is a what I would call an arm of a greater cyborg octopus. It utilizes an Angular 1 Frontend mixed with bootstrap for styling. This app also used Travis CI and Gulp. I worked on The checkout process of this application. Not only did I have to make sure this app follow standard Ecommerce flow, but also take into account the many markets the company sells product in. I made what we called Market exceptions for different views and functionality. 
+                </Segment>
               </Segment>
               <a href="https://shop.unicity.com/#/home" target="_blank" rel="noopener noreferrer">Check Out Source</a>
             </Segment>
