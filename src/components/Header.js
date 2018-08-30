@@ -14,7 +14,7 @@ const HeaderComp = () => {
               <Segment textAlign="center" inverted>
                 <Segment color="blue">
                   <Button size="medium" color="black">
-                    <h2 style={styles.navStyles}>Home</h2>
+                    <h4 style={styles.navStyles}>Home</h4>
                   </Button>
                 </Segment>
               </Segment>
@@ -24,7 +24,7 @@ const HeaderComp = () => {
               <Segment textAlign="center" inverted>
                 <Segment color="blue">
                   <Button size="medium" color="black">
-                    <h2 style={styles.navStyles}>Projects</h2>
+                    <h4 style={styles.navStyles}>Projects</h4>
                   </Button>
                 </Segment>
               </Segment>
@@ -40,7 +40,7 @@ const HeaderComp = () => {
               <Segment textAlign="center" inverted>
                 <Segment color="blue">
                   <Button size="medium" color="black">
-                    <h2 style={styles.navStyles}>About</h2>
+                    <h4 style={styles.navStyles}>About</h4>
                   </Button>
                 </Segment>
               </Segment>
@@ -50,7 +50,7 @@ const HeaderComp = () => {
               <Segment textAlign="center" inverted>
                 <Segment color="blue">
                   <Button size="medium" color="black">
-                    <h2 style={styles.navStyles}>Contact</h2>
+                    <h4 style={styles.navStyles}>Contact</h4>
                   </Button>
                 </Segment>
               </Segment>
