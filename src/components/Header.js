@@ -12,19 +12,21 @@ const HeaderComp = () => {
           <Grid.Column width={6}>
             <Link to="/">
               <Segment textAlign="center" inverted>
-                <Button color="black" size="large">
-                  <h2>Home</h2>
-                </Button>
+                <Segment color="blue">
+                  <Button size="medium" color="black">
+                    <h2 style={styles.navStyles}>Home</h2>
+                  </Button>
+                </Segment>
               </Segment>
             </Link>
             <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
             <Link to="/projects">
               <Segment textAlign="center" inverted>
-                <Button color="black" size="large">
-                  <h2>Projects</h2>
-                </Button>
+                <Segment color="blue">
+                  <Button size="medium" color="black">
+                    <h2 style={styles.navStyles}>Projects</h2>
+                  </Button>
+                </Segment>
               </Segment>
             </Link>
           </Grid.Column>
@@ -36,19 +38,21 @@ const HeaderComp = () => {
           <Grid.Column width={6}>
             <Link to="/about">
               <Segment textAlign="center" inverted>
-                <Button color="black" size="large">
-                  <h2>About</h2>
-                </Button>
+                <Segment color="blue">
+                  <Button size="medium" color="black">
+                    <h2 style={styles.navStyles}>About</h2>
+                  </Button>
+                </Segment>
               </Segment>
             </Link>
-            <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
+            <Divider hidden/>
             <Link to="/contact">
               <Segment textAlign="center" inverted>
-                <Button color="black" size="large">
-                  <h2>Contact</h2>
-                </Button>
+                <Segment color="blue">
+                  <Button size="medium" color="black">
+                    <h2 style={styles.navStyles}>Contact</h2>
+                  </Button>
+                </Segment>
               </Segment>
             </Link>
           </Grid.Column>
@@ -56,6 +60,15 @@ const HeaderComp = () => {
       </Grid>
     </Container>
   )
+}
+
+const styles = {
+  navStyles: {
+    fontFamily: 'century gothic'
+  },
+  segmentColor: {
+    color: 'blue'
+  }
 }
 
 export default HeaderComp;
