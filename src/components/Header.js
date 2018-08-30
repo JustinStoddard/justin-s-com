@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Segment, Container, Grid, Divider, Button, Image, Header } from 'semantic-ui-react';
+import { Segment, Container, Grid, Divider, Button, Image } from 'semantic-ui-react';
 import JustinLogo from '../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
 
 const HeaderComp = () => {
