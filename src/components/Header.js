@@ -65,10 +65,8 @@ const HeaderComp = () => {
 const styles = {
   navStyles: {
     fontFamily: 'century gothic'
+    // color: '#3399CC'
   },
-  segmentColor: {
-    color: 'blue'
-  }
 }
 
 export default HeaderComp;
