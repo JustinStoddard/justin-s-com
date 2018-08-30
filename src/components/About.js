@@ -20,7 +20,7 @@ const About = () => {
         <Grid.Row>
           <Grid.Column width={6}>
             <Segment inverted>
-              <Image src={GrandCanyon} size="large"/>
+              <Image src={GrandCanyon} size="large" style={styles.photoHeight2}/>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
@@ -30,7 +30,7 @@ const About = () => {
           </Grid.Column>
           <Grid.Column width={6}>
             <Segment inverted>
-              <Image src={SuperMan} size="large"/>
+              <Image src={SuperMan} size="large" style={styles.photoHeight1}/>
             </Segment>
           </Grid.Column>
         </Grid.Row>
@@ -129,6 +129,15 @@ const About = () => {
       </Grid>
     </Container>
   )
+}
+
+const styles = {
+  photoHeight1: {
+    height: '335px'
+  },
+  photoHeight2: {
+    height: '335px'
+  }
 }
 
 export default About;
