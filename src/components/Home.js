@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import ResumeImage from '../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
 import CoverImage from '../Images/New cover picture';
+import expertiseImage1 from '../Images/React Image.png';
+import expertiseImage2 from '../Images/redux image.png';
+import expertiseImage3 from '../Images/ruby image.png';
+import expertiseImage4 from '../Images/RubyRails image.png';
+import expertiseImage5 from '../Images/nodejs image.png';
+import expertiseImage6 from '../Images/HTML5 image.png';
+import expertiseImage7 from '../Images/CSS.3 image.png';
+import expertiseImage8 from '../Images/semantic image.png';
 import { Segment, Container, Grid, Divider, Header, Image } from 'semantic-ui-react';
 
 class Home extends Component {
@@ -51,31 +59,71 @@ class Home extends Component {
         <Grid>
           <Grid.Row>
             <Grid.Column width={4}>
-              <Segment textAlign="center">1</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Image src={expertiseImage1} size="medium"/>
+                </Segment>
+              </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center">2</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Image src={expertiseImage2} size="medium"/>
+                </Segment>
+              </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center">3</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Divider hidden/>
+                  <Divider hidden/>
+                  <Image src={expertiseImage3} size="medium"/>
+                </Segment>
+              </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center">4</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Image src={expertiseImage4} size="medium" style={styles.railsImage}/>
+                </Segment>
+              </Segment>
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
             <Grid.Column width={4}>
-              <Segment textAlign="center">5</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Divider hidden/>
+                  <Divider hidden/>
+                  <Divider hidden/>
+                  <Image src={expertiseImage5} size="large"/>
+                  <Divider hidden/>
+                  <Divider hidden/>
+                  <Divider hidden/>
+                </Segment>
+              </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center">6</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Image src={expertiseImage6} size="medium"/>
+                </Segment>
+              </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center">7</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Image src={expertiseImage7} size="small" style={styles.cssImage}/>
+                </Segment>
+              </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center">8</Segment>
+              <Segment textAlign="center" inverted>
+                <Segment>
+                  <Image src={expertiseImage8} size="medium"/>
+                </Segment>
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -88,6 +136,13 @@ class Home extends Component {
 const styles = {
   marginFixer: {
     display: 'inline-block'
+  },
+  cssImage: {
+    display: 'inline-block',
+    height: '205px'
+  },
+  railsImage: {
+    height: '205px'
   }
 }
 
