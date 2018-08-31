@@ -24,11 +24,11 @@ class Home extends Component {
           <Grid.Row> {/* Second Row */}
             <Grid.Column width={8}>
               <Segment textAlign="center" inverted>
-              <Segment>
+              <Segment color="blue">
                 <Header as="h1">Resumé</Header>
               </Segment>
                 <Divider hidden />
-                <Segment>
+                <Segment color="blue">
                   <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
                   <Divider hidden />
                   <Divider hidden />
@@ -40,11 +40,11 @@ class Home extends Component {
             
             <Grid.Column width={8}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Header as="h1">Cover Letter</Header>
                 </Segment>
                 <Divider hidden />
-                <Segment>
+                <Segment color="blue">
                   <Image src={CoverImage} size="medium" style={styles.marginFixer}/>
                 </Segment>
                 <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
@@ -60,21 +60,21 @@ class Home extends Component {
           <Grid.Row>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Image src={expertiseImage1} size="medium"/>
                 </Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Image src={expertiseImage2} size="medium"/>
                 </Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
                   <Image src={expertiseImage3} size="medium"/>
@@ -83,7 +83,7 @@ class Home extends Component {
             </Grid.Column>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Image src={expertiseImage4} size="medium" style={styles.railsImage}/>
                 </Segment>
               </Segment>
@@ -93,7 +93,7 @@ class Home extends Component {
           <Grid.Row>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
                   <Divider hidden/>
@@ -106,21 +106,21 @@ class Home extends Component {
             </Grid.Column>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Image src={expertiseImage6} size="medium"/>
                 </Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Image src={expertiseImage7} size="small" style={styles.cssImage}/>
                 </Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
               <Segment textAlign="center" inverted>
-                <Segment>
+                <Segment color="blue">
                   <Image src={expertiseImage8} size="medium"/>
                 </Segment>
               </Segment>
@@ -139,7 +139,7 @@ const styles = {
   },
   cssImage: {
     display: 'inline-block',
-    height: '205px'
+    height: '203px'
   },
   railsImage: {
     height: '205px'
