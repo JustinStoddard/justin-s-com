@@ -115,6 +115,7 @@ const About = () => {
       <Segment textAlign="center" inverted>
         <Header as="h2">Awards</Header>
       </Segment>
+      <Divider hidden/>
       <Grid>
         <Grid.Row>
           <Grid.Column width={4}>
