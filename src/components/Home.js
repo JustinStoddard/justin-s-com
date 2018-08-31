@@ -21,7 +21,7 @@ class Home extends Component {
               </Segment>
                 <Divider hidden />
                 <Segment>
-                  <Image src={ResumeImage} size="large"/>
+                  <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
@@ -37,28 +37,58 @@ class Home extends Component {
                 </Segment>
                 <Divider hidden />
                 <Segment>
-                  <Image src={CoverImage} size="medium"/>
+                  <Image src={CoverImage} size="medium" style={styles.marginFixer}/>
                 </Segment>
                 <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
             </Grid.Column>
           </Grid.Row>
+        </Grid>
+        <Divider hidden/>
+        <Segment textAlign="center" inverted>
+          <Header as="h1">Expertise</Header>
+        </Segment>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">1</Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">2</Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">3</Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">4</Segment>
+            </Grid.Column>
+          </Grid.Row>
 
-          <Grid.Row> {/* Third Row */}
-            <Grid.Column>
-              <Segment textAlign="center">
-              <Segment inverted>
-                <Header as="h1">Content 1</Header>
-              </Segment>
-                <Divider hidden />
-                  Main Content
-              </Segment>
+          <Grid.Row>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">5</Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">6</Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">7</Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Segment textAlign="center">8</Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        <Divider hidden/>
       </Container>
     )
   }
 } 
+
+const styles = {
+  marginFixer: {
+    display: 'inline-block'
+  }
+}
 
 export default Home;

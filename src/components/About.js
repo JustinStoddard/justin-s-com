@@ -22,15 +22,30 @@ const About = () => {
             <Segment inverted>
               <Image src={GrandCanyon} size="large" style={styles.photoHeight2}/>
             </Segment>
+            <Segment inverted>
+              <Segment>
+                <Header as="h4"> - I love to Adventure! You'll find me in dry deserts and damp forests.</Header>
+              </Segment>
+            </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment inverted>
               <Image src={selfiePic} size="medium"/>
             </Segment>
+            <Segment inverted>
+              <Segment textAlign="center">
+                <Header as="h4"> - Yes, I wear sunglasses. Classy right?</Header>
+              </Segment>
+            </Segment>
           </Grid.Column>
           <Grid.Column width={6}>
             <Segment inverted>
               <Image src={SuperMan} size="large" style={styles.photoHeight1}/>
+            </Segment>
+            <Segment inverted>
+              <Segment>
+                <Header as="h4"> - My all time favorite superhero is Superman! Marvel is still better though...</Header>
+              </Segment>
             </Segment>
           </Grid.Column>
         </Grid.Row>
@@ -48,7 +63,7 @@ const About = () => {
                 <Header as="h3">The University Of Utah</Header>
               </Segment>
               <Segment>
-                <strong>While</strong> studying with The University of Utah I attended a program managed by the university, called DevPoint Labs. This program only lasted 11 weeks but I learned and absorbed more than most people would pursuing a standard CS degree. I learned about what languages the current industry prefereed, and the ones many other companies still use. I learned and recieved real world/ hands on experience working on a team with actual problems, actual code, and actual clients. It was an amazing experience and spearheaded my career as a Web Developer. I'll provide a link to their website so you can see the stack I was taught!
+                <strong>While</strong> studying with The University of Utah I attended a program managed by the university, called DevPoint Labs. This program only lasted 11 weeks but I learned and absorbed more than most people would pursuing a standard CS degree. I learned about what languages the current industry prefereed, and the ones many other companies still use. I learned and recieved real world/ hands on experience working on a team with actual problems, actual code, and actual clients. It was an amazing experience and spearheaded my career as a Web Developer. <strong>I'll provide a link to their website so you can see the stack I was taught!</strong>
               </Segment>
               <Segment textAlign="center">
                 <a href="http://devpointlabs.com/university-of-utah-coding-bootcamp-full-time" rel="noopener noreferrer" target="_blank">
@@ -63,7 +78,7 @@ const About = () => {
                 <Header as="h3">Salt Lake Community College</Header>
               </Segment>
               <Segment>
-                <strong>While</strong> I attended SLCC, I pursued an Associates of Applied Science, Majoring in Computer Science & Information systems. I graduated in 2017. Coming out with, in my opinion, Mid-Level level knowledge of the IT world, as well has how technology in the field of Computer Hardware and Software have evolved and created the world we live in today. I also learned many older technologies like C, C++, UNIX, and others you'd find in a standard CS course. Check out the link!
+                <strong>While</strong> I attended SLCC, I pursued an Associates of Applied Science, Majoring in Computer Science & Information systems. I graduated in 2017. Coming out with, in my opinion, Mid-Level level knowledge of the IT world, as well has how technology in the field of Computer Hardware and Software have evolved and created the world we live in today. I also learned many older technologies like C, C++, UNIX, and others you'd find in a standard CS course. <strong>Check out the link to see the courses I took!</strong>
               <Divider hidden/>
               <Divider hidden/>
               </Segment>
@@ -101,7 +116,7 @@ const About = () => {
       </Grid>
       <Divider hidden/>
       <Segment textAlign="center" inverted>
-        <Header as="h4">Awards</Header>
+        <Header as="h2">Awards</Header>
       </Segment>
       <Grid>
         <Grid.Row>
