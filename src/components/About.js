@@ -3,9 +3,6 @@ import UofU from '../Images/F4112AA3-0521-40EF-90A4-7DEFC02A81BD.jpg';
 import selfiePic from '../Images/36366299_891494954384180_6425517567284084736_n.jpg';
 import GrandCanyon from '../Images/grand canyon trip photo.jpg';
 import SuperMan from '../Images/superman photo.jpg';
-// import Udemy from '../Images/';
-// import Udemy2 from '../Images/';
-// import Udemy3 from '../Images/';
 import { Container, Segment, Divider, Header, Grid, Button, Image } from 'semantic-ui-react';
 
 const About = () => {
@@ -128,18 +125,45 @@ const About = () => {
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Segment>
-              {/* <Image src={Udemy}/> */}
+            <Segment inverted>
+              <Segment textAlign="center">
+                <Divider hidden/> {/*I hate dividers but currently it's a necessary evil.......theres too many here...*/}
+                <Divider hidden/>
+                <Divider hidden/>
+                <Header as="h1">Coming Soon...</Header>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+              </Segment>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Segment>
-              {/* <Image src={Udemy2}/> */}
+            <Segment inverted>
+              <Segment textAlign="center">
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Header as="h1">Coming Soon...</Header>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+              </Segment>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Segment>
-              {/* <Image src={Udemy3}/> */}
+            <Segment inverted>
+              <Segment textAlign="center">
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Header as="h1">Coming Soon...</Header>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
+              </Segment>
             </Segment>
           </Grid.Column>
         </Grid.Row>
