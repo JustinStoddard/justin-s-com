@@ -3,6 +3,8 @@ import LinkedIn from '../Images/linkedin image.png';
 import GitHub from '../Images/github image.png';
 import Instagram from '../Images/instagram image.png';
 import FaceBook from '../Images/facebook image.png';
+import Phone from '../Images/phone image.png';
+import Email from '../Images/email image.png';
 import { Container, Segment, Divider, Header, Grid, Image} from 'semantic-ui-react';
 
 const Contact = () => {
@@ -56,15 +58,21 @@ const Contact = () => {
           <Grid.Column width={4}></Grid.Column>
           <Grid.Column width={4}>
             <Segment inverted>
-              <Segment>
-                
+              <Segment color="blue">
+                <Image src={Phone} size="medium" style={styles.imageCrop}/>
+              </Segment>
+              <Segment textAlign="center" color="blue">
+                <Header as="h3">801-209-4087</Header>
               </Segment>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment inverted>
-              <Segment>
-
+              <Segment color="blue">
+                <Image src={Email} size="medium" style={styles.imageCrop}/>
+              </Segment>
+              <Segment textAlign="center" color="blue">
+                <Header as="h3">Stoddard.j.t@gmail.com</Header>
               </Segment>
             </Segment>
           </Grid.Column>
