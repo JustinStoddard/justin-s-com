@@ -126,7 +126,7 @@ const About = () => {
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment inverted>
-              <Segment textAlign="center">
+              <Segment textAlign="center" color="blue">
                 <Divider hidden/> {/*I hate dividers but currently it's a necessary evil.......theres too many here...*/}
                 <Divider hidden/>
                 <Divider hidden/>
@@ -140,7 +140,7 @@ const About = () => {
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment inverted>
-              <Segment textAlign="center">
+              <Segment textAlign="center" color="blue">
                 <Divider hidden/>
                 <Divider hidden/>
                 <Divider hidden/>
@@ -154,7 +154,7 @@ const About = () => {
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment inverted>
-              <Segment textAlign="center">
+              <Segment textAlign="center" color="blue">
                 <Divider hidden/>
                 <Divider hidden/>
                 <Divider hidden/>
