@@ -9,33 +9,33 @@ import expertiseImage5 from '../Images/nodejs image.png';
 import expertiseImage6 from '../Images/HTML5 image.png';
 import expertiseImage7 from '../Images/CSS.3 image.png';
 import expertiseImage8 from '../Images/semantic image.png';
-import { Segment, Container, Grid, Divider, Header, Image } from 'semantic-ui-react';
+import { Segment, Container, Grid, Divider, Header, Image, Responsive } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {
     return(
       <Container>
         <br />
-        <Segment textAlign="center" inverted>
+        <Responsive as={Segment} textAlign="center" inverted>
           <Header as="h1">Home</Header>
-        </Segment>
+        </Responsive>
         <br />
-        <Grid>
+        <Responsive as={Grid}>
           <Grid.Row> {/* Second Row */}
             <Grid.Column width={8}>
-              <Segment textAlign="center" inverted>
-              <Segment color="blue">
+              <Responsive as={Segment} textAlign="center" inverted>
+              <Responsive as={Segment} color="blue">
                 <Header as="h1">Resumé</Header>
-              </Segment>
+              </Responsive>
                 <Divider hidden />
-                <Segment color="blue">
+                <Responsive as={Segment} color="blue">
                   <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
-                </Segment>
+                </Responsive>
                 <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Check Out Source</a>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             
             <Grid.Column width={8}>
@@ -51,48 +51,48 @@ class Home extends Component {
               </Segment>
             </Grid.Column>
           </Grid.Row>
-        </Grid>
+        </Responsive>
         <Divider hidden/>
         <Segment textAlign="center" inverted>
           <Header as="h1">Expertise</Header>
         </Segment>
-        <Grid>
+        <Responsive as={Grid}>
           <Grid.Row>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Image src={expertiseImage1} size="medium"/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Image src={expertiseImage2} size="medium"/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
                   <Image src={expertiseImage3} size="medium"/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Image src={expertiseImage4} size="medium" style={styles.railsImage}/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
@@ -102,31 +102,31 @@ class Home extends Component {
                   <Divider hidden/>
                   <Divider hidden/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Image src={expertiseImage6} size="medium"/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Image src={expertiseImage7} size="small" style={styles.cssImage}/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted>
                 <Segment color="blue">
                   <Image src={expertiseImage8} size="medium"/>
                 </Segment>
-              </Segment>
+              </Responsive>
             </Grid.Column>
           </Grid.Row>
-        </Grid>
+        </Responsive>
         <Divider hidden/>
       </Container>
     )
