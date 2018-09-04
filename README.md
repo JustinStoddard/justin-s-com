@@ -1,5 +1,5 @@
 ACTIVATION:
-Go to justinstoddard.com and enjoy the site!!
+Go to "justin-s-com.herokuapp.com" and enjoy the site!!
 
 NOTES
 This is my personal website that highlights my skills as a Frontend Developer.

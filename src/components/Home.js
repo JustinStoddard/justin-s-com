@@ -45,7 +45,7 @@ class Home extends Component {
                 </Segment>
                 <Divider hidden />
                 <Segment color="blue">
-                  <Image src={CoverImage} size="medium" style={styles.marginFixer}/>
+                  <Responsive as={Image} src={CoverImage} size="medium" style={styles.marginFixer}/>
                 </Segment>
                 <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
@@ -60,32 +60,32 @@ class Home extends Component {
           <Grid.Row>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
-                  <Image src={expertiseImage1} size="medium"/>
-                </Segment>
+                <Responsive as={Segment} color="blue">
+                  <Responsive as={Image} src={expertiseImage1} size="medium"/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
-                  <Image src={expertiseImage2} size="medium"/>
-                </Segment>
+                <Responsive as={Segment} color="blue">
+                  <Responsive as={Image} src={expertiseImage2} size="medium"/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
+                <Responsive as={Segment} color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
-                  <Image src={expertiseImage3} size="medium"/>
-                </Segment>
+                  <Responsive as={Image} src={expertiseImage3} size="medium"/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
-                  <Image src={expertiseImage4} size="medium" style={styles.railsImage}/>
-                </Segment>
+                <Responsive as={Segment} color="blue">
+                  <Responsive as={Image} src={expertiseImage4} size="medium" style={styles.railsImage}/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
           </Grid.Row>
@@ -93,36 +93,36 @@ class Home extends Component {
           <Grid.Row>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
+                <Responsive as={Segment} color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
                   <Divider hidden/>
-                  <Image src={expertiseImage5} size="large"/>
+                  <Responsive as={Image} src={expertiseImage5} size="large"/>
                   <Divider hidden/>
                   <Divider hidden/>
                   <Divider hidden/>
-                </Segment>
+                </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
-                  <Image src={expertiseImage6} size="medium"/>
-                </Segment>
+                <Responsive as={Segment} color="blue">
+                  <Responsive as={Image} src={expertiseImage6} size="medium"/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
-                  <Image src={expertiseImage7} size="small" style={styles.cssImage}/>
-                </Segment>
+                <Responsive as={Segment} color="blue">
+                  <Responsive as={Image} src={expertiseImage7} size="small" style={styles.cssImage}/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
-                <Segment color="blue">
-                  <Image src={expertiseImage8} size="medium"/>
-                </Segment>
+                <Responsive as={Segment} color="blue">
+                  <Responsive as={Image} src={expertiseImage8} size="medium"/>
+                </Responsive>
               </Responsive>
             </Grid.Column>
           </Grid.Row>
