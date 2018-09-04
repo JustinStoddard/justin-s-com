@@ -12,14 +12,27 @@ import expertiseImage8 from '../Images/semantic image.png';
 import { Segment, Container, Grid, Divider, Header, Image, Responsive } from 'semantic-ui-react';
 
 class Home extends Component {
+  state = { reactPic: true, reduxPic: true }
+
+  onClickReact = () => {
+    const { reactPic } = this.state;
+    this.setState({ reactPic: !reactPic })
+  }
+
+  onClickRedux = () => {
+    const { reduxPic } = this.state;
+    this.setState({ reduxPic: !reduxPic })
+  }
+
   render() {
+    const { reactPic, reduxPic } = this.state;
     return(
       <Container>
-        <br />
+        <Divider hidden/>
         <Responsive as={Segment} textAlign="center" inverted>
           <Header as="h1">Home</Header>
         </Responsive>
-        <br />
+        <Divider hidden/>
         <Responsive as={Grid}>
           <Grid.Row> {/* Second Row */}
             <Grid.Column width={8}>
@@ -61,14 +74,32 @@ class Home extends Component {
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  <Responsive as={Image} src={expertiseImage1} size="medium"/>
+                  { reactPic ?
+                      <Responsive as={Image} src={expertiseImage1} size="medium" onClick={this.onClickReact}/>
+                    :
+                      <div> {/* I had to add in a "div" because JSX wanted the code to have a parent element */}
+                        <Responsive as={Image} src={expertiseImage1} size="medium" onClick={this.onClickReact}/>
+                        <Segment inverted>
+                          <Header as="h4">This is React!</Header>
+                        </Segment>
+                      </div>
+                  }
                 </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  <Responsive as={Image} src={expertiseImage2} size="medium"/>
+                  { reduxPic ?
+                      <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>    
+                    :
+                      <div>
+                        <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>
+                        <Segment inverted>
+                          <Header as="h4">This is Redux!</Header>
+                        </Segment>
+                      </div>
+                  }
                 </Responsive>
               </Responsive>
             </Grid.Column>

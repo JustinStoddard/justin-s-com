@@ -79,6 +79,26 @@ const Contact = () => {
           <Grid.Column width={4}></Grid.Column>
         </Grid.Row>
       </Grid>
+      <Divider hidden/>
+      <Segment textAlign="center" inverted>
+        <Header as="h1">Comments</Header>
+      </Segment>
+      <Divider hidden/>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column width={16}>
+            <Segment inverted>
+              <Segment textAlign="center">
+              <Divider hidden/>
+              <Divider hidden/>
+                <Header as="h1">Coming Soon...</Header>
+              <Divider hidden/>
+              <Divider hidden/>
+              </Segment>
+            </Segment>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </Container>
   )
 }
