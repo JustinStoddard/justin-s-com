@@ -89,11 +89,11 @@ const Contact = () => {
           <Grid.Column width={16}>
             <Segment inverted>
               <Segment textAlign="center">
-              <Divider hidden/>
-              <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
                 <Header as="h1">Coming Soon...</Header>
-              <Divider hidden/>
-              <Divider hidden/>
+                <Divider hidden/>
+                <Divider hidden/>
               </Segment>
             </Segment>
           </Grid.Column>

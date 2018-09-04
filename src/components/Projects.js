@@ -32,7 +32,7 @@ const Projects = () => {
                   NOTES
                 </Segment>
                 <Segment textAlign="left">
-                  <strong>During</strong> my time at DevPoint Labs we worked on many projects. This project was the culmination of my teams experience during the course. We used React.Js with Redux to create an App that would serve as a way for coaches affiliated with the Junior Jazz to more effecitvly communicate with parents and League Managers. It features the ability to make different Teams, Leagues, and Games. It also allows a coach to make a post to their teams personal page. <strong>Check out the repo and follow the README.md to discover the full functionality.</strong>
+                  <strong>During</strong> my time at DevPoint Labs we worked on many projects. This project was the culmination of my teams experience during the course. We used React.Js with Redux to create an App that would serve as a way for coaches affiliated with the Junior Jazz to more effectivly communicate with parents and League Managers. It features the ability to make different Teams, Leagues, and Games. It also allows a coach to make a post to their teams personal page. <strong>Check out the repo and follow the README.md to discover the full functionality.</strong>
                 </Segment>
               </Segment>
               <a href="https://github.com/JustinStoddard/Ball-Is-Life" target="_blank" rel="noopener noreferrer">Check Out Source</a>
