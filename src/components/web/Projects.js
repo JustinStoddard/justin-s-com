@@ -1,7 +1,7 @@
 import React from 'react';
-import BallIsLife from '../Images/Jazz-Logo_Single_Front_aec9f4df-237d-46d5-8c3a-d71d52fd71d7.png';
-import ShopUnicity from '../Images/images.png';
-import StrikerBot from '../Images/fc220x200black-u2.jpg';
+import BallIsLife from '../../Images/Jazz-Logo_Single_Front_aec9f4df-237d-46d5-8c3a-d71d52fd71d7.png';
+import ShopUnicity from '../../Images/images.png';
+import StrikerBot from '../../Images/fc220x200black-u2.jpg';
 import { Container, Segment, Divider, Header, Grid, Image, List } from 'semantic-ui-react';
 
 const Projects = () => {

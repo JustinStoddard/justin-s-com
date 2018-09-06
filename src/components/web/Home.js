@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import ResumeImage from '../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
-import CoverImage from '../Images/New cover picture';
-import expertiseImage1 from '../Images/React Image.png';
-import expertiseImage2 from '../Images/redux image.png';
-import expertiseImage3 from '../Images/ruby image.png';
-import expertiseImage4 from '../Images/RubyRails image.png';
-import expertiseImage5 from '../Images/nodejs image.png';
-import expertiseImage6 from '../Images/HTML5 image.png';
-import expertiseImage7 from '../Images/CSS.3 image.png';
-import expertiseImage8 from '../Images/semantic image.png';
+import ResumeImage from '../../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
+import CoverImage from '../../Images/New cover picture';
+import expertiseImage1 from '../../Images/React Image.png';
+import expertiseImage2 from '../../Images/redux image.png';
+import expertiseImage3 from '../../Images/ruby image.png';
+import expertiseImage4 from '../../Images/RubyRails image.png';
+import expertiseImage5 from '../../Images/nodejs image.png';
+import expertiseImage6 from '../../Images/HTML5 image.png';
+import expertiseImage7 from '../../Images/CSS.3 image.png';
+import expertiseImage8 from '../../Images/semantic image.png';
 import { Segment, Container, Grid, Divider, Header, Image, Responsive } from 'semantic-ui-react';
 
 class Home extends Component {
@@ -88,7 +88,7 @@ class Home extends Component {
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
+              <Responsive as={Segment} textAlign="center" inverted {...Responsive.onlyComputer}>
                 <Responsive as={Segment} color="blue">
                   { reduxPic ?
                       <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>    

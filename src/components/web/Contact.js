@@ -1,10 +1,10 @@
 import React from 'react';
-import LinkedIn from '../Images/linkedin image.png';
-import GitHub from '../Images/github image.png';
-import Instagram from '../Images/instagram image.png';
-import FaceBook from '../Images/facebook image.png';
-import Phone from '../Images/phone image.png';
-import Email from '../Images/email image.png';
+import LinkedIn from '../../Images/linkedin image.png';
+import GitHub from '../../Images/github image.png';
+import Instagram from '../../Images/instagram image.png';
+import FaceBook from '../../Images/facebook image.png';
+import Phone from '../../Images/phone image.png';
+import Email from '../../Images/email image.png';
 import { Container, Segment, Divider, Header, Grid, Image} from 'semantic-ui-react';
 
 const Contact = () => {
