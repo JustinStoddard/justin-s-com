@@ -1,12 +1,12 @@
 import React from 'react';
-import { Segment, Container, Loader } from 'semantic-ui-react';
+import { Dimmer, Container, Loader } from 'semantic-ui-react';
 
 const ContentLoader = () => {
   return(
     <Container>
-      <Segment inverted >
+      <Dimmer active>
         <Loader size="massive">Loading</Loader>
-      </Segment>
+      </Dimmer>
     </Container>
   )
 }
