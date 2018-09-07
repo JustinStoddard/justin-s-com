@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Segment, Container, Grid, Divider, Button, Image, Responsive, Icon } from 'semantic-ui-react';
+import { Segment, Container, Grid, Divider, Image, Icon } from 'semantic-ui-react';
 import JustinLogo from '../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
 
 const MobileHeader = () => {
@@ -12,9 +12,7 @@ const MobileHeader = () => {
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={12}>
           <Segment inverted>
-            <Segment>
-              <Image src={JustinLogo} size="large"/>
-            </Segment>
+            <Image src={JustinLogo} size="large"/>
           </Segment>
           </Grid.Column>
           <Grid.Column wisth={2}></Grid.Column>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import MobileHome from './mobileHome';
-// import MobileProjects from './mobileProjects';
-// import MobileAbout from './mobileAbout';
-// import MobileContact from './mobileContact';
+import MobileProjects from './mobileProjects';
+import MobileAbout from './mobileAbout';
+import MobileContact from './mobileContact';
 import MobileHeader from './mobileHeader';
 
 class Mobile extends Component {
@@ -13,9 +13,9 @@ class Mobile extends Component {
         <MobileHeader />
         <Switch>
           <Route exact path="/" component={MobileHome}/>
-          {/* <Route exact path="/mobileprojects" component={mobileProjects}/> */}
-          {/* <Route exact path="/mobileabout" component={mobileAbout}/> */}
-          {/* <Route exact path="/mobilecontact" component={mobileContact}/> */}
+          <Route exact path="/mobileprojects" component={MobileProjects}/>
+          <Route exact path="/mobileabout" component={MobileAbout}/>
+          <Route exact path="/mobilecontact" component={MobileContact}/>
         </Switch>
       </div>
     )

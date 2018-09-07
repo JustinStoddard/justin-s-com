@@ -34,7 +34,7 @@ class Home extends Component {
         </Responsive>
         <Divider hidden/>
         <Responsive as={Grid}>
-          <Grid.Row> {/* Second Row */}
+          <Grid.Row>
             <Grid.Column width={8}>
               <Responsive as={Segment} textAlign="center" inverted>
               <Responsive as={Segment} color="blue">
