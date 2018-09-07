@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const MobileLoader = Loadable({
   loader: () => import('./components/mobile/Mobile'),
-  loading: () => <Loader />,
+  loading: () => <Loader />, //Tried to dynamically import the Loader but that didnt work :( .....Kind of ironic
 })
 
 const WebLoader = Loadable({

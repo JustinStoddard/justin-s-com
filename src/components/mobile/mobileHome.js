@@ -24,7 +24,7 @@ const MobileHome = () => {
               <Segment textAlign="center" color="blue">
                 <Header as="h3">Resumé</Header>
               </Segment>
-              <Segment>
+              <Segment color="blue">
                 <Image src={ResumeImage} size="medium"/>
               </Segment>
               <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Check Out Source</a>
@@ -37,7 +37,7 @@ const MobileHome = () => {
               <Segment textAlign="center" color="blue">
                 <Header as="h3">Cover letter</Header>
               </Segment>
-              <Segment>
+              <Segment color="blue">
                 <Image src={CoverImage} size="medium"/>
               </Segment>
               <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
