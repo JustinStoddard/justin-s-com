@@ -1,6 +1,6 @@
 {
   "name": "justin-s.com",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.4.2",
