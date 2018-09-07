@@ -128,7 +128,7 @@ const About = () => {
           <Grid.Column width={4}>
             <Segment inverted>
               <Segment textAlign="center" color="blue">
-                <Divider hidden/> {/*I hate dividers but currently it's a necessary evil.......theres too many here...*/}
+                <Divider hidden/> {/*I hate dividers but currently it's a necessary evil.......there are too many here...*/}
                 <Divider hidden/>
                 <Divider hidden/>
                 <Header as="h1">Coming Soon...</Header>
