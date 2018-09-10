@@ -77,7 +77,6 @@ const About = () => {
               <Segment color="blue">
                 <strong>While</strong> I attended SLCC, I pursued an Associates of Applied Science, Majoring in Computer Science & Information systems. I graduated in 2017. Coming out with, in my opinion, Mid-Level level knowledge of the IT world, as well has how technology in the field of Computer Hardware and Software have evolved and created the world we live in today. I also learned many older technologies like C, C++, UNIX, and others you'd find in a standard CS course. <strong>Check out the link to see the courses I took!</strong>
               <Divider hidden/>
-              <Divider hidden/>
               </Segment>
               <Segment textAlign="center">
                 <a href="http://www.slcc.edu/csis/docs/computer-information-systems.pdf" rel="noopener noreferrer" target="_blank">

@@ -42,6 +42,7 @@ const MobileProjects = () => {
             </Segment>
           </Grid.Column>
         </Grid.Row>
+
         <Grid.Row>
           <Grid.Column>
             <Segment inverted>
@@ -73,6 +74,7 @@ const MobileProjects = () => {
             </Segment>
           </Grid.Column>
         </Grid.Row>
+        
         <Grid.Row>
           <Grid.Column>
             <Segment inverted>
