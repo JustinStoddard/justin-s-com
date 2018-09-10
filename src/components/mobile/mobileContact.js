@@ -5,6 +5,7 @@ import Instagram from '../../Images/instagram image.png';
 import FaceBook from '../../Images/facebook image.png';
 import Phone from '../../Images/phone image.png';
 import Email from '../../Images/email image.png';
+import CommentMobile from './CommentFormMobile';
 import { Container, Segment, Divider, Header, Grid, Image } from 'semantic-ui-react';
 
 const MobileContact = () => {
@@ -85,11 +86,7 @@ const MobileContact = () => {
           <Grid.Column width={16}>
             <Segment inverted>
               <Segment textAlign="center">
-                <Divider hidden/>
-                <Divider hidden/>
-                <Header as="h1">Coming Soon...</Header>
-                <Divider hidden/>
-                <Divider hidden/>
+                <CommentMobile />
               </Segment>
             </Segment>
           </Grid.Column>
