@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Container, Grid, Divider, Button, Image, Responsive } from 'semantic-ui-react';
 import JustinLogo from '../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
+import Loader from '../../Loader';
 
 const HeaderComp = () => {
   return(
@@ -32,7 +33,13 @@ const HeaderComp = () => {
           </Grid.Column>
           <Grid.Column width={4}>
           <Responsive as={Segment} textAlign="center" inverted>
-            <Image src={JustinLogo} size="medium"/>
+            { JustinLogo ?
+                <Image src={JustinLogo} size="medium"/>
+              :
+                <Fragment>
+                  <Loader />
+                </Fragment>
+            }
           </Responsive>
           </Grid.Column>
           <Grid.Column width={6}>
