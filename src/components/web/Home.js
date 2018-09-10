@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ResumeImage from '../../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
 import CoverImage from '../../Images/New cover picture';
 import expertiseImage1 from '../../Images/React Image.png';
@@ -9,12 +9,7 @@ import expertiseImage5 from '../../Images/nodejs image.png';
 import expertiseImage6 from '../../Images/HTML5 image.png';
 import expertiseImage7 from '../../Images/CSS.3 image.png';
 import expertiseImage8 from '../../Images/semantic image.png';
-import Loadable from 'react-loadable';
 import { Segment, Container, Grid, Divider, Header, Image, Responsive } from 'semantic-ui-react';
-
-const Loader = Loadable({
-  loader: () => import('../../Loader'),
-})
 
 class Home extends Component {
   state = { reactPic: true, reduxPic: true }
@@ -47,13 +42,7 @@ class Home extends Component {
               </Responsive>
                 <Divider hidden />
                 <Responsive as={Segment} color="blue">
-                  { ResumeImage ? 
-                      <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
+                  <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
@@ -69,13 +58,7 @@ class Home extends Component {
                 </Segment>
                 <Divider hidden />
                 <Segment color="blue">
-                  { CoverImage ? 
-                      <Responsive as={Image} src={CoverImage} size="medium" style={styles.marginFixer}/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment> 
-                  }
+                  <Responsive as={Image} src={CoverImage} size="medium" style={styles.marginFixer}/>
                 </Segment>
                 <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
@@ -125,27 +108,14 @@ class Home extends Component {
                 <Responsive as={Segment} color="blue">
                   <Divider hidden/>
                   <Divider hidden/>
-                  { expertiseImage3 ? 
-                      <Responsive as={Image} src={expertiseImage3} size="medium"/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
-                  
+                    <Responsive as={Image} src={expertiseImage3} size="medium"/>
                 </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  { expertiseImage4 ? 
-                      <Responsive as={Image} src={expertiseImage4} size="medium" style={styles.railsImage}/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
+                  <Responsive as={Image} src={expertiseImage4} size="medium" style={styles.railsImage}/>
                 </Responsive>
               </Responsive>
             </Grid.Column>
@@ -158,13 +128,7 @@ class Home extends Component {
                   <Divider hidden/>
                   <Divider hidden/>
                   <Divider hidden/>
-                  { expertiseImage5 ?
-                      <Responsive as={Image} src={expertiseImage5} size="large"/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
+                    <Responsive as={Image} src={expertiseImage5} size="large"/>
                   <Divider hidden/>
                   <Divider hidden/>
                   <Divider hidden/>
@@ -174,40 +138,21 @@ class Home extends Component {
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  { expertiseImage6 ?
-                      <Responsive as={Image} src={expertiseImage6} size="medium"/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
+                  <Responsive as={Image} src={expertiseImage6} size="medium"/>
                 </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  { expertiseImage7 ?
-                      <Responsive as={Image} src={expertiseImage7} size="small" style={styles.cssImage}/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
-                  
+                  <Responsive as={Image} src={expertiseImage7} size="small" style={styles.cssImage}/>
                 </Responsive>
               </Responsive>
             </Grid.Column>
             <Grid.Column width={4}>
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  { expertiseImage8 ?
-                      <Responsive as={Image} src={expertiseImage8} size="medium"/>
-                    :
-                      <Fragment>
-                        <Loader />
-                      </Fragment>
-                  }
+                  <Responsive as={Image} src={expertiseImage8} size="medium"/>
                 </Responsive>
               </Responsive>
             </Grid.Column>
