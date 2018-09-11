@@ -25,7 +25,9 @@ const MobileHome = () => {
                 <Header as="h3">Resumé</Header>
               </Segment>
               <Segment color="blue">
-                <Image src={ResumeImage} size="medium"/>
+                <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <Image src={ResumeImage} size="medium"/>
+                </a>
               </Segment>
               <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Check Out Source</a>
             </Segment>
@@ -38,7 +40,9 @@ const MobileHome = () => {
                 <Header as="h3">Cover letter</Header>
               </Segment>
               <Segment color="blue">
-                <Image src={CoverImage} size="medium"/>
+                <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">
+                  <Image src={CoverImage} size="medium"/>
+                </a>
               </Segment>
               <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
             </Segment>

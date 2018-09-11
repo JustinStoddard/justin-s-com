@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
+import { Form, Container, Button, Segment, Grid, Header, Icon } from 'semantic-ui-react';
 
 class CommentForm extends Component {
   state ={ name: '', description: '', createComment: false }
@@ -17,7 +17,7 @@ class CommentForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { id, name, description, createComment } = this.state;
-    //Because I dont have a definitive backend so I cant save comments to the DOM. But this function does simulate opening a form, creating a post, and saving the post.
+    //Because I dont have a definitive backend, I cant save comments to the DOM. But this function does simulate opening a form, creating a post, and saving the post.
     this.setState({ name: '', description: '', createComment: !createComment })
   }
   

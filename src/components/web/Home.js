@@ -42,7 +42,9 @@ class Home extends Component {
               </Responsive>
                 <Divider hidden />
                 <Responsive as={Segment} color="blue">
-                  <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
+                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
+                  </a>
                   <Divider hidden />
                   <Divider hidden />
                   <Divider hidden />
@@ -58,7 +60,9 @@ class Home extends Component {
                 </Segment>
                 <Divider hidden />
                 <Segment color="blue">
-                  <Responsive as={Image} src={CoverImage} size="medium" style={styles.marginFixer}/>
+                  <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">
+                    <Responsive as={Image} src={CoverImage} size="medium" style={styles.marginFixer}/>
+                  </a>
                 </Segment>
                 <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
