@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Form, Container, Button, Segment, Grid, Header, Icon } from 'semantic-ui-react';
+import React, { Component, Fragment } from 'react';
+import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
 
 class CommentForm extends Component {
   state ={ name: '', description: '', createComment: false }
@@ -26,6 +26,19 @@ class CommentForm extends Component {
     return(
       <Container>
         { createComment ? 
+          <Fragment>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={4}></Grid.Column>
+                <Grid.Column width={8}>
+                <Segment inverted>
+                  <Button onClick={this.showForm} color="blue"><Icon name="eye slash"/>Hide</Button>
+                </Segment>
+                </Grid.Column>
+                <Grid.Column width={4}></Grid.Column>
+              </Grid.Row>
+            </Grid>
+            <Divider hidden/>
             <Form onSubmit={this.handleSubmit}>
               <Form.Input
                 name="name"
@@ -43,6 +56,7 @@ class CommentForm extends Component {
               />
               <Form.Button color="blue"><Icon name="check circle"/>Save</Form.Button>
             </Form>
+          </Fragment>
           :
             <Grid>
               <Grid.Row>
