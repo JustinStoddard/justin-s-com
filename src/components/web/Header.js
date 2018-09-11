@@ -11,7 +11,7 @@ const HeaderComp = () => {
       <Responsive as={Grid}>
         <Grid.Row>
         <Grid.Column width={3}>
-            <Link to="/home">
+            <Link to="/">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="small" color="black">

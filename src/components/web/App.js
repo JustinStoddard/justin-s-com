@@ -20,7 +20,7 @@ class App extends Component {
           <Route exact path="/about" component={About}/>
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/services" component={Services}/>
-          <Route exact path="/Demos" component={Demos}/>
+          <Route exact path="/demos" component={Demos}/>
         </Switch>
         <Footer />
       </Fragment>
