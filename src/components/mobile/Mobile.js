@@ -13,9 +13,9 @@ class Mobile extends Component {
         <MobileHeader />
         <Switch>
           <Route exact path="/" component={MobileHome}/>
-          <Route exact path="/mobileprojects" component={MobileProjects}/>
-          <Route exact path="/mobileabout" component={MobileAbout}/>
-          <Route exact path="/mobilecontact" component={MobileContact}/>
+          <Route exact path="/projects" component={MobileProjects}/>
+          <Route exact path="/about" component={MobileAbout}/>
+          <Route exact path="/contact" component={MobileContact}/>
         </Switch>
       </div>
     )
