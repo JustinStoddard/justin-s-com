@@ -22,21 +22,21 @@ const HeaderComp = () => {
             </Link>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Link to="/demos">
+            <Link to="/about">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Demos</h4>
+                    <h4 style={styles.navStyles}>About</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
             </Link>
             <Divider hidden />
-            <Link to="/projects">
+            <Link to="/contact">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Projects</h4>
+                    <h4 style={styles.navStyles}>Contact</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -54,21 +54,21 @@ const HeaderComp = () => {
           </Responsive>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Link to="/about">
+            <Link to="/demos">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>About</h4>
+                    <h4 style={styles.navStyles}>Demos</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
             </Link>
             <Divider hidden/>
-            <Link to="/contact">
+            <Link to="/projects">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Contact</h4>
+                    <h4 style={styles.navStyles}>Projects</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
