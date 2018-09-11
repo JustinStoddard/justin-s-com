@@ -3,7 +3,7 @@ import { Segment } from 'semantic-ui-react';
 
 const Demos = () => {
   return(
-    <Segment>Under Contruction</Segment>
+    <Segment>Demos Under Contruction</Segment>
   )
 }
 

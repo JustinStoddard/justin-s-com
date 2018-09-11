@@ -3,7 +3,7 @@ import { Segment } from 'semantic-ui-react';
 
 const Services = () => {
   return(
-    <Segment>Under Construction</Segment>
+    <Segment>Services Under Construction</Segment>
   )
 }
 

@@ -10,23 +10,18 @@ const HeaderComp = () => {
       <Divider hidden />
       <Responsive as={Grid}>
         <Grid.Row>
-          <Grid.Column width={6}></Grid.Column>
-          <Grid.Column width={4}>
-            <Link to="/">
+        <Grid.Column width={3}>
+            <Link to="/home">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Home</h4>
+                  <Responsive as={Button} size="small" color="black">
+                    <h5 style={styles.navStyles}>Home</h5>
                   </Responsive>
                 </Responsive>
               </Responsive>
             </Link>
           </Grid.Column>
-          <Grid.Column width={6}></Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row>
-          <Grid.Column width={6}>
+          <Grid.Column width={3}>
             <Link to="/demos">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
@@ -37,11 +32,11 @@ const HeaderComp = () => {
               </Responsive>
             </Link>
             <Divider hidden />
-            <Link to="/services">
+            <Link to="/projects">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Services</h4>
+                    <h4 style={styles.navStyles}>Projects</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -58,7 +53,7 @@ const HeaderComp = () => {
             }
           </Responsive>
           </Grid.Column>
-          <Grid.Column width={6}>
+          <Grid.Column width={3}>
             <Link to="/about">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
@@ -79,22 +74,17 @@ const HeaderComp = () => {
               </Responsive>
             </Link>
           </Grid.Column>
-        </Grid.Row>
-          
-        <Grid.Row>
-          <Grid.Column width={6}></Grid.Column>
-          <Grid.Column width={4}>
-            <Link to="/projects">
+          <Grid.Column width={3}>
+            <Link to="/services">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Projects</h4>
+                  <Responsive as={Button} size="small" color="black">
+                    <h5 style={styles.navStyles}>Services</h5>
                   </Responsive>
                 </Responsive>
               </Responsive>
             </Link>
           </Grid.Column>
-          <Grid.Column width={6}></Grid.Column>
         </Grid.Row>
       </Responsive>
     </Container>
