@@ -28,21 +28,21 @@ const MobileHeader = () => {
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment  textAlign="center" color="blue">
-              <Link to="/mobileProjects">
+              <Link to="/projects">
                 <Icon name="file code" size="big" color="black"/>
               </Link>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment textAlign="center" color="blue">
-              <Link to="/mobileAbout">
+              <Link to="/about">
                 <Icon name="flask" size="big" color="black"/>
               </Link>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
             <Segment  textAlign="center" color="blue">
-            <Link to="/mobileContact">
+            <Link to="/contact">
               <Icon name="paper plane" size="big" color="black"/>
             </Link>
             </Segment>
