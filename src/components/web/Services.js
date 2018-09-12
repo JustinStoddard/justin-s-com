@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
+import Loadable from 'react-loadable';
+import Loader from '../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button } from 'semantic-ui-react';
+
+const Plan1Load = Loadable({
+  loader: () => import('./Plan1'),
+  loading: () => <Loader/>,
+})
+
+const Plan2Load = Loadable({
+  loader: () => import('./Plan2'),
+  loading: () => <Loader/>,
+})
+
+const Plan3Load = Loadable({
+  loader: () => import('./Plan3'),
+  loading: () => <Loader/>,
+})
 
 class Services extends Component {
   state = { pickedBlog: false, pickedPort: false, pickedShop: false }
 
   render() {
+    const { pickedBlog, pickedPort, pickedShop } = this.state;
     return(
       <Container>
         <Divider hidden />
@@ -26,7 +44,7 @@ class Services extends Component {
                         <Segment textAlign="center" inverted>
                           <Header as="h4">Price</Header>
                         </Segment>
-                        <Segment>
+                        <Segment color="blue">
                           <Header as="h5" textAlign="center">$150</Header>
                         </Segment>
                       </Grid.Column>
@@ -34,7 +52,7 @@ class Services extends Component {
                         <Segment textAlign="center" inverted>
                           <Header as="h4">Maintainance</Header>
                         </Segment>
-                        <Segment>
+                        <Segment color="blue">
                           <Header as="h5" textAlign="center">$15</Header>
                         </Segment>
                       </Grid.Column>
@@ -42,7 +60,7 @@ class Services extends Component {
                   </Grid>
                   <Segment inverted>
                     <Segment textAlign="center" color="blue">
-                      <Button color="blue">View Plan</Button>
+                      <Button color="blue" onClick={() => this.setState({ pickedBlog: !pickedBlog, pickedPort: false, pickedShop: false })}>View Plan</Button>
                     </Segment>
                   </Segment>
                 </Segment>
@@ -62,7 +80,7 @@ class Services extends Component {
                           <Header as="h3">Price</Header>
                         </Segment>
                         <Divider hidden/>
-                        <Segment>
+                        <Segment color="blue">
                           <Header as="h2" textAlign="center">$50</Header>
                         </Segment>
                       </Grid.Column>
@@ -71,7 +89,7 @@ class Services extends Component {
                           <Header as="h3">Maintainance</Header>
                         </Segment>
                         <Divider hidden/>
-                        <Segment>
+                        <Segment color="blue">
                           <Header as="h2" textAlign="center">$5</Header>
                         </Segment>
                       </Grid.Column>
@@ -80,7 +98,7 @@ class Services extends Component {
                   <Divider hidden/>
                   <Segment inverted>
                     <Segment textAlign="center" color="blue">
-                      <Button color="blue">View Plan</Button>
+                      <Button color="blue" onClick={() => this.setState({ pickedPort: !pickedPort, pickedBlog: false, pickedShop: false })}>View Plan</Button>
                     </Segment>
                   </Segment>
                 </Segment>
@@ -100,7 +118,7 @@ class Services extends Component {
                         <Segment textAlign="center" inverted>
                           <Header as="h4">Price</Header>
                         </Segment>
-                        <Segment>
+                        <Segment color="blue">
                           <Header as="h5" textAlign="center">$1000</Header>
                         </Segment>
                       </Grid.Column>
@@ -108,7 +126,7 @@ class Services extends Component {
                         <Segment textAlign="center" inverted>
                           <Header as="h4">Maintainance</Header>
                         </Segment>
-                        <Segment>
+                        <Segment color="blue">
                           <Header as="h5" textAlign="center">$25</Header>
                         </Segment>
                       </Grid.Column>
@@ -116,7 +134,9 @@ class Services extends Component {
                   </Grid>
                   <Segment inverted>
                     <Segment textAlign="center" color="blue">
-                      <Button color="blue">View Plan</Button>
+                      <Button 
+                        color="blue" 
+                        onClick={() => this.setState({ pickedShop: !pickedShop, pickedBlog: false, pickedPort: false })}>View Plan</Button>
                     </Segment>
                   </Segment>
                 </Segment>
@@ -124,11 +144,31 @@ class Services extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column>
-              <Segment>
-                Stuff should render here depending on what plan the customer has clicked on. Write the loggic above the render to avois issues.
-              </Segment>
+            <Grid.Column width={4}></Grid.Column>
+            <Grid.Column width={8}>
+              { pickedPort ?
+                  <Segment inverted>
+                    <Plan1Load/>
+                  </Segment>
+                :
+                  null
+              }
+              { pickedBlog ?
+                  <Segment inverted>
+                    <Plan2Load/>
+                  </Segment>
+                :
+                  null
+              }
+              { pickedShop ?
+                  <Segment inverted>
+                    <Plan3Load/>
+                  </Segment>
+                :
+                  null
+              }
             </Grid.Column>
+            <Grid.Column width={4}></Grid.Column>
           </Grid.Row>
         </Grid>
       </Container>
