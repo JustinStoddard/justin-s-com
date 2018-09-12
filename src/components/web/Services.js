@@ -50,7 +50,7 @@ class Services extends Component {
                       </Grid.Column>
                       <Grid.Column width={8}>
                         <Segment textAlign="center" inverted>
-                          <Header as="h4">Maintainance</Header>
+                          <Header as="h4">Maintenance</Header>
                         </Segment>
                         <Segment color="blue">
                           <Header as="h5" textAlign="center">$15</Header>
@@ -86,7 +86,7 @@ class Services extends Component {
                       </Grid.Column>
                       <Grid.Column width={8}>
                         <Segment textAlign="center" inverted>
-                          <Header as="h3">Maintainance</Header>
+                          <Header as="h3">Maintenance</Header>
                         </Segment>
                         <Divider hidden/>
                         <Segment color="blue">
@@ -124,7 +124,7 @@ class Services extends Component {
                       </Grid.Column>
                       <Grid.Column width={8}>
                         <Segment textAlign="center" inverted>
-                          <Header as="h4">Maintainance</Header>
+                          <Header as="h4">Maintenance</Header>
                         </Segment>
                         <Segment color="blue">
                           <Header as="h5" textAlign="center">$25</Header>
