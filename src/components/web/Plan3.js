@@ -11,7 +11,7 @@ const Plan3 = () => {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell singleLine>
-              <Header as="h3">Plan Rank</Header>
+              <Header as="h3">Rank</Header>
             </Table.HeaderCell>
             <Table.HeaderCell>
               <Header as="h3">Price</Header>
