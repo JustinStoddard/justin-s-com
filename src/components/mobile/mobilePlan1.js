@@ -14,8 +14,8 @@ const Plan1 = () => {
               <Header as="h3">Bronze</Header>
               <Divider/>
             </Table.Cell>
-            <Table.Cell singleLine>$50</Table.Cell>
-            <Table.Cell singleLine>$5</Table.Cell>
+            <Table.Cell singleLine><strong>Price:</strong> $50</Table.Cell>
+            <Table.Cell singleLine><strong>Maintenance:</strong> $5</Table.Cell>
             <Table.Cell>
               <Rating ison="star" defaultRating={5} maxRating={5}/>
             </Table.Cell>
@@ -26,7 +26,7 @@ const Plan1 = () => {
               <Divider/>
             </Table.Cell>
             <Table.Cell singleLine><strong>Price:</strong> $90</Table.Cell>
-            <Table.Cell singleLine>Free For 6 Months</Table.Cell>
+            <Table.Cell singleLine><strong>Maintenance:</strong> Free For 6 Months</Table.Cell>
             <Table.Cell>
               <Rating ison="star" defaultRating={4} maxRating={5}/>
             </Table.Cell>
@@ -36,8 +36,8 @@ const Plan1 = () => {
               <Header as="h3">Gold</Header>
               <Divider/>
             </Table.Cell>
-            <Table.Cell singleLine>$150</Table.Cell>
-            <Table.Cell singleLine>Free For 1 Year</Table.Cell>
+            <Table.Cell singleLine><strong>Price:</strong> $150</Table.Cell>
+            <Table.Cell singleLine><strong>Maintenance:</strong> Free For 1 Year</Table.Cell>
             <Table.Cell>
               <Rating ison="star" defaultRating={4} maxRating={5}/>
             </Table.Cell>

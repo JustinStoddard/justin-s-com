@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
 
 class CommentForm extends Component {
-  state ={ name: '', description: '', createComment: false, comments: [] }
+  state = { name: '', description: '', createComment: false, comments: [] }
 
   showForm = () => {
     const { createComment } = this.state;
@@ -84,7 +84,6 @@ class CommentForm extends Component {
                 </Grid.Row>
               )}
             </Grid>
-            
         }
       </Container>
     )
