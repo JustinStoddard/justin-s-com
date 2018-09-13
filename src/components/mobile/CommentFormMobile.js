@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Form, Container, Button, Segment, Grid, Header, Icon } from 'semantic-ui-react';
+import React, { Component, Fragment } from 'react';
+import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
 
 class CommentForm extends Component {
-  state ={ name: '', description: '', createComment: false }
+  state ={ name: '', description: '', createComment: false, comments: [] }
 
   showForm = () => {
     const { createComment } = this.state;
@@ -16,9 +16,7 @@ class CommentForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { id, name, description, createComment } = this.state;
-    //Because I dont have a definitive backend, I cant save comments to the DOM. But this function does simulate opening a form, creating a post, and saving the post.
-    this.setState({ name: '', description: '', createComment: !createComment })
+    this.setState(prevState => ({ name: '', description: '', createComment: !prevState.createComment, comments: [ ...prevState.comments, { name: prevState.name, description: prevState.description }] }))
   }
   
   render() {
@@ -26,6 +24,17 @@ class CommentForm extends Component {
     return(
       <Container>
         { createComment ? 
+          <Fragment>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column>
+                  <Segment inverted>
+                    <Button onClick={this.showForm} color="blue"><Icon name="eye slash"/>Hide</Button>
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+            <Divider hidden/>
             <Form onSubmit={this.handleSubmit}>
               <Form.Input
                 name="name"
@@ -43,6 +52,7 @@ class CommentForm extends Component {
               />
               <Form.Button color="blue"><Icon name="check circle"/>Save</Form.Button>
             </Form>
+          </Fragment>
           :
             <Grid>
               <Grid.Row>
@@ -52,19 +62,20 @@ class CommentForm extends Component {
                   </Segment>
                 </Grid.Column>
               </Grid.Row>
-
-              <Grid.Row>
-                <Grid.Column>
-                  <Segment inverted>
-                    <Segment color="blue">
-                      <Header as="h3">Justin Stoddard</Header>
+              {this.state.comments.map(c =>
+                <Grid.Row>
+                  <Grid.Column>
+                    <Segment inverted>
+                      <Segment color="blue">
+                        <Header as="h3">{c.name}</Header>
+                      </Segment>
+                      <Segment textAlign="left" color="blue">
+                        <Header as="h5">{c.description}</Header>
+                      </Segment>
                     </Segment>
-                    <Segment textAlign="left" color="blue">
-                      <Header as="h5">Lucas ipsum dolor sit amet sidious aayla skywalker kessel windu wampa grievous gamorrean dooku luuke. Solo bothan coruscant solo.</Header>
-                    </Segment>
-                  </Segment>
-                </Grid.Column>
-              </Grid.Row>
+                  </Grid.Column>
+                </Grid.Row>
+              )}
             </Grid>
             
         }
