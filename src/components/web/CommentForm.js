@@ -1,5 +1,12 @@
 import React, { Component, Fragment } from 'react';
+import Loadable from 'react-loadable';
+import Loader from '../../Loader';
 import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
+
+const PostLoader = Loadable({
+  loader: () => import('./Post'),
+  loading: () => <Loader/>,
+})
 
 class CommentForm extends Component {
   state = { name: '', description: '', createComment: false, comments: [] }
@@ -66,23 +73,7 @@ class CommentForm extends Component {
                 </Grid.Column>
                 <Grid.Column width={4}></Grid.Column>
               </Grid.Row>
-
-              {this.state.comments.map(c => 
-                <Grid.Row>
-                  <Grid.Column width={4}></Grid.Column>
-                  <Grid.Column width={8}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h3">{c.name}</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <Header as="h5">{c.description}</Header>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={4}></Grid.Column>
-                </Grid.Row>
-              )}
+              <PostLoader comments={this.state.comments}/>
             </Grid>
         }
       </Container>
