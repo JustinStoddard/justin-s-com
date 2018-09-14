@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
 
 class CommentForm extends Component {
-  state ={ name: '', description: '', createComment: false }
+  state = { name: '', description: '', createComment: false, comments: [] }
 
   showForm = () => {
     const { createComment } = this.state;
@@ -16,9 +16,7 @@ class CommentForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { id, name, description, createComment } = this.state;
-    //Because I dont have a definitive backend so I cant save comments to the DOM. But this function does simulate opening a form, creating a post, and saving the post.
-    this.setState({ name: '', description: '', createComment: !createComment })
+    this.setState(prevState => ({ name: '', description: '', createComment: !prevState.createComment, comments: [ ...prevState.comments, { name: prevState.name, description: prevState.description }] }))
   }
   
   render() {
@@ -69,22 +67,23 @@ class CommentForm extends Component {
                 <Grid.Column width={4}></Grid.Column>
               </Grid.Row>
 
-              <Grid.Row>
-                <Grid.Column width={4}></Grid.Column>
-                <Grid.Column width={8}>
-                  <Segment inverted>
-                    <Segment color="blue">
-                      <Header as="h3">Justin Stoddard</Header>
+              {this.state.comments.map(c => 
+                <Grid.Row>
+                  <Grid.Column width={4}></Grid.Column>
+                  <Grid.Column width={8}>
+                    <Segment inverted>
+                      <Segment color="blue">
+                        <Header as="h3">{c.name}</Header>
+                      </Segment>
+                      <Segment textAlign="left" color="blue">
+                        <Header as="h5">{c.description}</Header>
+                      </Segment>
                     </Segment>
-                    <Segment textAlign="left" color="blue">
-                      <Header as="h5">Lucas ipsum dolor sit amet sidious aayla skywalker kessel windu wampa grievous gamorrean dooku luuke. Solo bothan coruscant solo. Yoda darth jade lando fett mace kashyyyk. Moff alderaan grievous maul vader alderaan. Solo zabrak darth leia jabba. Moff leia greedo mon calamari luke moff solo ahsoka. Anakin skywalker tusken raider darth. Aayla vader solo obi-wan antilles kamino. Binks endor ackbar calrissian ackbar dagobah hoth ackbar calamari. Bothan kenobi darth utapau solo moff secura c-3po. Padmé tusken raider mandalore jabba anakin antilles.</Header>
-                    </Segment>
-                  </Segment>
-                </Grid.Column>
-                <Grid.Column width={4}></Grid.Column>
-              </Grid.Row>
+                  </Grid.Column>
+                  <Grid.Column width={4}></Grid.Column>
+                </Grid.Row>
+              )}
             </Grid>
-            
         }
       </Container>
     )

@@ -6,7 +6,7 @@ import FaceBook from '../../Images/facebook image.png';
 import Phone from '../../Images/phone image.png';
 import Email from '../../Images/email image.png';
 import CommentMobile from './CommentFormMobile';
-import { Container, Segment, Divider, Header, Grid, Image } from 'semantic-ui-react';
+import { Container, Segment, Header, Grid, Image } from 'semantic-ui-react';
 
 const MobileContact = () => {
   return(
