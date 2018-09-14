@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Loadable from 'react-loadable';
 import Loader from '../../Loader';
-import { Form, Container, Button, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
+import { Form, Container, Button, Segment, Grid, Icon, Divider } from 'semantic-ui-react';
 
 const PostLoader = Loadable({
   loader: () => import('./mobilePost'),

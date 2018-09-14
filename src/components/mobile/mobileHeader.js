@@ -27,7 +27,7 @@ class MobileHeader extends Component {
                   <Grid.Column width={2}></Grid.Column>
                   <Grid.Column width={12}>
                     <Segment textAlign="center" inverted onClick={() => this.setState({ buttonClicked: !buttonClicked })}>
-                      <Icon name="caret square down outline" size="big"/>
+                      <Icon name="caret square up" size="big"/>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={2}></Grid.Column>
