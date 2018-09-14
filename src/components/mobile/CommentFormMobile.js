@@ -71,7 +71,6 @@ class CommentForm extends Component {
               </Grid.Row>
               <PostLoader comments={this.state.comments}/>
             </Grid>
-            
         }
       </Container>
     )
