@@ -51,7 +51,7 @@ class Demos extends Component {
                           <List as="ul">
                             <List.Item as="li">React Js</List.Item>
                             <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">My Mind</List.Item>
+                            <List.Item as="li">YouTube API</List.Item>
                             <List.Item as="li">NPM Lodash</List.Item>
                           </List>
                         </Segment>
