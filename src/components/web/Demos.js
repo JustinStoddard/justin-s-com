@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import Loader from '../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button, List } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
@@ -37,7 +36,7 @@ class Demos extends Component {
                         <Header as="h2">YouTube Player</Header>
                       </Segment>
                       <Segment textAlign="left">
-                        <strong>This</strong> demos show cases the to ability use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. <strong>Also star the repo <a href="https://github.com/JustinStoddard/JustinS.com">here</a></strong>
+                        <strong>This</strong> demos show cases the ability to use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. <strong>Also star the repo <a href="https://github.com/JustinStoddard/JustinS.com">here</a></strong>
                       </Segment>
                       <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
                     </Segment>
