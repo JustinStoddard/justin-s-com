@@ -7,6 +7,7 @@ import MobileContact from './mobileContact';
 import MobileHeader from './mobileHeader';
 import MobileServices from './mobileServices';
 import MobileDemos from './mobileDemos';
+// React-Loadable is not compatible with React-Router :(
 
 class Mobile extends Component {
   render() {

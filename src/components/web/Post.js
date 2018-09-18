@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Segment, Grid, Header } from 'semantic-ui-react';
+import { Segment, Grid, Header, Button } from 'semantic-ui-react';
 
 const Post = ({ comments }) => {
   return(
@@ -15,6 +15,8 @@ const Post = ({ comments }) => {
               <Segment textAlign="left" color="blue">
                 <Header as="h5">{c.description}</Header>
               </Segment>
+              <Button>Edit</Button>
+              <Button>Delete</Button>
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}></Grid.Column>

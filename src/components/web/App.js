@@ -8,6 +8,7 @@ import About from './About';
 import Contact from './Contact';
 import Services from './Services';
 import Demos from './Demos'
+// React-Loadable is not compatible with React-Router :(
 
 class App extends Component {
   render() {
