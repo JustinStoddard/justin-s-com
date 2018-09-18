@@ -36,7 +36,7 @@ class Demos extends Component {
                         <Header as="h2">YouTube Player</Header>
                       </Segment>
                       <Segment textAlign="left">
-                        <strong>This</strong> demos show cases the to ability use YouTubes API to search for, and view videos. There is also a lot of work behind the sceenes with State, Props, and Conditional Rendering. 
+                        <strong>This</strong> demos show cases the to ability use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. 
                       </Segment>
                       <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
                     </Segment>
