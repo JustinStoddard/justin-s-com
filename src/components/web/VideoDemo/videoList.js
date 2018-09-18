@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoListItem from './videoListItem';
+import { List } from 'semantic-ui-react';
 
 const VideoList = (props) => {
   const videoItems = props.videos.map((video) => {
@@ -12,9 +13,9 @@ const VideoList = (props) => {
     )
   })
   return(
-    <ul>
+    <List>
       {videoItems}
-    </ul>
+    </List>
   )
 }
 

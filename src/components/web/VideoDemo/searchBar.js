@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Segment, Container, Input, Icon } from 'semantic-ui-react';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -15,9 +16,11 @@ class SearchBar extends Component {
   render() {
     const { term } = this.state;
     return(
-      <div>
-        <input value={term} onChange={event => this.onInputChange(event.target.value)}/>
-      </div>
+      <Container>
+        <Segment textAlign="left" inverted>
+          <Input icon={<Icon name="search" inverted circular link/>} size="huge" placeholder="Search..." value={term} onChange={event => this.onInputChange(event.target.value)}/>
+        </Segment>
+      </Container>
     )
   }
 }

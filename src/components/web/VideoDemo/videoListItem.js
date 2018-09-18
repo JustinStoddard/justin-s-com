@@ -1,13 +1,13 @@
 import React from 'react';
-import { Segment, Container, Header, Image } from 'semantic-ui-react';
+import { Segment, Container, Header, Image, List, Divider } from 'semantic-ui-react';
 
 const VideoListItem = ({video, onVideoSelect}) => {
   const imageURL = video.snippet.thumbnails.default.url;
 
   return(
     <Container>
-      <li onClick={() => onVideoSelect(video)}>
-        <Segment>
+      <List.Item onClick={() => onVideoSelect(video)}>
+        <Segment inverted>
           <Segment>
             <Image src={imageURL}/>
           </Segment>
@@ -15,7 +15,8 @@ const VideoListItem = ({video, onVideoSelect}) => {
             <Header as="h3">{video.snippet.title}</Header>
           </Segment>
         </Segment>
-      </li>
+      </List.Item>
+      <Divider hidden/>
     </Container>
   )
 }

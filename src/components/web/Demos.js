@@ -15,12 +15,13 @@ class Demos extends Component {
         </Segment>
         { videoDemo ?
             <Segment>
+              <Button color="blue" size="large" onClick={() => this.setState({ videoDemo: !videoDemo })}>Hide Demo</Button>
+              <Divider hidden/>
               <VideoIndex />
-              <Button onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
             </Segment>
           :
             <Segment>
-              <Button onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
+              <Button color="blue" size="large" onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
             </Segment>
         }
       </Container>

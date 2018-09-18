@@ -4,7 +4,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './VideoDemo/searchBar';
 import VideoList from './VideoDemo/videoList';
 import VideoPlayer from './VideoDemo/videoPlayer';
-import { Segment, Container } from 'semantic-ui-react';
+import { Container, Divider, Grid } from 'semantic-ui-react';
 
 const API_KEY = "AIzaSyBAbu36HFStXbL3D577r1yheldu7Y4AdfQ"
 
@@ -16,7 +16,7 @@ class VideoDemo extends Component {
       videos: [],
       selectedVideo: null
     }
-    this.videoSearch('surfboards');
+    this.videoSearch('React JS');
   }
 
   videoSearch(term) {
@@ -33,14 +33,21 @@ class VideoDemo extends Component {
     const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300)
     return( 
       <Container>
-        <Segment>
-          <SearchBar onSearchTermChange={videoSearch}/>
-          <VideoPlayer video={selectedVideo}/>
-          <VideoList 
-            onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-            videos={videos}
-          />
-        </Segment>
+        <SearchBar onSearchTermChange={videoSearch}/>
+        <Divider hidden/>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={10}>
+              <VideoPlayer video={selectedVideo}/>
+            </Grid.Column>
+            <Grid.Column width={6}>
+              <VideoList 
+                onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                videos={videos}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Container>
     )
   }
