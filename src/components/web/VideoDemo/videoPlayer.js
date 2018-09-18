@@ -6,6 +6,7 @@ const VideoPlayer = ({video}) => {
   if (!video) {
     return <Loader />
   }
+
   const videoID = video.id.videoId;
   const url = `https://www.youtube.com/embed/${videoID}`;
   const imageURL = video.snippet.thumbnails.default.url;
