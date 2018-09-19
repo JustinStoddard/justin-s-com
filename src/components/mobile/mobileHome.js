@@ -9,7 +9,7 @@ import expertiseImage5 from '../../Images/nodejs image.png';
 import expertiseImage6 from '../../Images/HTML5 image.png';
 import expertiseImage7 from '../../Images/CSS.3 image.png';
 import expertiseImage8 from '../../Images/semantic image.png';
-import { Segment, Container, Grid, Image, Header } from 'semantic-ui-react';
+import { Segment, Container, Grid, Image, Header, Divider } from 'semantic-ui-react';
 
 const MobileHome = () => {
   return(
@@ -89,7 +89,9 @@ const MobileHome = () => {
           <Grid.Column width={8}>
             <Segment inverted>
               <Segment color="blue">
-                <Image src={expertiseImage5} size="medium" style={styles.imageSize}/>
+                <Divider hidden/>
+                <Image src={expertiseImage5} size="medium" style={styles.imageNode}/>
+                <Divider hidden/>
               </Segment>
             </Segment>
           </Grid.Column>
@@ -125,6 +127,9 @@ const MobileHome = () => {
 const styles = {
   imageSize: {
     height: '100px'
+  },
+  imageNode: {
+    height: '40px'
   }
 }
 

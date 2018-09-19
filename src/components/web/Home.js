@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ResumeImage from '../../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
 import CoverImage from '../../Images/New cover picture';
 import expertiseImage1 from '../../Images/React Image.png';
@@ -81,12 +81,12 @@ class Home extends Component {
                   { reactPic ?
                       <Responsive as={Image} src={expertiseImage1} size="medium" onClick={this.onClickReact}/>
                     :
-                      <div> {/* I had to add in a "div" because JSX wanted the code to have a parent element */}
+                      <Fragment>
                         <Responsive as={Image} src={expertiseImage1} size="medium" onClick={this.onClickReact}/>
                         <Segment inverted>
                           <Header as="h4">This is React!</Header>
                         </Segment>
-                      </div>
+                      </Fragment>
                   }
                 </Responsive>
               </Responsive>
@@ -97,12 +97,12 @@ class Home extends Component {
                   { reduxPic ?
                       <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>    
                     :
-                      <div>
+                      <Fragment>
                         <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>
                         <Segment inverted>
                           <Header as="h4">This is Redux!</Header>
                         </Segment>
-                      </div>
+                      </Fragment>
                   }
                 </Responsive>
               </Responsive>
