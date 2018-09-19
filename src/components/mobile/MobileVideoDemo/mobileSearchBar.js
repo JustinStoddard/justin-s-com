@@ -16,7 +16,7 @@ class SearchBar extends Component {
   render() {
     const { term } = this.state;
     return(
-      <Segment textAlign="left" inverted>
+      <Segment textAlign="center" inverted>
         <Input icon={<Icon name="search" inverted circular link/>} size="huge" placeholder="Search..." value={term} onChange={event => this.onInputChange(event.target.value)}/>
       </Segment>
     )
