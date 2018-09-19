@@ -16,10 +16,10 @@ const VideoPlayer = ({video}) => {
         <Embed url={url} title="videoplayer" placeholder={imageURL} aspectRatio="16:9"></Embed>
       </Segment>
       <Segment inverted>
-        <Segment textAlign="left">
+        <Segment textAlign="left" color="blue">
           <Header as="h2">{video.snippet.title}</Header>
         </Segment>
-        <Segment textAlign="left">
+        <Segment textAlign="left" color="blue">
           <Header as="h5">{video.snippet.description}</Header>
         </Segment>
       </Segment>

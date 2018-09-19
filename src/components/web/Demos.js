@@ -21,7 +21,7 @@ class Demos extends Component {
         </Segment>
         <Divider hidden/>
         { videoDemo ?
-            <Segment>
+            <Segment color="blue">
               <Button color="blue" size="large" onClick={() => this.setState({ videoDemo: !videoDemo })}>Hide Demo</Button>
               <Divider hidden/>
               <VideoDemoLoader />
@@ -32,10 +32,10 @@ class Demos extends Component {
                 <Grid.Row>
                   <Grid.Column width={13}>
                     <Segment inverted>
-                      <Segment>
+                      <Segment color="blue">
                         <Header as="h2">YouTube Player</Header>
                       </Segment>
-                      <Segment textAlign="left">
+                      <Segment textAlign="left" color="blue">
                         <strong>This</strong> demos show cases the ability to use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. <strong>Also star the repo <a href="https://github.com/JustinStoddard/JustinS.com">here</a></strong>
                       </Segment>
                       <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
@@ -43,11 +43,11 @@ class Demos extends Component {
                   </Grid.Column>
                   <Grid.Column width={3}>
                     <Segment inverted>
-                      <Segment>
+                      <Segment color="blue">
                         <Segment textAlign="center" inverted>
                           <Header as="h3">TECH</Header>
                         </Segment>
-                        <Segment>
+                        <Segment color="blue">
                           <List as="ul">
                             <List.Item as="li">React Js</List.Item>
                             <List.Item as="li">Semantic-UI</List.Item>

@@ -8,10 +8,10 @@ const VideoListItem = ({video, onVideoSelect}) => {
     <Container>
       <List.Item onClick={() => onVideoSelect(video)}>
         <Segment inverted>
-          <Segment>
+          <Segment color="blue">
             <Image src={imageURL}/>
           </Segment>
-          <Segment>
+          <Segment color="blue">
             <Header as="h3">{video.snippet.title}</Header>
           </Segment>
         </Segment>
