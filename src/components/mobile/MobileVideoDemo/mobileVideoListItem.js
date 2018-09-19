@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Segment, Container, Header, Image, List, Divider } from 'semantic-ui-react';
+import { Segment, Header, Image, List, Divider } from 'semantic-ui-react';
 
 const VideoListItem = ({video, onVideoSelect}) => {
   const imageURL = video.snippet.thumbnails.default.url;
