@@ -16,7 +16,9 @@ class MobileHeader extends Component {
             <Grid.Column width={2}></Grid.Column>
             <Grid.Column width={12}>
             <Segment inverted>
-              <Image src={JustinLogo} size="large"/>
+              <Link to="/">
+                <Image src={JustinLogo} size="large"/>
+              </Link>
             </Segment>
             </Grid.Column>
             <Grid.Column wisth={2}></Grid.Column>

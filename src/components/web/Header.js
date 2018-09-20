@@ -45,7 +45,9 @@ const HeaderComp = () => {
           <Grid.Column width={4}>
           <Responsive as={Segment} textAlign="center" inverted>
             { JustinLogo ?
-                <Image src={JustinLogo} size="medium"/>
+                <Link to="/">
+                  <Image src={JustinLogo} size="medium"/>
+                </Link>
               :
                 <Fragment>
                   <Loader />
