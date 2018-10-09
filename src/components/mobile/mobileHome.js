@@ -1,5 +1,5 @@
 import React from 'react';
-import ResumeImage from '../../Images/1874879A-E7C9-474F-BE68-80044AF98F0B.jpg';
+import ResumeImage from '../../Images/B4B87BEE-6F42-43A4-92FC-857790185640.jpg';
 import CoverImage from '../../Images/New cover picture';
 import expertiseImage1 from '../../Images/React Image.png';
 import expertiseImage2 from '../../Images/redux image.png';
