@@ -8,11 +8,16 @@ const VideoDemoLoader = Loadable({
   loading: () => <Loader />
 })
 
+const CalculatorDemoLoader = Loadable({
+  loader: () => import('./MobileCalculatorDemo/mobileCalculatorIndex'),
+  loading: () => <Loader />
+})
+
 class Demos extends Component {
-  state = { videoDemo: false }
+  state = { videoDemo: false, calculatorDemo: false }
 
   render() {
-    const { videoDemo } = this.state;
+    const { videoDemo, calculatorDemo } = this.state;
     return(
       <Container>
         <Divider hidden />
@@ -48,7 +53,41 @@ class Demos extends Component {
                     </List>
                   </Segment>
                 </Segment>
-                <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo })}>View Demo</Button>
+                <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false })}>View Demo</Button>
+              </Segment>
+              <Divider hidden/>
+            </Fragment>
+        }
+        <Divider hidden/>
+        { calculatorDemo ?
+            <Segment color="blue">
+              <Button color="blue" size="large" onClick={() => this.setState({ calculatorDemo: !calculatorDemo })}>Hide Demo</Button>
+              <Divider hidden/>
+              <CalculatorDemoLoader />
+            </Segment>
+          :
+            <Fragment>
+              <Segment inverted>
+                <Segment color="blue" textAlign="center">
+                  <Header as="h2">Calculator Demo</Header>
+                </Segment>
+                <Segment textAlign="left" color="blue">
+                  <strong>This</strong> demos showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state.
+                </Segment>
+                <Segment color="blue">
+                  <Segment textAlign="center" inverted>
+                    <Header as="h3">TECH</Header>
+                  </Segment>
+                  <Segment color="blue">
+                    <List as="ul">
+                      <List.Item as="li">React Js</List.Item>
+                      <List.Item as="li">Semantic-UI</List.Item>
+                      <List.Item as="li">ES6 JS</List.Item>
+                      <List.Item as="li">My Brain</List.Item>
+                    </List>
+                  </Segment>
+                </Segment>
+                <Button color="blue" size="huge" onClick={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false })}>View Demo</Button>
               </Segment>
               <Divider hidden/>
             </Fragment>
