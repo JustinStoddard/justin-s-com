@@ -2,7 +2,9 @@ import React from 'react';
 import BallIsLife from '../../Images/Jazz-Logo_Single_Front_aec9f4df-237d-46d5-8c3a-d71d52fd71d7.png';
 import ShopUnicity from '../../Images/images.png';
 import StrikerBot from '../../Images/fc220x200black-u2.jpg';
-import { Container, Segment, Header, Grid, Image, List } from 'semantic-ui-react';
+import ThisJustin from '../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
+import Library from '../../Images/80DF52C9-6BFE-4C4E-B58A-F83147DEE8F7.jpg';
+import { Container, Segment, Header, Grid, Image, List, Divider } from 'semantic-ui-react';
 
 const MobileProjects = () => {
   return(
@@ -102,6 +104,71 @@ const MobileProjects = () => {
               </Segment>
               <Segment textAlign="center" inverted>
                 <a href="https://github.com/JustinStoddard/StrikerBot" target="_blank" rel="noopener noreferrer">Check Out Source</a>
+              </Segment>
+            </Segment>
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row>
+          <Grid.Column>
+            <Segment inverted>
+              <Segment textAlign="center" color="blue">
+                <Image src={ThisJustin} size="medium"/>
+                <Header as="h1">thisjustin.tech</Header>
+              </Segment>
+              <Segment>
+                <Segment textAlign="center" inverted>
+                  <Header as="h3">Tech</Header>
+                </Segment>
+                <Segment color="blue">
+                  <List as="ul">
+                    <List.Item as="li">React JS</List.Item>
+                    <List.Item as="li">Semantic-UI-React</List.Item>
+                    <List.Item as="li">Heroku</List.Item>
+                  </List>
+                </Segment>
+                <Segment textAlign="center" inverted>
+                  <Header as="h3">Notes</Header>
+                </Segment>
+                <Segment color="blue">
+                  <strong>Striker</strong> is an idea i've had for a long time. Think Tony Starks Jarvos. I wanted striker to be an A.I. that did simple tasks on command. Currently Striker is connected to another app called Discord, A messaging platform for gamers. Striker can answer to simple commands but they're scripted, not Independant decisions.
+                </Segment>
+              </Segment>
+              <Segment textAlign="center" inverted>
+                <a href="http://www.thisjustin.tech/" target="_blank" rel="noopener noreferrer">Check Out Source</a>
+              </Segment>
+            </Segment>
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row>
+          <Grid.Column>
+            <Segment inverted>
+              <Segment textAlign="center" color="blue">
+                <Divider hidden/>
+                <Image src={Library} size="medium"/>
+                <Header as="h1">library.unicity.com</Header>
+              </Segment>
+              <Segment>
+                <Segment textAlign="center" inverted>
+                  <Header as="h3">Tech</Header>
+                </Segment>
+                <Segment color="blue">
+                  <List as="ul">
+                    <List.Item as="li">Angular 1</List.Item>
+                    <List.Item as="li">PHP and Node.JS</List.Item>
+                    <List.Item as="li">Gulp and Bootstrap</List.Item>
+                  </List>
+                </Segment>
+                <Segment textAlign="center" inverted>
+                  <Header as="h3">Notes</Header>
+                </Segment>
+                <Segment color="blue">
+                  <strong>This</strong> web application is an internal archive for distributers and other employees to view document profils for products, videos, and other programs created by the company. I helped build functionality that: Tracked when an item in the library was created or updated in another application. Tracked the time according to the Locale of the market. Then rendered the "Updated At" time and a flag on each item that had been created or updated.
+                </Segment>
+              </Segment>
+              <Segment textAlign="center" inverted>
+                <a href="https://library.unicity.com/#/login" target="_blank" rel="noopener noreferrer">Check Out Source</a>
               </Segment>
             </Segment>
           </Grid.Column>
