@@ -3,6 +3,7 @@ import BallIsLife from '../../Images/Jazz-Logo_Single_Front_aec9f4df-237d-46d5-8
 import ShopUnicity from '../../Images/images.png';
 import StrikerBot from '../../Images/fc220x200black-u2.jpg';
 import ThisJustin from '../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg'
+import Library from '../../Images/80DF52C9-6BFE-4C4E-B58A-F83147DEE8F7.jpg'
 import { Container, Segment, Divider, Header, Grid, Image, List, Button } from 'semantic-ui-react';
 
 class Projects extends Component {
@@ -215,7 +216,7 @@ class Projects extends Component {
                         </Segment>
                       </Segment>
                       <Segment textAlign="center" inverted> {/*Make sure you change this Link*/}
-                        <a href="https://github.com/JustinStoddard/StrikerBot" target="_blank" rel="noopener noreferrer">Check Out Source</a>
+                        <a href="http://www.thisjustin.tech/" target="_blank" rel="noopener noreferrer">Check Out Source</a>
                       </Segment>
                     </Fragment>
                 }
@@ -225,7 +226,13 @@ class Projects extends Component {
               <Segment inverted>
                 { !library ?
                     <Segment textAlign="center">
-                      <Image src={StrikerBot} size="medium" style={styles.imageFix}/>
+                      <Divider hidden/>
+                      <Divider hidden/>
+                      <Divider hidden/>
+                      <Image src={Library} size="medium" style={styles.imageFix}/>
+                      <Divider hidden/>
+                      <Divider hidden/>
+                      <Divider hidden/>
                       <Divider hidden/>
                       <Header as="h1">library.unicity.com</Header>
                       <Button color="blue" onClick={() => this.setState({ library: !library })}>More</Button>
@@ -233,7 +240,13 @@ class Projects extends Component {
                   :
                     <Fragment>
                       <Segment textAlign="center">
-                        <Image src={StrikerBot} size="medium" style={styles.imageFix}/>
+                        <Divider hidden/>
+                        <Divider hidden/>
+                        <Divider hidden/>
+                        <Image src={Library} size="medium" style={styles.imageFix}/>
+                        <Divider hidden/>
+                        <Divider hidden/>
+                        <Divider hidden/>
                         <Divider hidden/>
                         <Header as="h1">library.unicity.com</Header>
                         <Button onClick={() => this.setState({ library: !library })}>Less</Button>
@@ -253,11 +266,11 @@ class Projects extends Component {
                           NOTES
                         </Segment>
                         <Segment textAlign="left" color="blue">
-                          <strong>Striker</strong> is an idea i've had for a long time. Think Tony Starks Jarvos. I wanted striker to be an A.I. that did simple tasks on command. Currently Striker is connected to another app called Discord, A messaging platform for gamers. Striker can answer to simple commands but they're scripted, not Independant decisions.
+                          <strong>This</strong> web application is an internal archive for distributers and other employees to view document profils for products, videos, and other programs created by the company. I helped build functionality that: Tracked when an item in the library was created or updated in another application. Tracked the time according to the Locale of the market. Then rendered the "Updated At" time and a flag on each item that had been created or updated. 
                         </Segment>
                       </Segment>
                       <Segment textAlign="center" inverted>{/*Make sure you change this Link*/}
-                        <a href="https://github.com/JustinStoddard/StrikerBot" target="_blank" rel="noopener noreferrer">Check Out Source</a>
+                        <a href="https://library.unicity.com/#/login" target="_blank" rel="noopener noreferrer">Check Out Source</a>
                       </Segment>
                     </Fragment>
                 }
@@ -292,8 +305,8 @@ const styles = {
     marginBottom: '20px'
   },
   imageFix: {
-    height: '243px',
-    marginBottom: '20px',
+    height: '125px',
+    marginBottom: '27px',
     marginLeft: '25px'
   }
 }
