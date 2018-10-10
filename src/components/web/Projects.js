@@ -211,7 +211,7 @@ class Projects extends Component {
                           NOTES
                         </Segment>
                         <Segment textAlign="left" color="blue">
-                          <strong>This</strong> is the project you're currently using! I started building <strong>thisjustin.tech</strong> in August of 2018. It's had many iterations, but also has a lot of cool functionality. While you look around, pay attention to how things load. Also, check out the <strong>Demos</strong>. There you can see some code that uses the YouTube API and code thats more focused on logic than DOM manipulation. While you're at it, maybe leave a comment on the <strong>Contact</strong> page. Whatever your heart desires. Enjoy! 
+                          <strong>This</strong> is the project you're currently using! I started building <strong>thisjustin.tech</strong> in August of 2018 and V1.0 offically deployed on Heroku in Late September, 2018. It's had many iterations, but also has a lot of cool functionality. While you look around, pay attention to how things load. Also, check out the <strong>Demos</strong>. There you can see some code that uses the YouTube API and code thats more focused on logic than DOM manipulation. While you're at it, maybe leave a comment on the <strong>Contact</strong> page. Whatever your heart desires. Enjoy! 
                         </Segment>
                       </Segment>
                       <Segment textAlign="center" inverted> {/*Make sure you change this Link*/}
