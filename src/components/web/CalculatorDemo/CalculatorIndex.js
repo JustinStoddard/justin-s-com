@@ -13,10 +13,10 @@ class CalculatorIndex extends Component {
 
   showState = () => {
     const { answer, firstNum, secondNum, operator, entered, calcInt } = this.state
-    console.log(answer)
-    console.log(firstNum)
-    console.log(secondNum)
-    console.log(operator)
+    console.log('Answer: ',answer)
+    console.log('First Num: ',firstNum)
+    console.log('Second Num: ',secondNum)
+    console.log('Operator: ',operator)
     console.log(entered)
     console.log(calcInt)
   }
