@@ -1,8 +1,8 @@
 import React from 'react';
-import UofU from '../../Images/F4112AA3-0521-40EF-90A4-7DEFC02A81BD.jpg';
-import selfiePic from '../../Images/36366299_891494954384180_6425517567284084736_n.jpg';
-import GrandCanyon from '../../Images/grand canyon trip photo.jpg';
-import SuperMan from '../../Images/superman photo.jpg';
+import UofU from '../../../Images/F4112AA3-0521-40EF-90A4-7DEFC02A81BD.jpg';
+import selfiePic from '../../../Images/36366299_891494954384180_6425517567284084736_n.jpg';
+import GrandCanyon from '../../../Images/grand canyon trip photo.jpg';
+import SuperMan from '../../../Images/superman photo.jpg';
 import { Container, Segment, Divider, Header, Grid, Button, Image } from 'semantic-ui-react';
 
 const About = () => {

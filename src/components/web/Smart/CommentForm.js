@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import Loadable from 'react-loadable';
-import Loader from '../../Loader';
+import Loader from '../../../Loader';
 import { Container, Button, Segment, Grid, Icon, Divider } from 'semantic-ui-react';
 
 const PostLoader = Loadable({
-  loader: () => import('./Post'),
+  loader: () => import('../Dumb/Post'),
   loading: () => <Loader/>,
 })
 
 const FormLoader = Loadable({
-  loader: () => import('./Form'),
+  loader: () => import('../Dumb/Form'),
   loading: () => <Loader/>
 })
 
@@ -63,26 +63,26 @@ class CommentForm extends Component {
     return(
       <Container>
         { createComment ? 
-          <Fragment>
-            <Grid>
-              <Grid.Row>
-                <Grid.Column width={4}></Grid.Column>
-                <Grid.Column width={8}>
-                <Segment inverted>
-                  <Button onClick={this.showForm} color="blue"><Icon name="eye slash"/>Hide</Button>
-                </Segment>
-                </Grid.Column>
-                <Grid.Column width={4}></Grid.Column>
-              </Grid.Row>
-            </Grid>
-            <Divider hidden/>
-            <FormLoader 
-              name={name}
-              description={description}
-              submit={this.handleSubmit}
-              change={this.handleChange}
-            />
-          </Fragment>
+            <Fragment>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={4}></Grid.Column>
+                  <Grid.Column width={8}>
+                  <Segment inverted>
+                    <Button onClick={this.showForm} color="blue"><Icon name="eye slash"/>Hide</Button>
+                  </Segment>
+                  </Grid.Column>
+                  <Grid.Column width={4}></Grid.Column>
+                </Grid.Row>
+              </Grid>
+              <Divider hidden/>
+              <FormLoader 
+                name={name}
+                description={description}
+                submit={this.handleSubmit}
+                change={this.handleChange}
+              />
+            </Fragment>
           :
             <Grid>
               <Grid.Row>

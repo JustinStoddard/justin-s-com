@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import Loadable from 'react-loadable';
-import Loader from '../../Loader';
+import Loader from '../../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button } from 'semantic-ui-react';
 
 const Plan1Load = Loadable({
-  loader: () => import('./Plan1'),
+  loader: () => import('../Dumb/Plan1'),
   loading: () => <Loader/>,
 })
 
 const Plan2Load = Loadable({
-  loader: () => import('./Plan2'),
+  loader: () => import('../Dumb/Plan2'),
   loading: () => <Loader/>,
 })
 
 const Plan3Load = Loadable({
-  loader: () => import('./Plan3'),
+  loader: () => import('../Dumb/Plan3'),
   loading: () => <Loader/>,
 })
 

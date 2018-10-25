@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Loader from '../../Loader';
+import Loader from '../../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button, List } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
 
@@ -9,7 +9,7 @@ const VideoDemoLoader = Loadable({
 })
 
 const CalculatorDemoLoader = Loadable({
-  loader: () => import('./CalculatorDemo/CalculatorIndex'),
+  loader: () => import('../CalculatorDemo/CalculatorIndex'),
   loading: () => <Loader />
 })
 
