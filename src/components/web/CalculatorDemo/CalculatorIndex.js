@@ -1,5 +1,17 @@
 import React, { Component, Fragment } from 'react';
+import Loadable from 'react-loadable';
+import Loader from '../../../Loader';
 import { Segment, Grid, Button, Header, Icon } from 'semantic-ui-react';
+
+const AnswerLoader = Loadable({
+  loader: () => import('../Dumb/CalculatorAnswer'),
+  loading: () => <Loader />,
+})
+
+const StringLoader = Loadable({
+  loader: () => import('../Dumb/CalculatorString'),
+  loading: () => <Loader />,
+})
 
 class CalculatorIndex extends Component {
   state = { 
@@ -108,15 +120,13 @@ class CalculatorIndex extends Component {
                 </Segment>
                 <Segment color="blue">
                   { entered ?
-                      <Segment textAlign="center" color="blue">
-                        <Header as="h3">Is {answer}</Header> 
-                      </Segment>
+                      <AnswerLoader answer={answer}/>
                     :
-                    <Fragment>
-                      <Segment textAlign="center" color="blue">
-                        <Header as="h3">{firstNum} {operator} {secondNum}</Header> 
-                      </Segment>
-                    </Fragment>
+                      <StringLoader 
+                        firstNum={firstNum}
+                        secondNum={secondNum}
+                        operator={operator}
+                      />
                   }
                 </Segment>
                 <Grid>
