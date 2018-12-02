@@ -11,6 +11,7 @@ class CalculatorIndex extends Component {
     calcInt: false
   }
 
+
   showState = () => {
     const { answer, firstNum, secondNum, operator, entered, calcInt } = this.state
     console.log('Answer: ',answer)
