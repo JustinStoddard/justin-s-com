@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import HeaderComp from './Header';
-import Footer from './Footer';
-import Projects from './Projects';
-import About from './About';
-import Contact from './Contact';
-import Services from './Services';
-import Demos from './Demos'
+import Home from './Smart/Home';
+import HeaderComp from './Dumb/Header';
+import Footer from './Dumb/Footer';
+import Projects from './Smart/Projects';
+import About from './Dumb/About';
+import Contact from './Dumb/Contact';
+import Services from './Smart/Services';
+import Demos from './Smart/Demos'
 // React-Loadable is not compatible with React-Router :(
 
 class App extends Component {

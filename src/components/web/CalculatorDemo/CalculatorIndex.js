@@ -1,5 +1,17 @@
 import React, { Component, Fragment } from 'react';
+import Loadable from 'react-loadable';
+import Loader from '../../../Loader';
 import { Segment, Grid, Button, Header, Icon } from 'semantic-ui-react';
+
+const AnswerLoader = Loadable({
+  loader: () => import('../Dumb/CalculatorAnswer'),
+  loading: () => <Loader />,
+})
+
+const StringLoader = Loadable({
+  loader: () => import('../Dumb/CalculatorString'),
+  loading: () => <Loader />,
+})
 
 class CalculatorIndex extends Component {
   state = { 
@@ -86,6 +98,15 @@ class CalculatorIndex extends Component {
     }
   }
 
+  //I want to make the overall file size smaller. I can do this by setting props and passing them down into 
+  //presentational components. The segment that contains the answer to the problem should be its own component.
+  //or lines 105 - 115
+  //I also want to do the same things for the buttons. They should be sitting inside of a presentational
+  //component and getting their props from this component. I also want to be able to do multi digit operations
+  //The calculator currently only does single digit operations. I'm going to do like so: instead of sending a value onClick to a function
+  //The button should call a function with adds the value of the button to an array and squashes that number with any other number in that array.
+  //The same should follow suit with NUM2. I need to do more research on how to squash arrays. Basically turning this Array([1,5,6]) into Number(156)
+
   render() {
     const { entered, answer, calcInt, firstNum, secondNum, operator } = this.state;
     return(
@@ -100,20 +121,18 @@ class CalculatorIndex extends Component {
                 </Segment>
                 <Segment color="blue">
                   { entered ?
-                      <Segment textAlign="center" color="blue">
-                        <Header as="h3">Is {answer}</Header>
-                      </Segment>
+                      <AnswerLoader answer={answer}/>
                     :
-                    <Fragment>
-                      <Segment textAlign="center" color="blue">
-                        <Header as="h3">{firstNum} {operator} {secondNum}</Header>
-                      </Segment>
-                    </Fragment>
+                      <StringLoader 
+                        firstNum={firstNum}
+                        secondNum={secondNum}
+                        operator={operator}
+                      />
                   }
                 </Segment>
                 <Grid>
                   <Grid.Row> {/*This row will have 7, 8, 9, and divide*/}
-                    <Grid.Column width={4}>
+                    <Grid.Column width={4}> 
                       { calcInt ?
                           <Button size="large" onClick={() => this.calculateNum2(7)}>7</Button>
                         :

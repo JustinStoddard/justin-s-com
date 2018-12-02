@@ -17,6 +17,8 @@ const WebLoader = Loadable({
   loading: () => <Loader />,
 })
 
+
+//I'm doing this, this way because of the way Semantic-UI-React handles the responsive aspects of their styled components. Doing this is easier than putting "responsive" in front of every styled tag.
 const renderApp = () => {
   if (isMobile) {
     return <MobileLoader />
