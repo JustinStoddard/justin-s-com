@@ -1,7 +1,7 @@
 import "./styles.css";
 import React, { Component, Fragment } from 'react';
 import withClockDegrees from "./ClockDegrees";
-import { Header, Segment } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 
 class Clock extends Component {
     updateClock() {
