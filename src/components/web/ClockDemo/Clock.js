@@ -29,7 +29,6 @@ class Clock extends Component {
     render() {
       return(
         <Fragment>
-          <Header as="h1">Not Broken</Header>
           <Segment textAlign="center">
             <div className="clock">
               <div id="hours" className="clock-tick tick-hours"></div>
