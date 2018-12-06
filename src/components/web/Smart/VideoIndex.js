@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import { debounce } from 'lodash';
 import YTSearch from 'youtube-api-search';
 import SearchBar from '../VideoDemo/searchBar';
 import VideoList from '../VideoDemo/videoList';
@@ -16,11 +16,11 @@ class VideoDemo extends Component {
       videos: [],
       selectedVideo: null
     }
-    this.videoSearch('React JS');
+    this.videoSearch();
   }
 
-  videoSearch(term) {
-    YTSearch({key: API_KEY, term: term}, (videos) => {
+  async videoSearch(term='React JS') {
+    await YTSearch({key: API_KEY, term: term}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -30,7 +30,7 @@ class VideoDemo extends Component {
 
   render() {
     const { videos, selectedVideo } = this.state;
-    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300)
+    const videoSearch = debounce((term) => {this.videoSearch(term)}, 300)
     return( 
       <Container>
         <SearchBar onSearchTermChange={videoSearch}/>
