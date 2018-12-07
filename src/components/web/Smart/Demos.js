@@ -48,7 +48,7 @@ class Demos extends Component {
                       <Segment textAlign="left" color="blue">
                         <strong>This</strong> demo showcases the ability to use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. <strong>Also star the repo <a href="https://github.com/JustinStoddard/JustinS.com">here</a></strong>
                       </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false })}>View Demo</Button>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false, clockDemo: false })}>View Demo</Button>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={3}>
@@ -91,7 +91,7 @@ class Demos extends Component {
                       <Segment textAlign="left" color="blue">
                         <strong>This</strong> demo showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state.
                       </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false })}>View Demo</Button>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false, clockDemo: false })}>View Demo</Button>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={3}>
@@ -134,7 +134,7 @@ class Demos extends Component {
                       <Segment textAlign="left" color="blue">
                         <strong>The</strong> Demo you're about to see showcases my ability to write custom css code that functions, in collaboration with React JS code, as a working analog clock. 
                       </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ clockDemo: !clockDemo, videoDemo: false })}>View Demo</Button>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ clockDemo: !clockDemo, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={3}>
