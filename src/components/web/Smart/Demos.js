@@ -18,11 +18,16 @@ const ClockDemoLoader = Loadable({
   loading: () => <Loader />
 })
 
+const FunWithApisDemoLoader = Loadable({
+  loader: () => import('../FunWithApisDemo/FunApisDemoIndex'),
+  loading: () => <Loader />
+})
+
 class Demos extends Component {
-  state = { videoDemo: false, calculatorDemo: false, clockDemo: false }
+  state = { videoDemo: false, calculatorDemo: false, clockDemo: false, funWithApiDemo: false }
 
   render() {
-    const { videoDemo, calculatorDemo, clockDemo } = this.state;
+    const { videoDemo, calculatorDemo, clockDemo, funWithApiDemo } = this.state;
     return(
       <Container>
         <Divider hidden />
@@ -48,7 +53,7 @@ class Demos extends Component {
                       <Segment textAlign="left" color="blue">
                         <strong>This</strong> demo showcases the ability to use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. <strong>Also star the repo <a href="https://github.com/JustinStoddard/JustinS.com">here</a></strong>
                       </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false, clockDemo: false })}>View Demo</Button>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false, clockDemo: false, funWithApiDemo: false })}>View Demo</Button>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={3}>
@@ -91,7 +96,7 @@ class Demos extends Component {
                       <Segment textAlign="left" color="blue">
                         <strong>This</strong> demo showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state.
                       </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false, clockDemo: false })}>View Demo</Button>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false, clockDemo: false, funWithApiDemo: false })}>View Demo</Button>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={3}>
@@ -134,7 +139,7 @@ class Demos extends Component {
                       <Segment textAlign="left" color="blue">
                         <strong>The</strong> Demo you're about to see showcases my ability to write custom css code that functions, in collaboration with React JS code, as a working analog clock. 
                       </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ clockDemo: !clockDemo, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ clockDemo: !clockDemo, videoDemo: false, calculatorDemo: false, funWithApiDemo: false })}>View Demo</Button>
                     </Segment>
                   </Grid.Column>
                   <Grid.Column width={3}>
@@ -148,6 +153,49 @@ class Demos extends Component {
                             <List.Item as="li">React Js</List.Item>
                             <List.Item as="li">Semantic-UI</List.Item>
                             <List.Item as="li">SCSS</List.Item>
+                            <List.Item as="li">My Brain</List.Item>
+                          </List>
+                        </Segment>
+                      </Segment>
+                    </Segment>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Fragment>
+        }
+        <Divider hidden/>
+        { funWithApiDemo ?
+            <Segment color="blue">
+              <Button color="blue" size="large" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo })}>Hide Demo</Button>
+              <Divider hidden/>
+              <FunWithApisDemoLoader />
+            </Segment>
+          :
+            <Fragment>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={13}>
+                    <Segment inverted>
+                      <Segment color="blue">
+                        <Header as="h2">Fun With Api's</Header>
+                      </Segment>
+                      <Segment textAlign="left" color="blue">
+                        <strong>This</strong> Demo does some cool things with Api's. First, it "Gets" information from a database of television shows. Then, return those results to you through filters, such as rating, box office revenue, and actor name. Enjoy!
+                      </Segment>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo, clockDemo: false, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
+                    </Segment>
+                  </Grid.Column>
+                  <Grid.Column width={3}>
+                    <Segment inverted>
+                      <Segment color="blue">
+                        <Segment textAlign="center" inverted>
+                          <Header as="h3">TECH</Header>
+                        </Segment>
+                        <Segment color="blue">
+                          <List as="ul">
+                            <List.Item as="li">React Js</List.Item>
+                            <List.Item as="li">Semantic-UI</List.Item>
+                            <List.Item as="li">API Tech</List.Item>
                             <List.Item as="li">My Brain</List.Item>
                           </List>
                         </Segment>

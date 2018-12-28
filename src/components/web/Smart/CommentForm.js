@@ -21,15 +21,15 @@ const FormLoader = Loadable({
 class CommentForm extends Component {
   state = { name: '', description: '', createComment: false, comments: [] }
 
-  showForm = () => {
+  showForm = async () => {
     const { createComment } = this.state;
-    this.setState({
+    await this.setState({
       createComment: !createComment 
     })
   }
 
-  handleDelete = (index) => {
-    this.setState({
+  handleDelete = async (index) => {
+    await this.setState({
       comments: this.state.comments.filter((_, i) => i !== index)
     });
   }
@@ -38,16 +38,16 @@ class CommentForm extends Component {
 
   }
 
-  handleChange = (e) => {
+  handleChange = async (e) => {
     const { name, description, value } = e.target;
-    this.setState({ 
+    await this.setState({ 
       [name]: value, [description]: value 
     })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
-    this.setState(prevState => ({ 
+    await this.setState(prevState => ({ 
       name: '', 
       description: '', 
       createComment: !prevState.createComment, 

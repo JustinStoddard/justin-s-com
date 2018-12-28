@@ -3,11 +3,10 @@ import { Segment, Container, Header, Image, List, Divider } from 'semantic-ui-re
 
 const VideoListItem = ({video, onVideoSelect}) => {
   const imageURL = video.snippet.thumbnails.default.url;
-
   return(
     <Container>
       <List.Item onClick={() => onVideoSelect(video)}>
-        <Segment inverted>
+        <Segment style={styles.cursorHover} inverted>
           <Segment color="blue">
             <Image src={imageURL}/>
           </Segment>
@@ -19,6 +18,12 @@ const VideoListItem = ({video, onVideoSelect}) => {
       <Divider hidden/>
     </Container>
   )
+}
+
+const styles = {
+  cursorHover: {
+    cursor: 'pointer'
+  }
 }
 
 export default VideoListItem;
