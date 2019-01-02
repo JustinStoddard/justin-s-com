@@ -7,7 +7,7 @@ class ApiFunDemo extends Component {
     allPokeMon: [],
     pokeMon: [],
     pokeImage: null,
-    pokeMonNumber: 0,
+    pokeMonNumber: -1,
   }
 
   componentDidMount() {
@@ -29,8 +29,8 @@ class ApiFunDemo extends Component {
           const pokeMon = response.data;
           const pngImage = pokeMon.sprites.front_default;
           this.setState({ pokeMon: pokeMon, pokeImage: pngImage })
-          console.log(pokeMonNumber)
           console.log(pokeMon.name)
+          console.log(pokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getSinglePokeMon
@@ -39,14 +39,12 @@ class ApiFunDemo extends Component {
 
   plusNumber = async () => {
     const { pokeMonNumber } = this.state;
-    console.log(pokeMonNumber)
     await this.setState({ pokeMonNumber: pokeMonNumber + 1 })
     this.getSinglePokeMon()
   }
 
   minusNumber = async () => {
     const { pokeMonNumber } = this.state;
-    console.log(pokeMonNumber)
     if (pokeMonNumber === 0) {
       await this.setState({ pokeMonNumber: pokeMonNumber - 0 })
     } else {
