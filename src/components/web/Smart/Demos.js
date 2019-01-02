@@ -177,10 +177,10 @@ class Demos extends Component {
                   <Grid.Column width={13}>
                     <Segment inverted>
                       <Segment color="blue">
-                        <Header as="h2">Fun With Api's</Header>
+                        <Header as="h2">PokeDex Demo</Header>
                       </Segment>
                       <Segment textAlign="left" color="blue">
-                        <strong>This</strong> Demo does some cool things with Api's. First, it "Gets" information from a database of television shows. Then, return those results to you through filters, such as rating, box office revenue, and actor name. Enjoy!
+                        <strong>This</strong> Demo uses the Poke API to create a working PokeDex! Move through the library and find your favorite PokeMon to view its stats! Or search for it on the search bar! Enjoy!
                       </Segment>
                       <Button color="blue" size="huge" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo, clockDemo: false, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
                     </Segment>
@@ -195,7 +195,7 @@ class Demos extends Component {
                           <List as="ul">
                             <List.Item as="li">React Js</List.Item>
                             <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">API Tech</List.Item>
+                            <List.Item as="li">Poke API</List.Item>
                             <List.Item as="li">My Brain</List.Item>
                           </List>
                         </Segment>
