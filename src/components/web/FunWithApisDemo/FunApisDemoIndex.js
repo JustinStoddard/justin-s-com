@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Segment, Icon, Button, Image, Grid } from 'semantic-ui-react';
+import { Header, Segment, Icon, Button, Image, Grid, Divider } from 'semantic-ui-react';
 
 class ApiFunDemo extends Component {
   state = {
@@ -57,7 +57,7 @@ class ApiFunDemo extends Component {
       axios.get(secondPokeMonUrl)
         .then(response => {
           const secondPokeMon = response.data;
-          const secondPngImage = secondPokeMon.sprites.front_default;
+          const secondPngImage = secondPokeMon.sprites.front_default;              //I'd preferr not to do 3 API calls but its the only way I know how to do this for now
           this.setState({
             secondPokeMon: secondPokeMon, 
             secondPokeImage: secondPngImage 
@@ -153,7 +153,7 @@ class ApiFunDemo extends Component {
               <Grid.Column width={6}></Grid.Column>
               <Grid.Column width={4}>
                 <Segment inverted>
-                  <Segment textAlign="center">
+                  <Segment textAlign="center" color="red">
                     <Button onClick={this.minusNumber} size="large" color="red" circular><Icon fitted name="arrow left" size="large"/></Button>
                     <Button onClick={this.plusNumber} size="large" color="red" circular><Icon fitted name="arrow right" size="large"/></Button>
                   </Segment>
@@ -166,59 +166,60 @@ class ApiFunDemo extends Component {
               <Grid.Column width={2}></Grid.Column>
               <Grid.Column width={4}>
                 <Segment style={styles.segmentMove1} inverted>
-                  <Segment>
-                    {firstPokeImage ?
-                      <Fragment>
+                  {firstPokeImage ?
+                    <Fragment>
+                      <Segment color="red">
+                        <Header as="h4" textAlign="center" style={styles.pokeMonName}>{firstPokeMon.name}</Header>
                         <Segment textAlign="center" inverted circular>
                           <Image src={firstPokeImage} size="large" circular/>
                         </Segment>
-                        <Header as="h3">Name - {firstPokeMon.name}</Header>
-                        <Header as="h5">Base XP - {firstPokeMon.base_experience}</Header>
-                        <Header as="h5">Height - {firstPokeMon.height}</Header>
-                        <Header as="h5">Weight - {firstPokeMon.weight}</Header>
-                      </Fragment>
-                    :
-                    <Header as="h3" textAlign="center">Push The Forward Button</Header>
+                      </Segment>
+                    </Fragment>
+                  :
+                    <Fragment>
+                      <Segment textAlign="center" color="red">
+                        <Icon loading name="spinner"/>
+                      </Segment>
+                    </Fragment>
                   }
-                  </Segment>
                 </Segment>
               </Grid.Column>
               <Grid.Column width={4}>
               <Segment inverted>
-                <Segment>
+                <Segment color="red" textAlign="center">
                   {secondPokeImage ?
                       <Fragment>
+                        <Header as="h4" textAlign="center" style={styles.pokeMonName}>{secondPokeMon.name}</Header>
                         <Segment textAlign="center" inverted circular>
                           <Image src={secondPokeImage} size="large" circular/>
                         </Segment>
-                        <Header as="h3">Name - {secondPokeMon.name}</Header>
-                        <Header as="h5">Base XP - {secondPokeMon.base_experience}</Header>
-                        <Header as="h5">Height - {secondPokeMon.height}</Header>
-                        <Header as="h5">Weight - {secondPokeMon.weight}</Header>
+                        <Divider hidden/>
+                        <Button color="red" size="large">View Stats</Button>
                       </Fragment>
                     :
-                    <Header as="h3" textAlign="center">Push The Forward Button</Header>
+                      <Header as="h3" textAlign="center">Push The Forward Button</Header>
                   }
                 </Segment>
               </Segment>
               </Grid.Column>
               <Grid.Column width={4}>
                 <Segment style={styles.segmentMove1} inverted>
-                  <Segment>
-                    {thirdPokeImage ?
-                        <Fragment>
+                  {thirdPokeImage ?
+                      <Fragment>
+                        <Segment color="red">
+                          <Header as="h4" textAlign="center" style={styles.pokeMonName}>{thirdPokeMon.name}</Header>
                           <Segment textAlign="center" inverted circular>
                             <Image src={thirdPokeImage} size="large" circular/>
                           </Segment>
-                          <Header as="h3">Name - {thirdPokeMon.name}</Header>
-                          <Header as="h5">Base XP - {thirdPokeMon.base_experience}</Header>
-                          <Header as="h5">Height - {thirdPokeMon.height}</Header>
-                          <Header as="h5">Weight - {thirdPokeMon.weight}</Header>
-                        </Fragment>
-                      :
-                      <Header as="h3" textAlign="center">Push The Forward Button</Header>
-                    }
-                  </Segment>
+                        </Segment>
+                      </Fragment>
+                    :
+                      <Fragment>
+                        <Segment textAlign="center" color="red">
+                          <Icon loading name="spinner"/>
+                        </Segment>
+                      </Fragment>
+                  }
                 </Segment>
               </Grid.Column>
               <Grid.Column width={2}></Grid.Column>
@@ -236,6 +237,10 @@ const styles = {
   },
   segmentMove2: {
     marginTop: '-75px'
+  },
+  pokeMonName: {
+    textTransform: 'capitalize',
+    fontSize: '25px'
   }
 }
 
