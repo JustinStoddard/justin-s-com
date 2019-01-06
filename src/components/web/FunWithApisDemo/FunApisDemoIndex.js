@@ -5,9 +5,18 @@ import { Header, Segment, Icon, Button, Image, Grid } from 'semantic-ui-react';
 class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
-    firstPokeMon: [],
+
+    firstPokeMon: [], //This will be cleaned up eventually, but for now the excessive use of state is a proof of UI/UX concept, not arcitechural efficency.
     firstPokeImage: null,
     firstPokeMonNumber: -1,
+
+    secondPokeMon: [],
+    secondPokeImage: null,
+    secondPokeMonNumber: 0,
+
+    thirdPokeMon: [],
+    thirdPokeImage: null,
+    thirdPokeMonNumber: 1 
   }
 
   componentDidMount() {
@@ -28,34 +37,109 @@ class ApiFunDemo extends Component {
         .then(response => {
           const firstPokeMon = response.data;
           const firstPngImage = firstPokeMon.sprites.front_default;
-          this.setState({ firstPokeMon: firstPokeMon, firstPokeImage: firstPngImage })
-          console.log(firstPokeMon.name)
-          console.log(firstPokeMonNumber)
-          console.log(firstPokeMon)
+          this.setState({
+            firstPokeMon: firstPokeMon, 
+            firstPokeImage: firstPngImage 
+          })
+          console.log('first', firstPokeMon.name)
+          console.log('first', firstPokeMonNumber)
+          console.log('first', firstPokeMon)
         }).catch(err => console.log(err))
     } else {
       this.getFirstPokeMon
     }
   }
 
+  getSecondPokeMon = () => {
+    const { allPokeMon, secondPokeMonNumber } = this.state
+    if (allPokeMon[secondPokeMonNumber].url !== null) {
+      const secondPokeMonUrl = allPokeMon[secondPokeMonNumber].url;
+      axios.get(secondPokeMonUrl)
+        .then(response => {
+          const secondPokeMon = response.data;
+          const secondPngImage = secondPokeMon.sprites.front_default;
+          this.setState({
+            secondPokeMon: secondPokeMon, 
+            secondPokeImage: secondPngImage 
+          })
+          console.log('second', secondPokeMon.name)
+          console.log('second', secondPokeMonNumber)
+          console.log('second', secondPokeMon)
+        }).catch(err => console.log(err))
+    } else {
+      this.getSecondPokeMon
+    }
+  }
+
+  getThirdPokeMon = () => {
+    const { allPokeMon, thirdPokeMonNumber } = this.state
+    if (allPokeMon[thirdPokeMonNumber].url !== null) {
+      const thirdPokeMonUrl = allPokeMon[thirdPokeMonNumber].url;
+      axios.get(thirdPokeMonUrl)
+        .then(response => {
+          const thirdPokeMon = response.data;
+          const thirdPngImage = thirdPokeMon.sprites.front_default;
+          this.setState({
+            thirdPokeMon: thirdPokeMon, 
+            thirdPokeImage: thirdPngImage 
+          })
+          console.log('third', thirdPokeMon.name)
+          console.log('third', thirdPokeMonNumber)
+          console.log('third', thirdPokeMon)
+        }).catch(err => console.log(err))
+    } else {
+      this.getThirdPokeMon
+    }
+  }
+
   plusNumber = async () => {
-    const { firstPokeMonNumber } = this.state;
-    await this.setState({ firstPokeMonNumber: firstPokeMonNumber + 1 })
+    const { firstPokeMonNumber, secondPokeMonNumber, thirdPokeMonNumber } = this.state;
+    await this.setState({ 
+      firstPokeMonNumber: firstPokeMonNumber + 1, 
+      secondPokeMonNumber: secondPokeMonNumber + 1, 
+      thirdPokeMonNumber: thirdPokeMonNumber + 1 
+    })
     this.getFirstPokeMon()
+    this.getSecondPokeMon()
+    this.getThirdPokeMon()
   }
 
   minusNumber = async () => {
-    const { firstPokeMonNumber } = this.state;
+    const { firstPokeMonNumber, secondPokeMonNumber, thirdPokeMonNumber } = this.state;
     if (firstPokeMonNumber === 0) {
       await this.setState({ firstPokeMonNumber: firstPokeMonNumber - 0 })
     } else {
       await this.setState({ firstPokeMonNumber: firstPokeMonNumber - 1 })
     }
+
+    if (secondPokeMonNumber === 1) {
+      await this.setState({ secondPokeMonNumber: secondPokeMonNumber - 0 })
+    } else {
+      await this.setState({ secondPokeMonNumber: secondPokeMonNumber - 1 })
+    }
+
+    if (thirdPokeMonNumber === 2) {
+      await this.setState({ thirdPokeMonNumber: thirdPokeMonNumber - 0 })
+    } else {
+      await this.setState({ thirdPokeMonNumber: thirdPokeMonNumber - 1 })
+    }
     this.getFirstPokeMon()
+    this.getSecondPokeMon()
+    this.getThirdPokeMon()
   }
 
   render() {
-    const { firstPokeMon, firstPokeImage } = this.state
+    const { 
+      firstPokeMon, 
+      firstPokeImage, 
+
+      secondPokeMon, 
+      secondPokeImage, 
+
+      thirdPokeMon, 
+      thirdPokeImage 
+    } = this.state
+
     return(
       <Fragment>
         <Segment inverted>
@@ -83,14 +167,7 @@ class ApiFunDemo extends Component {
               <Grid.Column width={4}>
                 <Segment style={styles.segmentMove1} inverted>
                   <Segment>
-                    <Header as="h1">2</Header>
-                  </Segment>
-                </Segment>
-              </Grid.Column>
-              <Grid.Column width={4}>
-              <Segment inverted>
-                <Segment>
-                  {firstPokeImage ?
+                    {firstPokeImage ?
                       <Fragment>
                         <Segment textAlign="center" inverted circular>
                           <Image src={firstPokeImage} size="large" circular/>
@@ -103,13 +180,44 @@ class ApiFunDemo extends Component {
                     :
                     <Header as="h3" textAlign="center">Push The Forward Button</Header>
                   }
+                  </Segment>
+                </Segment>
+              </Grid.Column>
+              <Grid.Column width={4}>
+              <Segment inverted>
+                <Segment>
+                  {secondPokeImage ?
+                      <Fragment>
+                        <Segment textAlign="center" inverted circular>
+                          <Image src={secondPokeImage} size="large" circular/>
+                        </Segment>
+                        <Header as="h3">Name - {secondPokeMon.name}</Header>
+                        <Header as="h5">Base XP - {secondPokeMon.base_experience}</Header>
+                        <Header as="h5">Height - {secondPokeMon.height}</Header>
+                        <Header as="h5">Weight - {secondPokeMon.weight}</Header>
+                      </Fragment>
+                    :
+                    <Header as="h3" textAlign="center">Push The Forward Button</Header>
+                  }
                 </Segment>
               </Segment>
               </Grid.Column>
               <Grid.Column width={4}>
                 <Segment style={styles.segmentMove1} inverted>
                   <Segment>
-                    <Header as="h1">4</Header>
+                    {thirdPokeImage ?
+                        <Fragment>
+                          <Segment textAlign="center" inverted circular>
+                            <Image src={thirdPokeImage} size="large" circular/>
+                          </Segment>
+                          <Header as="h3">Name - {thirdPokeMon.name}</Header>
+                          <Header as="h5">Base XP - {thirdPokeMon.base_experience}</Header>
+                          <Header as="h5">Height - {thirdPokeMon.height}</Header>
+                          <Header as="h5">Weight - {thirdPokeMon.weight}</Header>
+                        </Fragment>
+                      :
+                      <Header as="h3" textAlign="center">Push The Forward Button</Header>
+                    }
                   </Segment>
                 </Segment>
               </Grid.Column>
