@@ -5,9 +5,9 @@ import { Header, Segment, Icon, Button, Image, Grid } from 'semantic-ui-react';
 class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
-    pokeMon: [],
-    pokeImage: null,
-    pokeMonNumber: -1,
+    firstPokeMon: [],
+    firstPokeImage: null,
+    firstPokeMonNumber: -1,
   }
 
   componentDidMount() {
@@ -20,41 +20,42 @@ class ApiFunDemo extends Component {
       }).catch(err => console.log(err))
   }
 
-  getSinglePokeMon = () => {
-    const { allPokeMon, pokeMonNumber } = this.state
-    if (allPokeMon[pokeMonNumber].url !== null ) { //Re-runs this call if "pokeMonUrl" is null
-      const pokeMonUrl = allPokeMon[pokeMonNumber].url; //Checks if allPokeMon does not equal null
-      axios.get(pokeMonUrl)
+  getFirstPokeMon = () => {
+    const { allPokeMon, firstPokeMonNumber } = this.state
+    if (allPokeMon[firstPokeMonNumber].url !== null ) { //Re-runs this call if "pokeMonUrl" is null
+      const firstPokeMonUrl = allPokeMon[firstPokeMonNumber].url; //Checks if allPokeMon does not equal null
+      axios.get(firstPokeMonUrl)
         .then(response => {
-          const pokeMon = response.data;
-          const pngImage = pokeMon.sprites.front_default;
-          this.setState({ pokeMon: pokeMon, pokeImage: pngImage })
-          console.log(pokeMon.name)
-          console.log(pokeMonNumber)
+          const firstPokeMon = response.data;
+          const firstPngImage = firstPokeMon.sprites.front_default;
+          this.setState({ firstPokeMon: firstPokeMon, firstPokeImage: firstPngImage })
+          console.log(firstPokeMon.name)
+          console.log(firstPokeMonNumber)
+          console.log(firstPokeMon)
         }).catch(err => console.log(err))
     } else {
-      this.getSinglePokeMon
+      this.getFirstPokeMon
     }
   }
 
   plusNumber = async () => {
-    const { pokeMonNumber } = this.state;
-    await this.setState({ pokeMonNumber: pokeMonNumber + 1 })
-    this.getSinglePokeMon()
+    const { firstPokeMonNumber } = this.state;
+    await this.setState({ firstPokeMonNumber: firstPokeMonNumber + 1 })
+    this.getFirstPokeMon()
   }
 
   minusNumber = async () => {
-    const { pokeMonNumber } = this.state;
-    if (pokeMonNumber === 0) {
-      await this.setState({ pokeMonNumber: pokeMonNumber - 0 })
+    const { firstPokeMonNumber } = this.state;
+    if (firstPokeMonNumber === 0) {
+      await this.setState({ firstPokeMonNumber: firstPokeMonNumber - 0 })
     } else {
-      await this.setState({ pokeMonNumber: pokeMonNumber - 1 })
+      await this.setState({ firstPokeMonNumber: firstPokeMonNumber - 1 })
     }
-    this.getSinglePokeMon()
+    this.getFirstPokeMon()
   }
 
   render() {
-    const { pokeMon, pokeImage } = this.state
+    const { firstPokeMon, firstPokeImage } = this.state
     return(
       <Fragment>
         <Segment inverted>
@@ -69,8 +70,8 @@ class ApiFunDemo extends Component {
               <Grid.Column width={4}>
                 <Segment inverted>
                   <Segment textAlign="center">
-                    <Button onClick={this.minusNumber} size="large" color="red"><Icon fitted name="arrow left" size="large"/></Button>
-                    <Button onClick={this.plusNumber} size="large" color="red"><Icon fitted name="arrow right" size="large"/></Button>
+                    <Button onClick={this.minusNumber} size="large" color="red" circular><Icon fitted name="arrow left" size="large"/></Button>
+                    <Button onClick={this.plusNumber} size="large" color="red" circular><Icon fitted name="arrow right" size="large"/></Button>
                   </Segment>
                 </Segment>
               </Grid.Column>
@@ -78,32 +79,55 @@ class ApiFunDemo extends Component {
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={6}></Grid.Column>
+              <Grid.Column width={2}></Grid.Column>
+              <Grid.Column width={4}>
+                <Segment style={styles.segmentMove1} inverted>
+                  <Segment>
+                    <Header as="h1">2</Header>
+                  </Segment>
+                </Segment>
+              </Grid.Column>
               <Grid.Column width={4}>
               <Segment inverted>
                 <Segment>
-                  {pokeMon !== [] ?
+                  {firstPokeImage ?
                       <Fragment>
-                        <Segment textAlign="center" inverted>
-                          {pokeImage ? <Image src={pokeImage} size="large"/> : <Icon loading name="spinner"/>}
+                        <Segment textAlign="center" inverted circular>
+                          <Image src={firstPokeImage} size="large" circular/>
                         </Segment>
-                        <Header as="h3">Name - {pokeMon.name}</Header>
-                        <Header as="h5">Base XP - {pokeMon.base_experience}</Header>
-                        <Header as="h5">Height - {pokeMon.height}</Header>
-                        <Header as="h5">Weight - {pokeMon.weight}</Header>
+                        <Header as="h3">Name - {firstPokeMon.name}</Header>
+                        <Header as="h5">Base XP - {firstPokeMon.base_experience}</Header>
+                        <Header as="h5">Height - {firstPokeMon.height}</Header>
+                        <Header as="h5">Weight - {firstPokeMon.weight}</Header>
                       </Fragment>
                     :
-                    <Header as="h3">Push The Forward Button</Header>
+                    <Header as="h3" textAlign="center">Push The Forward Button</Header>
                   }
                 </Segment>
               </Segment>
               </Grid.Column>
-              <Grid.Column width={6}></Grid.Column>
+              <Grid.Column width={4}>
+                <Segment style={styles.segmentMove1} inverted>
+                  <Segment>
+                    <Header as="h1">4</Header>
+                  </Segment>
+                </Segment>
+              </Grid.Column>
+              <Grid.Column width={2}></Grid.Column>
             </Grid.Row>
           </Grid>
         {/* <Button onClick={this.getSinglePokeMon}>PokeMon</Button> */}
       </Fragment>
     )
+  }
+}
+
+const styles = {
+  segmentMove1: {
+    marginTop: '-25px'
+  },
+  segmentMove2: {
+    marginTop: '-75px'
   }
 }
 
