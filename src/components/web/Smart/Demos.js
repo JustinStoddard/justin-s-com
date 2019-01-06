@@ -24,7 +24,7 @@ const ClockDemoLoader = Loadable({
 })
 
 const FunWithApisDemoLoader = Loadable({
-  loader: () => import('../FunWithApisDemo/FunApisDemoIndex'),
+  loader: () => import('../PokeDexDemo/PokeDexDemo'),
   loading: () => <Loader />
 })
 

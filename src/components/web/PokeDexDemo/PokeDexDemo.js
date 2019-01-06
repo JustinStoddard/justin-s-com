@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Segment, Icon, Button, Image, Grid, Divider } from 'semantic-ui-react';
+import { Header, Segment, Icon, Button, Image, Grid, Divider, Input } from 'semantic-ui-react';
 
 class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
+    viewStats: false,
 
     firstPokeMon: [], //This will be cleaned up eventually, but for now the excessive use of state is a proof of UI/UX concept, not arcitechural efficency.
     firstPokeImage: null,
@@ -60,7 +61,7 @@ class ApiFunDemo extends Component {
       axios.get(secondPokeMonUrl)
         .then(response => {
           const secondPokeMon = response.data;
-          const secondPngImage = secondPokeMon.sprites.front_default;              //I'd preferr not to do 3 API calls but its the only way I know how to do this for now
+          const secondPngImage = secondPokeMon.sprites.front_default;              //I'd preferr not to do 3 API calls but its the only way I know how to do this for now because of the way this API handles GETing data.
           this.setState({
             secondPokeMon: secondPokeMon, 
             secondPokeImage: secondPngImage,
@@ -110,9 +111,9 @@ class ApiFunDemo extends Component {
     }
 
     if (secondPokeMonNumber === firstPokeArrayNumber) {
-      await this.setState({ secondPokeMonNumber: 0 })
+      await this.setState({ secondPokeMonNumber: 0, viewStats: false })
     } else {
-      await this.setState({ secondPokeMonNumber: secondPokeMonNumber + 1 })
+      await this.setState({ secondPokeMonNumber: secondPokeMonNumber + 1, viewStats: false })
     }
 
     if (thirdPokeMonNumber === firstPokeArrayNumber) {
@@ -142,11 +143,11 @@ class ApiFunDemo extends Component {
     }
 
     if (secondPokeMonNumber === 1) {
-      await this.setState({ secondPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber })
+      await this.setState({ secondPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber, viewStats: false })
     } else if (secondPokeMonNumber === 0) {
-      await this.setState({ secondPokeMonNumber: secondPokeArrayNumber })
+      await this.setState({ secondPokeMonNumber: secondPokeArrayNumber, viewStats: false })
     } else {
-      await this.setState({ secondPokeMonNumber: secondPokeMonNumber - 1 })
+      await this.setState({ secondPokeMonNumber: secondPokeMonNumber - 1, viewStats: false })
     }
 
     if (thirdPokeMonNumber === 2) {
@@ -163,16 +164,21 @@ class ApiFunDemo extends Component {
     this.getThirdPokeMon()
   }
 
+
+  viewStats = () => {
+    const { viewStats } = this.state
+    this.setState({ viewStats: !viewStats })
+  }
+
   render() {
     const { 
       firstPokeMon, 
       firstPokeImage, 
-
       secondPokeMon, 
       secondPokeImage, 
-
       thirdPokeMon, 
-      thirdPokeImage 
+      thirdPokeImage,
+      viewStats
     } = this.state
 
     return(
@@ -185,16 +191,17 @@ class ApiFunDemo extends Component {
         </Segment>
           <Grid>
             <Grid.Row>
-              <Grid.Column width={6}></Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column width={4}></Grid.Column>
+              <Grid.Column width={8}>
                 <Segment inverted>
-                  <Segment textAlign="center" color="red">
-                    <Button onClick={this.minusNumber} size="large" color="red" circular><Icon fitted name="arrow left" size="large"/></Button>
-                    <Button onClick={this.plusNumber} size="large" color="red" circular><Icon fitted name="arrow right" size="large"/></Button>
+                  <Segment color="red">
+                    <Input icon={<Icon name="search" inverted circular link/>} size="huge" iconPosition="left" placeholder="Search..."/> 
+                    <Button onClick={this.minusNumber} size="large" color="red" style={styles.leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
+                    <Button onClick={this.plusNumber} size="large" color="red" style={styles.buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
                   </Segment>
                 </Segment>
               </Grid.Column>
-              <Grid.Column width={6}></Grid.Column>
+              <Grid.Column width={4}></Grid.Column>
             </Grid.Row>
             <Divider hidden/>
             <Grid.Row>
@@ -224,12 +231,25 @@ class ApiFunDemo extends Component {
                 <Segment color="red" textAlign="center">
                   {secondPokeImage ?
                       <Fragment>
-                        <Header as="h4" textAlign="center" style={styles.pokeMonName}>{secondPokeMon.name}</Header>
-                        <Segment textAlign="center" inverted circular>
-                          <Image src={secondPokeImage} size="large" circular/>
-                        </Segment>
-                        <Divider hidden/>
-                        <Button color="red" size="large">View Stats</Button>
+                        {!viewStats ? 
+                            <div>
+                              <Header as="h4" textAlign="center" style={styles.pokeMonName}>{secondPokeMon.name}</Header>
+                              <Segment textAlign="center" inverted circular>
+                                <Image src={secondPokeImage} size="large" circular/>
+                              </Segment>
+                              <Divider hidden/>
+                              <Button onClick={this.viewStats} color="red" size="large"><Icon name="eye"/>View</Button>
+                            </div>
+                          :
+                            <div>
+                              <Header as="h4" textAlign="center" style={styles.pokeMonName}>{secondPokeMon.name}</Header>
+                              <Segment textAlign="center" inverted circular>
+                                <Image src={secondPokeImage} size="large" circular/>
+                              </Segment>
+                              <Divider hidden/>
+                              <Button onClick={this.viewStats} color="red" size="large"><Icon name="eye slash"/>Hide</Button>
+                            </div>
+                        }
                       </Fragment>
                     :
                       <Header as="h3" textAlign="center">Push The Forward Button</Header>
@@ -259,8 +279,23 @@ class ApiFunDemo extends Component {
               </Grid.Column>
               <Grid.Column width={2}></Grid.Column>
             </Grid.Row>
+            {viewStats ?
+                <Grid.Row>
+                  <Grid.Column width={3}></Grid.Column>
+                  <Grid.Column width={10}>
+                    <Segment inverted>
+                      <Segment textAlign="center">
+                        <Header as="h4">Not Broken</Header>
+                      </Segment>
+                    </Segment>
+                  </Grid.Column>
+                  <Grid.Column width={3}></Grid.Column>
+                </Grid.Row>
+              :
+              null
+            }
+            
           </Grid>
-        {/* <Button onClick={this.getSinglePokeMon}>PokeMon</Button> */}
       </Fragment>
     )
   }
@@ -276,6 +311,12 @@ const styles = {
   pokeMonName: {
     textTransform: 'capitalize',
     fontSize: '25px'
+  },
+  buttonMargin: {
+    marginLeft: '10px'
+  },
+  leftButtonMargin: {
+    marginLeft: '20px'
   }
 }
 
