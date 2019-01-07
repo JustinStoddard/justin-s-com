@@ -93,7 +93,7 @@ class ApiFunDemo extends Component {
                         <Header as="h5">Weight - {pokeMon.weight}</Header>
                       </Fragment>
                     :
-                    <Header as="h3">Push The Forward Button</Header>
+                      <Button onClick={this.plusNumber} size="large" color="red"><Icon fitted name="arrow right" size="large"/></Button>
                   }
                 </Segment>
               </Segment>
