@@ -1,6 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Segment, Icon, Button, Image, Grid, Divider, Input } from 'semantic-ui-react';
+import { Header, Segment, Icon, Button, Grid, Divider, Input } from 'semantic-ui-react';
+import FirstPoke from './FirstPoke';
+import SecondPoke from './SecondPoke';
+import ThirdPoke from './ThirdPoke';
+import ViewStats from './ViewStats';
+import SearchBar from './SearchBar';
 
 class ApiFunDemo extends Component {
   state = {
@@ -193,13 +198,12 @@ class ApiFunDemo extends Component {
             <Grid.Row>
               <Grid.Column width={4}></Grid.Column>
               <Grid.Column width={8}>
-                <Segment inverted>
-                  <Segment color="red">
-                    <Input icon={<Icon name="search" inverted circular link/>} size="huge" iconPosition="left" placeholder="Search..."/> 
-                    <Button onClick={this.minusNumber} size="large" color="red" style={styles.leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
-                    <Button onClick={this.plusNumber} size="large" color="red" style={styles.buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
-                  </Segment>
-                </Segment>
+                <SearchBar 
+                  minus={this.minusNumber}
+                  plus={this.plusNumber}
+                  leftButtonMargin={styles.leftButtonMargin}
+                  buttonMargin={styles.buttonMargin}
+                />
               </Grid.Column>
               <Grid.Column width={4}></Grid.Column>
             </Grid.Row>
@@ -207,94 +211,35 @@ class ApiFunDemo extends Component {
             <Grid.Row>
               <Grid.Column width={2}></Grid.Column>
               <Grid.Column width={4}>
-                <Segment style={styles.segmentMove1} inverted>
-                  {firstPokeImage ?
-                    <Fragment>
-                      <Segment color="red">
-                        <Header as="h4" textAlign="center" style={styles.pokeMonName}>{firstPokeMon.name}</Header>
-                        <Segment textAlign="center" inverted circular>
-                          <Image src={firstPokeImage} size="large" circular/>
-                        </Segment>
-                      </Segment>
-                    </Fragment>
-                  :
-                    <Fragment>
-                      <Segment textAlign="center" color="red">
-                        <Icon loading name="spinner"/>
-                      </Segment>
-                    </Fragment>
-                  }
-                </Segment>
+                <FirstPoke 
+                  firstPokeMon={firstPokeMon}
+                  firstPokeImage={firstPokeImage} 
+                  pokeMonNameStyle={styles.pokeMonName}
+                  segmentMove={styles.segmentMove1}
+                />
               </Grid.Column>
               <Grid.Column width={4}>
-              <Segment inverted>
-                <Segment color="red" textAlign="center">
-                  {secondPokeImage ?
-                      <Fragment>
-                        {!viewStats ? 
-                            <div>
-                              <Header as="h4" textAlign="center" style={styles.pokeMonName}>{secondPokeMon.name}</Header>
-                              <Segment textAlign="center" inverted circular>
-                                <Image src={secondPokeImage} size="large" circular/>
-                              </Segment>
-                              <Divider hidden/>
-                              <Button onClick={this.viewStats} color="red" size="large"><Icon name="eye"/>View</Button>
-                            </div>
-                          :
-                            <div>
-                              <Header as="h4" textAlign="center" style={styles.pokeMonName}>{secondPokeMon.name}</Header>
-                              <Segment textAlign="center" inverted circular>
-                                <Image src={secondPokeImage} size="large" circular/>
-                              </Segment>
-                              <Divider hidden/>
-                              <Button onClick={this.viewStats} color="red" size="large"><Icon name="eye slash"/>Hide</Button>
-                            </div>
-                        }
-                      </Fragment>
-                    :
-                      <Header as="h3" textAlign="center">Push The Forward Button</Header>
-                  }
-                </Segment>
-              </Segment>
+                <SecondPoke 
+                  secondPokeMon={secondPokeMon}
+                  secondPokeImage={secondPokeImage}
+                  viewStats={viewStats}
+                  viewStatsButton={this.viewStats}
+                  pokeMonNameStyle={styles.pokeMonName}
+                />
               </Grid.Column>
               <Grid.Column width={4}>
-                <Segment style={styles.segmentMove1} inverted>
-                  {thirdPokeImage ?
-                      <Fragment>
-                        <Segment color="red">
-                          <Header as="h4" textAlign="center" style={styles.pokeMonName}>{thirdPokeMon.name}</Header>
-                          <Segment textAlign="center" inverted circular>
-                            <Image src={thirdPokeImage} size="large" circular/>
-                          </Segment>
-                        </Segment>
-                      </Fragment>
-                    :
-                      <Fragment>
-                        <Segment textAlign="center" color="red">
-                          <Icon loading name="spinner"/>
-                        </Segment>
-                      </Fragment>
-                  }
-                </Segment>
+                <ThirdPoke
+                  thirdPokeMon={thirdPokeMon}
+                  thirdPokeImage={thirdPokeImage}
+                  pokeMonNameStyle={styles.pokeMonName}
+                  segmentMove={styles.segmentMove1}
+                />
               </Grid.Column>
               <Grid.Column width={2}></Grid.Column>
             </Grid.Row>
-            {viewStats ?
-                <Grid.Row>
-                  <Grid.Column width={3}></Grid.Column>
-                  <Grid.Column width={10}>
-                    <Segment inverted>
-                      <Segment textAlign="center">
-                        <Header as="h4">Not Broken</Header>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}></Grid.Column>
-                </Grid.Row>
-              :
-              null
-            }
-            
+            <ViewStats 
+              viewStats={viewStats}
+            />
           </Grid>
       </Fragment>
     )
