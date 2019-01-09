@@ -201,7 +201,7 @@ class Demos extends Component {
                             <List.Item as="li">React Js</List.Item>
                             <List.Item as="li">Semantic-UI</List.Item>
                             <List.Item as="li">Poke API</List.Item>
-                            <List.Item as="li">My Brain</List.Item>
+                            <List.Item as="li">Axios</List.Item>
                           </List>
                         </Segment>
                       </Segment>

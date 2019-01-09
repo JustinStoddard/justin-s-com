@@ -1,11 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Segment, Icon, Button, Grid, Divider, Input } from 'semantic-ui-react';
+import Loadable from 'react-loadable';
+import { Header, Segment, Icon, Grid, Divider } from 'semantic-ui-react';
 import FirstPoke from './FirstPoke';
 import SecondPoke from './SecondPoke';
 import ThirdPoke from './ThirdPoke';
-import ViewStats from './ViewStats';
 import SearchBar from './SearchBar';
+import Loader from '../../../Loader';
+
+const StatLoader = Loadable({
+  loader: () => import('./ViewStats'),
+  loading: () => <Loader/>
+})
 
 class ApiFunDemo extends Component {
   state = {
@@ -41,12 +47,12 @@ class ApiFunDemo extends Component {
   getFirstPokeMon = () => {
     const { allPokeMon, firstPokeMonNumber } = this.state
     if (allPokeMon[firstPokeMonNumber].url !== null ) { //Re-runs this call if "pokeMonUrl" is null
-      const firstPokeMonUrl = allPokeMon[firstPokeMonNumber].url; //Checks if allPokeMon does not equal null
+      const firstPokeMonUrl = allPokeMon[firstPokeMonNumber].url;
       axios.get(firstPokeMonUrl)
-        .then(response => {
+        .then(async response => {
           const firstPokeMon = response.data;
           const firstPngImage = firstPokeMon.sprites.front_default;
-          this.setState({
+          await this.setState({
             firstPokeMon: firstPokeMon, 
             firstPokeImage: firstPngImage,
             firstPokeArrayNumber: allPokeMon.length - 1
@@ -59,19 +65,20 @@ class ApiFunDemo extends Component {
     }
   }
 
-  getSecondPokeMon = () => {
+  getSecondPokeMon = async () => {
     const { allPokeMon, secondPokeMonNumber } = this.state
     if (allPokeMon[secondPokeMonNumber].url !== null) {
       const secondPokeMonUrl = allPokeMon[secondPokeMonNumber].url;
       axios.get(secondPokeMonUrl)
-        .then(response => {
+        .then(async response => {
           const secondPokeMon = response.data;
           const secondPngImage = secondPokeMon.sprites.front_default;              //I'd preferr not to do 3 API calls but its the only way I know how to do this for now because of the way this API handles GETing data.
-          this.setState({
+          await this.setState({
             secondPokeMon: secondPokeMon, 
             secondPokeImage: secondPngImage,
             secondPokeArrayNumber: allPokeMon.length -1
           })
+          console.log(secondPokeMon)
           console.log('second', secondPokeMon.name)
           console.log('second', secondPokeMonNumber)
         }).catch(err => console.log(err))
@@ -85,10 +92,10 @@ class ApiFunDemo extends Component {
     if (allPokeMon[thirdPokeMonNumber].url !== null) {
       const thirdPokeMonUrl = allPokeMon[thirdPokeMonNumber].url;
       axios.get(thirdPokeMonUrl)
-        .then(response => {
+        .then(async response => {
           const thirdPokeMon = response.data;
           const thirdPngImage = thirdPokeMon.sprites.front_default;
-          this.setState({
+          await this.setState({
             thirdPokeMon: thirdPokeMon, 
             thirdPokeImage: thirdPngImage,
             thirdPokeArrayNumber: allPokeMon.length - 1
@@ -237,8 +244,9 @@ class ApiFunDemo extends Component {
               </Grid.Column>
               <Grid.Column width={2}></Grid.Column>
             </Grid.Row>
-            <ViewStats 
+            <StatLoader 
               viewStats={viewStats}
+              secondPokeMon={secondPokeMon}
             />
           </Grid>
       </Fragment>
