@@ -5,12 +5,14 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
   return(
     <Fragment>
       <Segment inverted>
-        <Segment color="red" textAlign="center">
+        <Segment textAlign="center">
           {secondPokeImage ?
             <Fragment>
               {!viewStats ? 
                   <div>
-                    <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{secondPokeMon.name}</Header>
+                    <Segment color="red">
+                      <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{secondPokeMon.name}</Header>
+                    </Segment>
                     <Segment textAlign="center" inverted circular>
                       <Image src={secondPokeImage} size="large" circular/>
                     </Segment>
@@ -19,7 +21,9 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
                   </div>
                 :
                   <div>
-                    <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{secondPokeMon.name}</Header>
+                    <Segment color="red">
+                      <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{secondPokeMon.name}</Header>
+                    </Segment>
                     <Segment textAlign="center" inverted circular>
                       <Image src={secondPokeImage} size="large" circular/>
                     </Segment>

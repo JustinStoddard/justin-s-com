@@ -38,7 +38,7 @@ class ApiFunDemo extends Component {
     const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20";
     axios.get(apiUrl)
       .then(response => {
-        const manyPokeMon = response.data.results.slice(0,50);
+        const manyPokeMon = response.data.results.slice(0,100);
         this.setState({ allPokeMon: manyPokeMon });
         console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))

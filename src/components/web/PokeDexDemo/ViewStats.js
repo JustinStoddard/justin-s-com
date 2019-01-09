@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Grid, Header, Table, Segment, Divider } from 'semantic-ui-react';
+import { Grid, Header, Table, Segment } from 'semantic-ui-react';
 
 const ViewStats = ({ viewStats, secondPokeMon }) => {
   return(

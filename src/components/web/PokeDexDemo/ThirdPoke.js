@@ -7,8 +7,10 @@ const ThirdPoke = ({ thirdPokeMon, thirdPokeImage, pokeMonNameStyle, segmentMove
       <Segment style={segmentMove} inverted>
         {thirdPokeImage ?
           <Fragment>
-            <Segment color="red">
-              <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{thirdPokeMon.name}</Header>
+            <Segment>
+              <Segment color="red">
+                <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{thirdPokeMon.name}</Header>
+              </Segment>
               <Segment textAlign="center" inverted circular>
                 <Image src={thirdPokeImage} size="large" circular/>
               </Segment>

@@ -7,8 +7,10 @@ const FirstPoke = ({ firstPokeMon, firstPokeImage, pokeMonNameStyle, segmentMove
       <Segment style={segmentMove} inverted>
         {firstPokeImage ?
           <Fragment>
-            <Segment color="red">
-              <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{firstPokeMon.name}</Header>
+            <Segment>
+              <Segment color="red">
+                <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{firstPokeMon.name}</Header>
+              </Segment>
               <Segment textAlign="center" inverted circular>
                 <Image src={firstPokeImage} size="large" circular/>
               </Segment>
