@@ -9,16 +9,16 @@ const ViewStats = ({ viewStats, secondPokeMon }) => {
           <Grid.Column width={3}></Grid.Column>
           <Grid.Column width={10}>
             <Segment inverted>
-              <Table textAlign="center" color="red" celled padded>
+              <Table textAlign="center" color="red" columns="12" celled padded>
                 <Table.Header>
                   <Table.Row>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Base XP</Header>
                     </Table.HeaderCell>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Weight</Header>
                     </Table.HeaderCell>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Height</Header>
                     </Table.HeaderCell>
                   </Table.Row>
@@ -37,16 +37,16 @@ const ViewStats = ({ viewStats, secondPokeMon }) => {
                   </Table.Row>
                 </Table.Body>
               </Table>
-              <Table textAlign="center" color="red" celled padded>
+              <Table textAlign="center" color="red" columns="12" celled padded>
                 <Table.Header>
                   <Table.Row>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Attack</Header>
                     </Table.HeaderCell>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Defense</Header>
                     </Table.HeaderCell>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Speed</Header>
                     </Table.HeaderCell>
                   </Table.Row>
@@ -65,16 +65,16 @@ const ViewStats = ({ viewStats, secondPokeMon }) => {
                   </Table.Row>
                 </Table.Body>
               </Table>
-              <Table textAlign="center" color="red" celled padded>
+              <Table textAlign="center" color="red" columns="12" celled padded>
                 <Table.Header>
                   <Table.Row>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Special Attack</Header>
                     </Table.HeaderCell>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">Special Defense</Header>
                     </Table.HeaderCell>
-                    <Table.HeaderCell>
+                    <Table.HeaderCell width="4">
                       <Header as="h3">HP</Header>
                     </Table.HeaderCell>
                   </Table.Row>
