@@ -42,7 +42,7 @@ class ApiFunDemo extends Component {
     const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20";
     axios.get(apiUrl)
       .then(response => {
-        const manyPokeMon = response.data.results;
+        const manyPokeMon = response.data.results.slice(0,500);
         this.setState({ allPokeMon: manyPokeMon });
         console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
@@ -61,6 +61,8 @@ class ApiFunDemo extends Component {
             firstPokeImage: firstPngImage,
             firstPokeArrayNumber: allPokeMon.length - 1
           })
+          console.log('first', firstPokeMon.name)
+          console.log('first', firstPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getFirstPokeMon()
@@ -80,6 +82,9 @@ class ApiFunDemo extends Component {
             secondPokeImage: secondPngImage,
             secondPokeArrayNumber: allPokeMon.length -1
           })
+          console.log(secondPokeMon)
+          console.log('second', secondPokeMon.name)
+          console.log('second', secondPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getSecondPokeMon()
@@ -99,6 +104,8 @@ class ApiFunDemo extends Component {
             thirdPokeImage: thirdPngImage,
             thirdPokeArrayNumber: allPokeMon.length - 1
           })
+          console.log('third', thirdPokeMon.name)
+          console.log('third', thirdPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getThirdPokeMon()
