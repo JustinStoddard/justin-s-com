@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import _ from 'lodash'
 import Loadable from 'react-loadable';
-import { Header, Segment, Icon, Grid, Divider } from 'semantic-ui-react';
+import { Header, Segment, Icon, Grid, Divider, Button } from 'semantic-ui-react';
 import FirstPoke from './FirstPoke';
 import SecondPoke from './SecondPoke';
 import ThirdPoke from './ThirdPoke';
@@ -18,6 +18,7 @@ class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
     viewStats: false,
+    enterPokeDex: false,
     pokeMonInput: '',
     pokeMonSelect: [],
 
@@ -41,7 +42,7 @@ class ApiFunDemo extends Component {
     const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20";
     axios.get(apiUrl)
       .then(response => {
-        const manyPokeMon = response.data.results.slice(0,100);
+        const manyPokeMon = response.data.results;
         this.setState({ allPokeMon: manyPokeMon });
         console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
@@ -64,7 +65,7 @@ class ApiFunDemo extends Component {
           console.log('first', firstPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
-      this.getFirstPokeMon
+      this.getFirstPokeMon()
     }
   }
 
@@ -86,7 +87,7 @@ class ApiFunDemo extends Component {
           console.log('second', secondPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
-      this.getSecondPokeMon
+      this.getSecondPokeMon()
     }
   }
 
@@ -107,26 +108,43 @@ class ApiFunDemo extends Component {
           console.log('third', thirdPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
-      this.getThirdPokeMon
+      this.getThirdPokeMon()
     }
   }
 
-  findPokeMon = () => { 
+  findPokeMon = async () => { 
     const { 
       allPokeMon,
       pokeMonSelect,
-      firstPokeMonNumber,
-      secondPokeMonNumber,
-      thirdPokeMonNumber
+      firstPokeArrayNumber
     } = this.state
+
     const wantedPokeMon = _.findIndex(allPokeMon, function(p) {
-      return p.name == pokeMonSelect
+      const selected = p.name === pokeMonSelect
+      return selected
     })
-    this.setState({
-      secondPokeMonNumber: wantedPokeMon,
-      firstPokeMonNumber: wantedPokeMon - 1,
-      thirdPokeMonNumber: wantedPokeMon + 1
-    })
+    
+    if ( wantedPokeMon === firstPokeArrayNumber ) {
+      await this.setState({
+        secondPokeMonNumber: wantedPokeMon,
+        firstPokeMonNumber: wantedPokeMon - 1,
+        thirdPokeMonNumber: 0
+      })
+    } else if (wantedPokeMon === 0) {
+      await this.setState({
+        secondPokeMonNumber: wantedPokeMon,
+        firstPokeMonNumber: firstPokeArrayNumber,
+        thirdPokeMonNumber: wantedPokeMon + 1
+      })
+    } else if (wantedPokeMon === -1) {
+      alert(`${pokeMonSelect} Not Found`)
+    } else {
+      await this.setState({
+        secondPokeMonNumber: wantedPokeMon,
+        firstPokeMonNumber: wantedPokeMon - 1,
+        thirdPokeMonNumber: wantedPokeMon + 1
+      })
+    }
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()
@@ -206,6 +224,14 @@ class ApiFunDemo extends Component {
     this.setState({ viewStats: !viewStats })
   }
 
+  enterPokeDex = () => {
+    const { enterPokeDex } = this.state
+    this.setState({
+      enterPokeDex: !enterPokeDex
+    })
+    this.plusNumber()
+  }
+
   handleChange = async (e) => {
     const { name, value } = e.target
     this.setState({
@@ -231,7 +257,8 @@ class ApiFunDemo extends Component {
       thirdPokeMon, 
       thirdPokeImage,
       viewStats,
-      pokeMonInput
+      pokeMonInput,
+      enterPokeDex
     } = this.state
 
     return(
@@ -242,58 +269,63 @@ class ApiFunDemo extends Component {
             <Icon loading name="spinner"/>
           </Segment>
         </Segment>
-          <Grid>
-            <Grid.Row>
-              <Grid.Column width={4}></Grid.Column>
-              <Grid.Column width={8}>
-                <SearchBar 
-                  minus={this.minusNumber}
-                  plus={this.plusNumber}
-                  leftButtonMargin={styles.leftButtonMargin}
-                  buttonMargin={styles.buttonMargin}
-                  searchBarStyles={styles.searchBarStyles}
-                  submit={this.handleSubmit}
-                  change={this.handleChange}
-                  pokeMonInput={pokeMonInput}
-                />
-              </Grid.Column>
-              <Grid.Column width={4}></Grid.Column>
-            </Grid.Row>
-            <Divider hidden/>
-            <Grid.Row>
-              <Grid.Column width={2}></Grid.Column>
-              <Grid.Column width={4}>
-                <FirstPoke 
-                  firstPokeMon={firstPokeMon}
-                  firstPokeImage={firstPokeImage} 
-                  pokeMonNameStyle={styles.pokeMonName}
-                  segmentMove={styles.segmentMove1}
-                />
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <SecondPoke 
-                  secondPokeMon={secondPokeMon}
-                  secondPokeImage={secondPokeImage}
-                  viewStats={viewStats}
-                  viewStatsButton={this.viewStats}
-                  pokeMonNameStyle={styles.pokeMonName}
-                />
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <ThirdPoke
-                  thirdPokeMon={thirdPokeMon}
-                  thirdPokeImage={thirdPokeImage}
-                  pokeMonNameStyle={styles.pokeMonName}
-                  segmentMove={styles.segmentMove1}
-                />
-              </Grid.Column>
-              <Grid.Column width={2}></Grid.Column>
-            </Grid.Row>
-            <StatLoader 
-              viewStats={viewStats}
-              secondPokeMon={secondPokeMon}
-            />
-          </Grid>
+        {enterPokeDex ?
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={4}></Grid.Column>
+                <Grid.Column width={8}>
+                  <SearchBar 
+                    minus={this.minusNumber}
+                    plus={this.plusNumber}
+                    leftButtonMargin={styles.leftButtonMargin}
+                    buttonMargin={styles.buttonMargin}
+                    searchBarStyles={styles.searchBarStyles}
+                    submit={this.handleSubmit}
+                    change={this.handleChange}
+                    pokeMonInput={pokeMonInput}
+                  />
+                </Grid.Column>
+                <Grid.Column width={4}></Grid.Column>
+              </Grid.Row>
+              <Divider hidden/>
+              <Grid.Row>
+                <Grid.Column width={2}></Grid.Column>
+                <Grid.Column width={4}>
+                  <FirstPoke 
+                    firstPokeMon={firstPokeMon}
+                    firstPokeImage={firstPokeImage} 
+                    pokeMonNameStyle={styles.pokeMonName}
+                    segmentMove={styles.segmentMove1}
+                  />
+                </Grid.Column>
+                <Grid.Column width={4}>
+                  <SecondPoke 
+                    secondPokeMon={secondPokeMon}
+                    secondPokeImage={secondPokeImage}
+                    viewStats={viewStats}
+                    viewStatsButton={this.viewStats}
+                    pokeMonNameStyle={styles.pokeMonName}
+                  />
+                </Grid.Column>
+                <Grid.Column width={4}>
+                  <ThirdPoke
+                    thirdPokeMon={thirdPokeMon}
+                    thirdPokeImage={thirdPokeImage}
+                    pokeMonNameStyle={styles.pokeMonName}
+                    segmentMove={styles.segmentMove1}
+                  />
+                </Grid.Column>
+                <Grid.Column width={2}></Grid.Column>
+              </Grid.Row>
+              <StatLoader 
+                viewStats={viewStats}
+                secondPokeMon={secondPokeMon}
+              />
+            </Grid>
+          :
+            <Button onClick={this.enterPokeDex}>Open</Button>
+        }
+          
       </Fragment>
     )
   }

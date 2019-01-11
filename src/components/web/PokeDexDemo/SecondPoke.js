@@ -5,7 +5,7 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
   return(
     <Fragment>
       <Segment inverted>
-        <Segment textAlign="center">
+        <Segment textAlign="center" color="red">
           {secondPokeImage ?
             <Fragment>
               {!viewStats ? 
@@ -33,7 +33,7 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
               }
               </Fragment>
             :
-              <Header as="h3" textAlign="center">Push The Forward Button</Header>
+            <Icon loading name="spinner"/>
           }
         </Segment>
       </Segment>
