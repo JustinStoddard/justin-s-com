@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import _ from 'lodash'
 import Loadable from 'react-loadable';
 import { Header, Segment, Icon, Grid, Divider } from 'semantic-ui-react';
 import FirstPoke from './FirstPoke';
@@ -17,6 +18,8 @@ class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
     viewStats: false,
+    pokeMonInput: '',
+    pokeMonSelect: [],
 
     firstPokeMon: [], //This will be cleaned up eventually, but for now the excessive use of state is a proof of UI/UX concept, not arcitechural efficency.
     firstPokeImage: null,
@@ -108,6 +111,27 @@ class ApiFunDemo extends Component {
     }
   }
 
+  findPokeMon = () => { 
+    const { 
+      allPokeMon,
+      pokeMonSelect,
+      firstPokeMonNumber,
+      secondPokeMonNumber,
+      thirdPokeMonNumber
+    } = this.state
+    const wantedPokeMon = _.findIndex(allPokeMon, function(p) {
+      return p.name == pokeMonSelect
+    })
+    this.setState({
+      secondPokeMonNumber: wantedPokeMon,
+      firstPokeMonNumber: wantedPokeMon - 1,
+      thirdPokeMonNumber: wantedPokeMon + 1
+    })
+    this.getFirstPokeMon()
+    this.getSecondPokeMon()
+    this.getThirdPokeMon()
+  }
+
   plusNumber = async () => {
     const { 
       firstPokeMonNumber,
@@ -182,6 +206,22 @@ class ApiFunDemo extends Component {
     this.setState({ viewStats: !viewStats })
   }
 
+  handleChange = async (e) => {
+    const { name, value } = e.target
+    this.setState({
+      [name]: await value
+    })
+  }
+
+  handleSubmit = async (e) => {
+    e.preventDefault()
+    await this.setState(prevState => ({
+      pokeMonInput: '',
+      pokeMonSelect: prevState.pokeMonInput.toLowerCase()
+    }))
+    this.findPokeMon()
+  }
+
   render() {
     const { 
       firstPokeMon, 
@@ -190,7 +230,8 @@ class ApiFunDemo extends Component {
       secondPokeImage, 
       thirdPokeMon, 
       thirdPokeImage,
-      viewStats
+      viewStats,
+      pokeMonInput
     } = this.state
 
     return(
@@ -210,6 +251,10 @@ class ApiFunDemo extends Component {
                   plus={this.plusNumber}
                   leftButtonMargin={styles.leftButtonMargin}
                   buttonMargin={styles.buttonMargin}
+                  searchBarStyles={styles.searchBarStyles}
+                  submit={this.handleSubmit}
+                  change={this.handleChange}
+                  pokeMonInput={pokeMonInput}
                 />
               </Grid.Column>
               <Grid.Column width={4}></Grid.Column>
@@ -270,6 +315,9 @@ const styles = {
   },
   leftButtonMargin: {
     marginLeft: '20px'
+  },
+  searchBarStyles: {
+    width: '280px'
   }
 }
 

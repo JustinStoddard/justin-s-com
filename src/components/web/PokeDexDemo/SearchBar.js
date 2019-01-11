@@ -1,14 +1,33 @@
 import React, { Fragment } from 'react';
-import { Segment, Input, Button, Icon } from 'semantic-ui-react';
+import { Segment, Form, Button, Icon, Grid } from 'semantic-ui-react';
 
-const SearchBar = ({ plus, minus, leftButtonMargin, buttonMargin }) => {
+const SearchBar = ({ plus, minus, leftButtonMargin, buttonMargin, searchBarStyles, submit, change, pokeMonInput }) => {
   return(
     <Fragment>
       <Segment inverted>
         <Segment color="red">
-          <Input icon={<Icon name="search" inverted circular link/>} size="huge" iconPosition="left" placeholder="Search..."/> 
-          <Button onClick={minus} size="large" color="red" style={leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
-          <Button onClick={plus} size="large" color="red" style={buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column width={9}>
+                <Form onSubmit={submit} size="small">
+                  <Form.Input 
+                    icon={<Icon name="search" inverted circular link/>}
+                    style={searchBarStyles}  
+                    size="huge"
+                    iconPosition="left" 
+                    placeholder="Search..." 
+                    name="pokeMonInput" 
+                    value={pokeMonInput}
+                    onChange={change}
+                  /> 
+                </Form>
+              </Grid.Column>
+              <Grid.Column width={7}>
+                <Button onClick={minus} size="large" color="red" style={leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
+                <Button onClick={plus} size="large" color="red" style={buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Segment>
       </Segment>
     </Fragment>
