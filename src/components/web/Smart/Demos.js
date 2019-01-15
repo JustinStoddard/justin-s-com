@@ -2,31 +2,15 @@ import React, { Component, Fragment } from 'react';
 import Loader from '../../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button, List } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
-
-const VideoDemoLoader = Loadable({
-  loader: () => import('./VideoIndex'),
-  loading: () => <Loader />
-})
-
-const CalculatorDemoLoader = Loadable({
-  loader: () => import('../CalculatorDemo/CalculatorIndex'),
-  loading: () => <Loader />
-})
+const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader />})
+const CalculatorDemoLoader = Loadable({loader: () => import('../CalculatorDemo/CalculatorIndex'),loading: () => <Loader />})
+const ClockDemoLoader = Loadable({loader: () => import('../ClockDemo/Clock'),loading: () => <Loader />})
+const PokeDexDemoLoader = Loadable({loader: () => import('../PokeDexDemo/PokeDexDemo'),loading: () => <Loader />})
 
 // const CodexDemoLoader = Loadable({
 //   loader: () => import('../CodexDemo/CodexIndex'),
 //   loading: () => <Loader/>
 // })
-
-const ClockDemoLoader = Loadable({
-  loader: () => import('../ClockDemo/Clock'),
-  loading: () => <Loader />
-})
-
-const FunWithApisDemoLoader = Loadable({
-  loader: () => import('../PokeDexDemo/PokeDexDemo'),
-  loading: () => <Loader />
-})
 
 class Demos extends Component {
   state = { videoDemo: false, calculatorDemo: false, clockDemo: false, funWithApiDemo: false }
@@ -39,6 +23,49 @@ class Demos extends Component {
         <Segment textAlign="center" inverted>
           <Header as="h2">Demos</Header>
         </Segment>
+        <Divider hidden/>
+        { funWithApiDemo ?
+            <Segment color="blue">
+              <Button color="blue" size="large" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo })}>Hide Demo</Button>
+              <Divider hidden/>
+              <PokeDexDemoLoader />
+            </Segment>
+          :
+            <Fragment>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={13}>
+                    <Segment inverted>
+                      <Segment color="blue">
+                        <Header as="h2">PokeDex Demo - NEW!</Header>
+                      </Segment>
+                      <Segment textAlign="left" color="blue">
+                        <strong>This</strong> Demo uses the Poke API to create a working PokeDex! Move through the library or use the search bar to find your favorite PokeMon and view its stats. Then add your favorites to your PokeDex, Enjoy!
+                      </Segment>
+                      <Button color="blue" size="huge" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo, clockDemo: false, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
+                    </Segment>
+                  </Grid.Column>
+                  <Grid.Column width={3}>
+                    <Segment inverted>
+                      <Segment color="blue">
+                        <Segment textAlign="center" inverted>
+                          <Header as="h3">TECH</Header>
+                        </Segment>
+                        <Segment color="blue">
+                          <List as="ul">
+                            <List.Item as="li">React Js</List.Item>
+                            <List.Item as="li">Semantic-UI</List.Item>
+                            <List.Item as="li">Poke API</List.Item>
+                            <List.Item as="li">Axios</List.Item>
+                          </List>
+                        </Segment>
+                      </Segment>
+                    </Segment>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Fragment>
+        }
         <Divider hidden/>
         { videoDemo ?
             <Segment color="blue">
@@ -159,49 +186,6 @@ class Demos extends Component {
                             <List.Item as="li">Semantic-UI</List.Item>
                             <List.Item as="li">SCSS</List.Item>
                             <List.Item as="li">My Brain</List.Item>
-                          </List>
-                        </Segment>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Fragment>
-        }
-        <Divider hidden/>
-        { funWithApiDemo ?
-            <Segment color="blue">
-              <Button color="blue" size="large" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo })}>Hide Demo</Button>
-              <Divider hidden/>
-              <FunWithApisDemoLoader />
-            </Segment>
-          :
-            <Fragment>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={13}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h2">PokeDex Demo</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <strong>This</strong> Demo uses the Poke API to create a working PokeDex! Move through the library and find your favorite PokeMon to view its stats! Or search for it on the search bar! Enjoy!
-                      </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo, clockDemo: false, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Segment textAlign="center" inverted>
-                          <Header as="h3">TECH</Header>
-                        </Segment>
-                        <Segment color="blue">
-                          <List as="ul">
-                            <List.Item as="li">React Js</List.Item>
-                            <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">Poke API</List.Item>
-                            <List.Item as="li">Axios</List.Item>
                           </List>
                         </Segment>
                       </Segment>
