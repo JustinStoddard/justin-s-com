@@ -7,6 +7,7 @@ import FirstPoke from './FirstPoke';
 import SecondPoke from './SecondPoke';
 import ThirdPoke from './ThirdPoke';
 import SearchBar from './SearchBar';
+import PokeDexMain from './PokeDexMain';
 import Loader from '../../../Loader';
 
 const StatLoader = Loadable({
@@ -323,7 +324,7 @@ class ApiFunDemo extends Component {
               />
             </Grid>
           :
-            <Button onClick={this.enterPokeDex}>Open</Button>
+            <PokeDexMain enterPokeDex={this.enterPokeDex}/>
         }
           
       </Fragment>
