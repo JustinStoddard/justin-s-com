@@ -11,9 +11,9 @@ const PokeMon = ({ myPokeMon, deletePokeMon }) => {
             <Card.Header style={pokeStyles.pokeHeader}>
               <Grid>
                 <Grid.Row>
-                  <Grid.Column width={8}>{p.name}</Grid.Column>
-                  <Grid.Column width={8}>
-                    <Button onClick={() => deletePokeMon(index)} size="tiny" color="red"><Icon name="trash alternate" fitted/></Button>
+                  <Grid.Column width={10}>{p.name}</Grid.Column>
+                  <Grid.Column width={6}>
+                    <Button onClick={() => deletePokeMon(index)} size="tiny" color="red" style={pokeStyles.buttonMargin}><Icon name="trash alternate" fitted/></Button>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
@@ -26,8 +26,12 @@ const PokeMon = ({ myPokeMon, deletePokeMon }) => {
 }
 
 const pokeStyles = {
-  pokeHeader : {
-    textTransform: 'capitalize'
+  pokeHeader: {
+    textTransform: 'capitalize',
+    marginLeft: '-5px'
+  },
+  buttonMargin: {
+    marginLeft: '-5px'
   }
 }
 

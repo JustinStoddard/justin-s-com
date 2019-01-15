@@ -1,7 +1,8 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 import Loader from '../../../Loader';
-import { Grid, Segment, Header, Icon, Button, Card } from 'semantic-ui-react';
+import PokeDexImage from '../../../Images/My PokeDex Image.png';
+import { Grid, Segment, Button, Card, Image } from 'semantic-ui-react';
 const PokeMon = Loadable({loader: () => import('./PokeMon'), loading: () => <Loader/>})
 
 const MyPokeDex = ({ myPokeMon, viewMyPokeDex, deletePokeMon }) => {
@@ -10,11 +11,7 @@ const MyPokeDex = ({ myPokeMon, viewMyPokeDex, deletePokeMon }) => {
       <Grid.Row>
         <Grid.Column width={4}></Grid.Column>
         <Grid.Column width={8}>
-          <Segment inverted>
-            <Segment textAlign="center" color="red">
-              <Header as="h1">My PokeDex</Header>
-            </Segment>
-          </Segment>
+          <Image src={PokeDexImage} centered/>
         </Grid.Column>
         <Grid.Column width={4}>
           <Segment inverted>

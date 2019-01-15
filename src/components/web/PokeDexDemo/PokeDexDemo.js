@@ -3,7 +3,7 @@ import axios from 'axios';
 import _ from 'lodash'
 import Loadable from 'react-loadable';
 import Loader from '../../../Loader';
-import { Header, Segment, Icon, Grid, Divider, Button } from 'semantic-ui-react';
+import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
 import PokeDexMain from './PokeDexMain';
 const FirstPokeMon = Loadable({loader: () => import('./FirstPoke'), loading: () => <Loader/>});
 const SecondPokeMon = Loadable({loader: () => import('./SecondPoke'), loading: () => <Loader/>});
@@ -44,7 +44,7 @@ class ApiFunDemo extends Component {
       .then(response => {
         const manyPokeMon = response.data.results.slice(0,500);
         this.setState({ allPokeMon: manyPokeMon });
-        console.log("All Poke", manyPokeMon)
+        // console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
   }
 
@@ -61,8 +61,8 @@ class ApiFunDemo extends Component {
             firstPokeImage: firstPngImage,
             firstPokeArrayNumber: allPokeMon.length - 1
           })
-          console.log('first', firstPokeMon.name)
-          console.log('first', firstPokeMonNumber)
+          // console.log('first', firstPokeMon.name)
+          // console.log('first', firstPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getFirstPokeMon()
@@ -82,9 +82,9 @@ class ApiFunDemo extends Component {
             secondPokeImage: secondPngImage,
             secondPokeArrayNumber: allPokeMon.length -1
           })
-          console.log(secondPokeMon)
-          console.log('second', secondPokeMon.name)
-          console.log('second', secondPokeMonNumber)
+          // console.log(secondPokeMon)
+          // console.log('second', secondPokeMon.name)
+          // console.log('second', secondPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getSecondPokeMon()
@@ -104,8 +104,8 @@ class ApiFunDemo extends Component {
             thirdPokeImage: thirdPngImage,
             thirdPokeArrayNumber: allPokeMon.length - 1
           })
-          console.log('third', thirdPokeMon.name)
-          console.log('third', thirdPokeMonNumber)
+          // console.log('third', thirdPokeMon.name)
+          // console.log('third', thirdPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
       this.getThirdPokeMon()
@@ -292,12 +292,11 @@ class ApiFunDemo extends Component {
   }
 
   addPokeMon = async () => {
-    const { secondPokeMon, myPokeMon } = this.state
+    const { secondPokeMon } = this.state
     await this.setState(prevState => ({
       myPokeMon: [ ...prevState.myPokeMon, secondPokeMon ]
     }))
-    alert(`Added ${secondPokeMon.name}`)
-    console.log(myPokeMon)
+    alert(`Added ${secondPokeMon.name} to your PokeDex`)
   }
 
   deletePokeMon = async (index) => {
@@ -324,12 +323,6 @@ class ApiFunDemo extends Component {
 
     return(
       <Fragment>
-        <Segment inverted>
-          <Segment textAlign="center" color="yellow">
-            <Header as="h1">Under Construction</Header>
-            <Icon loading name="spinner"/>
-          </Segment>
-        </Segment>
         {enterPokeDex ?
           <Fragment>
             {viewMyPokeDex ?
