@@ -2,29 +2,27 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import _ from 'lodash'
 import Loadable from 'react-loadable';
-import { Header, Segment, Icon, Grid, Divider, Button } from 'semantic-ui-react';
-import FirstPoke from './FirstPoke';
-import SecondPoke from './SecondPoke';
-import ThirdPoke from './ThirdPoke';
-import SearchBar from './SearchBar';
-import PokeDexMain from './PokeDexMain';
 import Loader from '../../../Loader';
-
-const StatLoader = Loadable({
-  loader: () => import('./ViewStats'),
-  loading: () => <Loader/>
-})
+import { Header, Segment, Icon, Grid, Divider, Button } from 'semantic-ui-react';
+import PokeDexMain from './PokeDexMain';
+const FirstPokeMon = Loadable({loader: () => import('./FirstPoke'), loading: () => <Loader/>});
+const SecondPokeMon = Loadable({loader: () => import('./SecondPoke'), loading: () => <Loader/>});
+const ThirdPokeMon = Loadable({loader: () => import('./ThirdPoke'), loading: () => <Loader/>});
+const SearchBar = Loadable({loader: () => import('./SearchBar'), loading: () => <Loader/>});
+const ViewStats = Loadable({loader: () => import('./ViewStats'), loading: () => <Loader/>});
+const MyPokeDex = Loadable({loader: () => import('./MyPokeDex'), loading: () => <Loader/>});
 
 class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
+    myPokeMon: [],
     viewStats: false,
     viewMyPokeDex: false,
     enterPokeDex: false,
     pokeMonInput: '',
     pokeMonSelect: [],
 
-    firstPokeMon: [], //This will be cleaned up eventually, but for now the excessive use of state is a proof of UI/UX concept, not arcitechural efficency.
+    firstPokeMon: [], //This will be cleaned up eventually, but for now the excessive use of state is for a proving a UI/UX concept, not arcitechural efficency.
     firstPokeImage: null,
     firstPokeMonNumber: -1,
     firstPokeArrayNumber: null,
@@ -293,8 +291,20 @@ class ApiFunDemo extends Component {
     this.findPokeMon()
   }
 
-  addPokeMon = () => {
-    alert("Added PokeMon")
+  addPokeMon = async () => {
+    const { secondPokeMon, myPokeMon } = this.state
+    await this.setState(prevState => ({
+      myPokeMon: [ ...prevState.myPokeMon, secondPokeMon ]
+    }))
+    alert(`Added ${secondPokeMon.name}`)
+    console.log(myPokeMon)
+  }
+
+  deletePokeMon = async (index) => {
+    const { myPokeMon } = this.state
+    await this.setState({
+      myPokeMon: myPokeMon.filter((_, i) => i !== index)
+    })
   }
 
   render() {
@@ -308,7 +318,8 @@ class ApiFunDemo extends Component {
       viewStats,
       pokeMonInput,
       enterPokeDex,
-      viewMyPokeDex
+      viewMyPokeDex,
+      myPokeMon
     } = this.state
 
     return(
@@ -322,38 +333,11 @@ class ApiFunDemo extends Component {
         {enterPokeDex ?
           <Fragment>
             {viewMyPokeDex ?
-                <Fragment>
-                  <Grid>
-                    <Grid.Row>
-                      <Grid.Column width={4}></Grid.Column>
-                      <Grid.Column width={8}>
-                        <Segment inverted>
-                          <Segment textAlign="center" color="red">
-                            <Header as="h1">My PokeDex</Header>
-                          </Segment>
-                        </Segment>
-                      </Grid.Column>
-                      <Grid.Column width={4}>
-                        <Segment inverted>
-                          <Segment textAlign="center" color="red">
-                            <Button onClick={this.viewMyPokeDex} size="huge" color="red">My PokeDex</Button>
-                          </Segment>
-                        </Segment>
-                      </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                      <Grid.Column width={3}></Grid.Column>
-                      <Grid.Column width={10}>
-                        <Segment inverted>
-                          <Segment tetAlign="center" color="red"> 
-                            <Header as="h3">Nothing to show right now.</Header>
-                          </Segment>
-                        </Segment>
-                      </Grid.Column>
-                      <Grid.Column width={3}></Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-                </Fragment>
+                <MyPokeDex 
+                  viewMyPokeDex={this.viewMyPokeDex}
+                  myPokeMon={myPokeMon}
+                  deletePokeMon={this.deletePokeMon}
+                />
               :
                 <Grid>
                   <Grid.Row>
@@ -382,7 +366,7 @@ class ApiFunDemo extends Component {
                   <Grid.Row>
                     <Grid.Column width={2}></Grid.Column>
                     <Grid.Column width={4}>
-                      <FirstPoke 
+                      <FirstPokeMon 
                         firstPokeMon={firstPokeMon}
                         firstPokeImage={firstPokeImage} 
                         pokeMonNameStyle={styles.pokeMonName}
@@ -390,7 +374,7 @@ class ApiFunDemo extends Component {
                       />
                     </Grid.Column>
                     <Grid.Column width={4}>
-                      <SecondPoke 
+                      <SecondPokeMon
                         secondPokeMon={secondPokeMon}
                         secondPokeImage={secondPokeImage}
                         viewStats={viewStats}
@@ -401,7 +385,7 @@ class ApiFunDemo extends Component {
                       />
                     </Grid.Column>
                     <Grid.Column width={4}>
-                      <ThirdPoke
+                      <ThirdPokeMon
                         thirdPokeMon={thirdPokeMon}
                         thirdPokeImage={thirdPokeImage}
                         pokeMonNameStyle={styles.pokeMonName}
@@ -410,7 +394,7 @@ class ApiFunDemo extends Component {
                     </Grid.Column>
                     <Grid.Column width={2}></Grid.Column>
                   </Grid.Row>
-                  <StatLoader 
+                  <ViewStats 
                     viewStats={viewStats}
                     secondPokeMon={secondPokeMon}
                   />

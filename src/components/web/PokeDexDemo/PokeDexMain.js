@@ -1,6 +1,6 @@
 import React from 'react';
 import pokeDexImage from '../../../Images/Poke Dex Image.png';
-import { Grid, Segment, Header, Image, Button, Divider } from 'semantic-ui-react';
+import { Grid, Segment, Image, Button, Divider } from 'semantic-ui-react';
 
 const PokeDexMain = ({ enterPokeDex }) => {
   return(

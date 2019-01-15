@@ -20,7 +20,7 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
                     <Grid>
                       <Grid.Row>
                         <Grid.Column width={10}>
-                          <Button onClick={viewStatsButton} color="red" size="large"><Icon name="eye"/>View</Button>
+                          <Button onClick={viewStatsButton} color="red" size="large"><Icon name="eye"/>Stats</Button>
                         </Grid.Column>
                         <Grid.Column width={4}>
                           <Button onClick={addPokeMon} color="red" size="large" style={addButtonStyles}><Icon name="plus" fitted/></Button>
