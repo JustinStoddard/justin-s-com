@@ -18,6 +18,7 @@ class ApiFunDemo extends Component {
   state = {
     allPokeMon: [],
     viewStats: false,
+    viewMyPokeDex: false,
     enterPokeDex: false,
     pokeMonInput: '',
     pokeMonSelect: [],
@@ -159,21 +160,35 @@ class ApiFunDemo extends Component {
     } = this.state;
 
     if (firstPokeMonNumber === firstPokeArrayNumber) {
-      await this.setState({ firstPokeMonNumber: 0 })
+      await this.setState({ 
+        firstPokeMonNumber: 0 
+      })
     } else {
-      await this.setState({ firstPokeMonNumber: firstPokeMonNumber + 1 })
+      await this.setState({ 
+        firstPokeMonNumber: firstPokeMonNumber + 1 
+      })
     }
 
     if (secondPokeMonNumber === firstPokeArrayNumber) {
-      await this.setState({ secondPokeMonNumber: 0, viewStats: false })
+      await this.setState({ 
+        secondPokeMonNumber: 0, 
+        viewStats: false 
+      })
     } else {
-      await this.setState({ secondPokeMonNumber: secondPokeMonNumber + 1, viewStats: false })
+      await this.setState({ 
+        secondPokeMonNumber: secondPokeMonNumber + 1, 
+        viewStats: false 
+      })
     }
 
     if (thirdPokeMonNumber === firstPokeArrayNumber) {
-      await this.setState({ thirdPokeMonNumber: 0 })
+      await this.setState({ 
+        thirdPokeMonNumber: 0 
+      })
     } else {
-      await this.setState({ thirdPokeMonNumber: thirdPokeMonNumber + 1 })
+      await this.setState({ 
+        thirdPokeMonNumber: thirdPokeMonNumber + 1 
+      })
     }
     this.getFirstPokeMon()
     this.getSecondPokeMon()
@@ -191,37 +206,66 @@ class ApiFunDemo extends Component {
     } = this.state;
 
     if (firstPokeMonNumber === 0) {
-      await this.setState({ firstPokeMonNumber: firstPokeArrayNumber })
+      await this.setState({ 
+        firstPokeMonNumber: firstPokeArrayNumber 
+      })
     } else {
-      await this.setState({ firstPokeMonNumber: firstPokeMonNumber - 1 })
+      await this.setState({ 
+        firstPokeMonNumber: firstPokeMonNumber - 1 
+      })
     }
 
     if (secondPokeMonNumber === 1) {
-      await this.setState({ secondPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber, viewStats: false })
+      await this.setState({ 
+        secondPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber, 
+        viewStats: false 
+      })
     } else if (secondPokeMonNumber === 0) {
-      await this.setState({ secondPokeMonNumber: secondPokeArrayNumber, viewStats: false })
+      await this.setState({ 
+        secondPokeMonNumber: secondPokeArrayNumber, 
+        viewStats: false 
+      })
     } else {
-      await this.setState({ secondPokeMonNumber: secondPokeMonNumber - 1, viewStats: false })
+      await this.setState({ 
+        secondPokeMonNumber: secondPokeMonNumber - 1, 
+        viewStats: false 
+      })
     }
 
     if (thirdPokeMonNumber === 2) {
-      await this.setState({ thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber + 1 })
+      await this.setState({ 
+        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber + 1 
+      })
     } else if (thirdPokeMonNumber === 1) {
-      await this.setState({ thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber })
+      await this.setState({ 
+        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber 
+      })
     } else if (thirdPokeMonNumber === 0) {
-      await this.setState({ thirdPokeMonNumber: thirdPokeArrayNumber })
+      await this.setState({ 
+        thirdPokeMonNumber: thirdPokeArrayNumber 
+      })
     } else {
-      await this.setState({ thirdPokeMonNumber: thirdPokeMonNumber - 1 })
+      await this.setState({ 
+        thirdPokeMonNumber: thirdPokeMonNumber - 1 
+      })
     }
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()
   }
 
-
   viewStats = () => {
     const { viewStats } = this.state
-    this.setState({ viewStats: !viewStats })
+    this.setState({ 
+      viewStats: !viewStats 
+    })
+  }
+
+  viewMyPokeDex = () => {
+    const { viewMyPokeDex } = this.state
+    this.setState({ 
+      viewMyPokeDex: !viewMyPokeDex 
+    })
   }
 
   enterPokeDex = () => {
@@ -248,6 +292,10 @@ class ApiFunDemo extends Component {
     this.findPokeMon()
   }
 
+  addPokeMon = () => {
+    alert("Added PokeMon")
+  }
+
   render() {
     const { 
       firstPokeMon, 
@@ -258,7 +306,8 @@ class ApiFunDemo extends Component {
       thirdPokeImage,
       viewStats,
       pokeMonInput,
-      enterPokeDex
+      enterPokeDex,
+      viewMyPokeDex
     } = this.state
 
     return(
@@ -270,62 +319,106 @@ class ApiFunDemo extends Component {
           </Segment>
         </Segment>
         {enterPokeDex ?
-            <Grid>
-              <Grid.Row>
-                <Grid.Column width={4}></Grid.Column>
-                <Grid.Column width={8}>
-                  <SearchBar 
-                    minus={this.minusNumber}
-                    plus={this.plusNumber}
-                    leftButtonMargin={styles.leftButtonMargin}
-                    buttonMargin={styles.buttonMargin}
-                    searchBarStyles={styles.searchBarStyles}
-                    submit={this.handleSubmit}
-                    change={this.handleChange}
-                    pokeMonInput={pokeMonInput}
-                  />
-                </Grid.Column>
-                <Grid.Column width={4}></Grid.Column>
-              </Grid.Row>
-              <Divider hidden/>
-              <Grid.Row>
-                <Grid.Column width={2}></Grid.Column>
-                <Grid.Column width={4}>
-                  <FirstPoke 
-                    firstPokeMon={firstPokeMon}
-                    firstPokeImage={firstPokeImage} 
-                    pokeMonNameStyle={styles.pokeMonName}
-                    segmentMove={styles.segmentMove1}
-                  />
-                </Grid.Column>
-                <Grid.Column width={4}>
-                  <SecondPoke 
-                    secondPokeMon={secondPokeMon}
-                    secondPokeImage={secondPokeImage}
+          <Fragment>
+            {viewMyPokeDex ?
+                <Fragment>
+                  <Grid>
+                    <Grid.Row>
+                      <Grid.Column width={4}></Grid.Column>
+                      <Grid.Column width={8}>
+                        <Segment inverted>
+                          <Segment textAlign="center" color="red">
+                            <Header as="h1">My PokeDex</Header>
+                          </Segment>
+                        </Segment>
+                      </Grid.Column>
+                      <Grid.Column width={4}>
+                        <Segment inverted>
+                          <Segment textAlign="center" color="red">
+                            <Button onClick={this.viewMyPokeDex} size="huge" color="red">My PokeDex</Button>
+                          </Segment>
+                        </Segment>
+                      </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                      <Grid.Column width={3}></Grid.Column>
+                      <Grid.Column width={10}>
+                        <Segment inverted>
+                          <Segment tetAlign="center" color="red"> 
+                            <Header as="h3">Nothing to show right now.</Header>
+                          </Segment>
+                        </Segment>
+                      </Grid.Column>
+                      <Grid.Column width={3}></Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </Fragment>
+              :
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={4}></Grid.Column>
+                    <Grid.Column width={8}>
+                      <SearchBar 
+                        minus={this.minusNumber}
+                        plus={this.plusNumber}
+                        leftButtonMargin={styles.leftButtonMargin}
+                        buttonMargin={styles.buttonMargin}
+                        searchBarStyles={styles.searchBarStyles}
+                        submit={this.handleSubmit}
+                        change={this.handleChange}
+                        pokeMonInput={pokeMonInput}
+                      />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                      <Segment inverted>
+                        <Segment textAlign="center" color="red">
+                          <Button onClick={this.viewMyPokeDex} size="huge" color="red">My PokeDex</Button>
+                        </Segment>
+                      </Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                  <Divider hidden/>
+                  <Grid.Row>
+                    <Grid.Column width={2}></Grid.Column>
+                    <Grid.Column width={4}>
+                      <FirstPoke 
+                        firstPokeMon={firstPokeMon}
+                        firstPokeImage={firstPokeImage} 
+                        pokeMonNameStyle={styles.pokeMonName}
+                        segmentMove={styles.segmentMove1}
+                      />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                      <SecondPoke 
+                        secondPokeMon={secondPokeMon}
+                        secondPokeImage={secondPokeImage}
+                        viewStats={viewStats}
+                        viewStatsButton={this.viewStats}
+                        addPokeMon={this.addPokeMon}
+                        pokeMonNameStyle={styles.pokeMonName}
+                        addButtonStyles={styles.addButtonStyles}
+                      />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                      <ThirdPoke
+                        thirdPokeMon={thirdPokeMon}
+                        thirdPokeImage={thirdPokeImage}
+                        pokeMonNameStyle={styles.pokeMonName}
+                        segmentMove={styles.segmentMove1}
+                      />
+                    </Grid.Column>
+                    <Grid.Column width={2}></Grid.Column>
+                  </Grid.Row>
+                  <StatLoader 
                     viewStats={viewStats}
-                    viewStatsButton={this.viewStats}
-                    pokeMonNameStyle={styles.pokeMonName}
+                    secondPokeMon={secondPokeMon}
                   />
-                </Grid.Column>
-                <Grid.Column width={4}>
-                  <ThirdPoke
-                    thirdPokeMon={thirdPokeMon}
-                    thirdPokeImage={thirdPokeImage}
-                    pokeMonNameStyle={styles.pokeMonName}
-                    segmentMove={styles.segmentMove1}
-                  />
-                </Grid.Column>
-                <Grid.Column width={2}></Grid.Column>
-              </Grid.Row>
-              <StatLoader 
-                viewStats={viewStats}
-                secondPokeMon={secondPokeMon}
-              />
-            </Grid>
+                </Grid>
+            }
+          </Fragment>
           :
             <Button onClick={this.enterPokeDex}>Open</Button>
         }
-          
       </Fragment>
     )
   }
@@ -350,6 +443,9 @@ const styles = {
   },
   searchBarStyles: {
     width: '280px'
+  },
+  addButtonStyles: {
+    marginLeft: '-10px'
   }
 }
 
