@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import Loader from '../../../Loader';
 import { Segment, Container, Divider, Header, Button, List } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
-const VideoDemoLoader = Loadable({loader: () => import('./mobileVideoIndex'),loading: () => <Loader/>})
-const CalculatorDemoLoader = Loadable({loader: () => import('./MobileCalculatorDemo/mobileCalculatorIndex'),loading: () => <Loader/>})
+const VideoDemoLoader = Loadable({loader: () => import('../MobileSmart/mobileVideoIndex'),loading: () => <Loader/>})
+const CalculatorDemoLoader = Loadable({loader: () => import('../MobileDemos/MobileCalculatorDemo/mobileCalculatorIndex'),loading: () => <Loader/>})
 const PokeDexDemoLoader = Loadable({loader: () => import('../MobileDemos/MobilePokeDexDemo/MobilePokeDexDemo'), loading: () => <Loader/>})
 
 class Demos extends Component {

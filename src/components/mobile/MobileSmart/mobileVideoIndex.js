@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import YTSearch from 'youtube-api-search';
-import SearchBar from './MobileVideoDemo/mobileSearchBar';
-import VideoList from './MobileVideoDemo/mobileVideoList';
-import VideoPlayer from './MobileVideoDemo/mobileVideoPlayer';
+import SearchBar from '../MobileDemos/MobileVideoDemo/mobileSearchBar';
+import VideoList from '../MobileDemos/MobileVideoDemo/mobileVideoList';
+import VideoPlayer from '../MobileDemos/MobileVideoDemo/mobileVideoPlayer';
 import { Container, Divider } from 'semantic-ui-react';
 
 const API_KEY = "AIzaSyBAbu36HFStXbL3D577r1yheldu7Y4AdfQ"

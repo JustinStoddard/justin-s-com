@@ -2,7 +2,7 @@ import React from 'react';
 import ResumeImage from '../../../Images/B4B87BEE-6F42-43A4-92FC-857790185640.jpg';
 import CoverImage from '../../../Images/New cover picture';
 import expertiseImage1 from '../../../Images/React Image.png';
-import expertiseImage2 from '.../../../Images/redux image.png';
+import expertiseImage2 from '../../../Images/redux image.png';
 import expertiseImage3 from '../../../Images/ruby image.png';
 import expertiseImage4 from '../../../Images/RubyRails image.png';
 import expertiseImage5 from '../../../Images/nodejs image.png';
