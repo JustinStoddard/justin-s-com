@@ -9,33 +9,24 @@ const MyPokeDex = ({ myPokeMon, viewMyPokeDex, deletePokeMon }) => {
   return(
     <Grid>
       <Grid.Row>
-        <Grid.Column width={4}></Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={10}>
           <Image src={PokeDexImage} centered/>
         </Grid.Column>
-        <Grid.Column width={4}>
-          <Segment inverted>
-            <Segment textAlign="center" color="red">
-              <Button onClick={viewMyPokeDex} size="huge" color="red">Back</Button>
-            </Segment>
+        <Grid.Column width={6}>
+          <Segment textAlign="center" color="red">
+            <Button onClick={viewMyPokeDex} size="medium" color="red">Back</Button>
           </Segment>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column width={2}></Grid.Column>
-        <Grid.Column width={12}>
-          <Segment inverted>
-            <Segment textAlign="center" color="red"> 
-              <Card.Group itemsPerRow={4}>
-                <PokeMon 
-                  myPokeMon={myPokeMon}
-                  deletePokeMon={deletePokeMon}
-                />
-              </Card.Group>
-            </Segment>
-          </Segment>
+        <Grid.Column>
+          <Card.Group itemsPerRow={2}>
+            <PokeMon 
+              myPokeMon={myPokeMon}
+              deletePokeMon={deletePokeMon}
+            />
+          </Card.Group>
         </Grid.Column>
-        <Grid.Column width={2}></Grid.Column>
       </Grid.Row>
     </Grid>
   )

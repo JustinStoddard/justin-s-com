@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Card, Image, Grid, Button, Icon } from 'semantic-ui-react';
+import { Card, Image, Grid, Button, Icon, Header } from 'semantic-ui-react';
 
 const PokeMon = ({ myPokeMon, deletePokeMon }) => {
   return(
@@ -28,10 +28,10 @@ const PokeMon = ({ myPokeMon, deletePokeMon }) => {
 const pokeStyles = {
   pokeHeader: {
     textTransform: 'capitalize',
-    marginLeft: '-5px'
+    marginLeft: '-10px'
   },
   buttonMargin: {
-    marginLeft: '-5px'
+    marginLeft: '-7px'
   }
 }
 
