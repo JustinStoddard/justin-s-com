@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Card, Image, Grid, Button, Icon, Header } from 'semantic-ui-react';
+import { Card, Image, Grid, Button, Icon } from 'semantic-ui-react';
 
 const PokeMon = ({ myPokeMon, deletePokeMon }) => {
   return(

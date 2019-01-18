@@ -3,7 +3,7 @@ import axios from 'axios';
 import _ from 'lodash'
 import Loadable from 'react-loadable';
 import Loader from '../../../../Loader';
-import { Segment, Grid, Divider, Button, Icon } from 'semantic-ui-react';
+import { Segment, Grid, Button, Icon } from 'semantic-ui-react';
 import PokeDexMain from './MobilePokeDexMain';
 const FirstPokeMon = Loadable({loader: () => import('./MobileFirstPoke'), loading: () => <Loader/>});
 const SecondPokeMon = Loadable({loader: () => import('./MobileSecondPoke'), loading: () => <Loader/>});
