@@ -347,8 +347,8 @@ class ApiFunDemo extends Component {
                       />
                     </Grid.Column>
                     <Grid.Column width={4}>
-                      <Segment textAlign="center" color="red">
-                        <Button onClick={this.viewMyPokeDex} size="tiny" color="red"><Icon size="large" name="sitemap" fitted/></Button>
+                      <Segment textAlign="center" style={styles.myPokeDexButton} color="red">
+                        <Button onClick={this.viewMyPokeDex} style={styles.myPokeDexButton2} size="tiny" color="red"><Icon size="large" name="sitemap" fitted/></Button>
                       </Segment>
                     </Grid.Column>
                   </Grid.Row>
@@ -406,7 +406,7 @@ const styles = {
   pokeMonName: {
     textTransform: 'capitalize',
     fontSize: '18px',
-    marginLeft: '-5px'
+    marginLeft: '-10px'
   },
   buttonMargin: {
     marginLeft: '10px'
@@ -415,10 +415,17 @@ const styles = {
     marginLeft: '10px'
   },
   searchBarStyles: {
-    width: '157px'
+    width: '202px'
   },
   addButtonStyles: {
     marginLeft: '-10px'
+  },
+  myPokeDexButton: {
+    width: '80px',
+    marginLeft: '-15px'
+  },
+  myPokeDexButton2: {
+    marginLeft: '-3px'
   }
 }
 
