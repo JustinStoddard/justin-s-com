@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { debounce } from 'lodash';
 import YTSearch from 'youtube-api-search';
-import SearchBar from '../VideoDemo/searchBar';
-import VideoList from '../VideoDemo/videoList';
-import VideoPlayer from '../VideoDemo/videoPlayer';
+import SearchBar from '../Demos/VideoDemo/searchBar';
+import VideoList from '../Demos/VideoDemo/videoList';
+import VideoPlayer from '../Demos/VideoDemo/videoPlayer';
 import { Container, Divider, Grid } from 'semantic-ui-react';
 
 const API_KEY = "AIzaSyBAbu36HFStXbL3D577r1yheldu7Y4AdfQ"

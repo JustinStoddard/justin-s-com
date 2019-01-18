@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import _ from 'lodash'
 import Loadable from 'react-loadable';
-import Loader from '../../../Loader';
+import Loader from '../../../../Loader';
 import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
 import PokeDexMain from './PokeDexMain';
 const FirstPokeMon = Loadable({loader: () => import('./FirstPoke'), loading: () => <Loader/>});

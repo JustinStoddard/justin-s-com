@@ -3,9 +3,9 @@ import Loader from '../../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button, List } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
 const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader />})
-const CalculatorDemoLoader = Loadable({loader: () => import('../CalculatorDemo/CalculatorIndex'),loading: () => <Loader />})
-const ClockDemoLoader = Loadable({loader: () => import('../ClockDemo/Clock'),loading: () => <Loader />})
-const PokeDexDemoLoader = Loadable({loader: () => import('../PokeDexDemo/PokeDexDemo'),loading: () => <Loader />})
+const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader />})
+const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader />})
+const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemo'),loading: () => <Loader />})
 
 // const CodexDemoLoader = Loadable({
 //   loader: () => import('../CodexDemo/CodexIndex'),

@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../../../Loader';
+import Loader from '../../../../Loader';
 import { Segment, Container, Header, Embed } from 'semantic-ui-react';
 
 const VideoPlayer = ({video}) => {

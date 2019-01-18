@@ -1,7 +1,7 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import Loader from '../../../Loader';
-import PokeDexImage from '../../../Images/My PokeDex Image.png';
+import Loader from '../../../../Loader';
+import PokeDexImage from '../../../../Images/My PokeDex Image.png';
 import { Grid, Segment, Button, Card, Image } from 'semantic-ui-react';
 const PokeMon = Loadable({loader: () => import('./PokeMon'), loading: () => <Loader/>})
 

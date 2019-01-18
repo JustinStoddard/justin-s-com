@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import Loadable from 'react-loadable';
-import Loader from '../../../Loader';
+import Loader from '../../../../Loader';
 import { Segment, Grid, Button, Header, Icon } from 'semantic-ui-react';
 
 const AnswerLoader = Loadable({
-  loader: () => import('../Dumb/CalculatorAnswer'),
+  loader: () => import('../../Dumb/CalculatorAnswer'),
   loading: () => <Loader />,
 })
 
 const StringLoader = Loadable({
-  loader: () => import('../Dumb/CalculatorString'),
+  loader: () => import('../../Dumb/CalculatorString'),
   loading: () => <Loader />,
 })
 
