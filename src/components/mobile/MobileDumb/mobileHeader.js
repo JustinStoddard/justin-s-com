@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Container, Grid, Divider, Image, Icon } from 'semantic-ui-react';
-import JustinLogo from '../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
+import JustinLogo from '../../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
 
 class MobileHeader extends Component {
   state = { buttonClicked: false }

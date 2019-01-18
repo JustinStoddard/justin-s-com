@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import MobileHome from './mobileHome';
-import MobileProjects from './mobileProjects';
-import MobileAbout from './mobileAbout';
-import MobileContact from './mobileContact';
-import MobileHeader from './mobileHeader';
-import MobileServices from './mobileServices';
-import MobileDemos from './mobileDemos';
+import MobileHome from './MobileSmart/mobileHome';
+import MobileProjects from './MobileSmart/mobileProjects';
+import MobileAbout from './MobileDumb/mobileAbout';
+import MobileContact from './MobileDumb/mobileContact';
+import MobileHeader from './MobileDumb/mobileHeader';
+import MobileServices from './MobileSmart/mobileServices';
+import MobileDemos from './MobileSmart/mobileDemos';
 // React-Loadable is not compatible with React-Router :(
 
 class Mobile extends Component {

@@ -1,9 +1,9 @@
 import React from 'react';
-import BallIsLife from '../../Images/Jazz-Logo_Single_Front_aec9f4df-237d-46d5-8c3a-d71d52fd71d7.png';
-import ShopUnicity from '../../Images/images.png';
-import StrikerBot from '../../Images/fc220x200black-u2.jpg';
-import ThisJustin from '../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
-import Library from '../../Images/80DF52C9-6BFE-4C4E-B58A-F83147DEE8F7.jpg';
+import BallIsLife from '../../../Images/Jazz-Logo_Single_Front_aec9f4df-237d-46d5-8c3a-d71d52fd71d7.png';
+import ShopUnicity from '../../../Images/images.png';
+import StrikerBot from '../../../Images/fc220x200black-u2.jpg';
+import ThisJustin from '../../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
+import Library from '../../../Images/80DF52C9-6BFE-4C4E-B58A-F83147DEE8F7.jpg';
 import { Container, Segment, Header, Grid, Image, List, Divider } from 'semantic-ui-react';
 
 const MobileProjects = () => {
