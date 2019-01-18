@@ -6,24 +6,36 @@ const FirstPoke = ({ firstPokeMon, firstPokeImage, pokeMonNameStyle, segmentMove
     <Fragment>
       {firstPokeImage ?
         <Fragment>
-          <Segment style={segmentMove}>
-            <Segment color="red">
+          <Segment style={segmentMove} basic>
+            <Segment color="red" style={styles.headerSegment}>
               <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{firstPokeMon.name}</Header>
             </Segment>
-            <Segment textAlign="center" inverted circular>
-              <Image src={firstPokeImage} size="large" circular/>
+            <Segment textAlign="center" style={styles.imageSegmentStyle} inverted>
+              <Image src={firstPokeImage} size="huge"/>
             </Segment>
           </Segment>
         </Fragment>
       :
         <Fragment>
-          <Segment style={segmentMove} textAlign="center" color="red">
+          <Segment style={segmentMove} textAlign="center" color="red" basic>
             <Icon loading name="spinner"/>
           </Segment>
         </Fragment>
       }
     </Fragment>
   )
+}
+
+const styles = {
+  headerSegment: {
+    width: '100px',
+    marginLeft: '-20px'
+  },
+  imageSegmentStyle: {
+    marginLeft: '-20px',
+    width: '100px',
+    height: '100px'
+  }
 }
 
 export default FirstPoke

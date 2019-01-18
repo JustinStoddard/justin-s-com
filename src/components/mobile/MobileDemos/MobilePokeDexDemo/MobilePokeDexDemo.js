@@ -334,7 +334,7 @@ class ApiFunDemo extends Component {
               :
                 <Grid>
                   <Grid.Row>
-                    <Grid.Column width={10}>
+                    <Grid.Column width={12}>
                       <SearchBar 
                         minus={this.minusNumber}
                         plus={this.plusNumber}
@@ -346,13 +346,12 @@ class ApiFunDemo extends Component {
                         pokeMonInput={pokeMonInput}
                       />
                     </Grid.Column>
-                    <Grid.Column width={6}>
+                    <Grid.Column width={4}>
                       <Segment textAlign="center" color="red">
                         <Button onClick={this.viewMyPokeDex} size="tiny" color="red"><Icon size="large" name="sitemap" fitted/></Button>
                       </Segment>
                     </Grid.Column>
                   </Grid.Row>
-                  <Divider hidden/>
                   <Grid.Row>
                     <Grid.Column width={5}>
                       <FirstPokeMon 
@@ -406,7 +405,8 @@ const styles = {
   },
   pokeMonName: {
     textTransform: 'capitalize',
-    fontSize: '25px'
+    fontSize: '18px',
+    marginLeft: '-5px'
   },
   buttonMargin: {
     marginLeft: '10px'
