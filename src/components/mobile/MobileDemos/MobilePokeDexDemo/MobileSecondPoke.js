@@ -19,10 +19,10 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
                   <Grid>
                     <Grid.Row>
                       <Grid.Column width={10}>
-                        <Button onClick={viewStatsButton} color="red" size="tiny"><Icon name="eye" fitted/></Button>
+                        <Button onClick={viewStatsButton} style={styles.viewStatsStyle} color="red" size="large"><Icon name="eye" fitted/></Button>
                       </Grid.Column>
                       <Grid.Column width={4}>
-                        <Button onClick={addPokeMon} color="red" size="tiny" style={addButtonStyles}><Icon name="plus" fitted/></Button>
+                        <Button onClick={addPokeMon} color="red" size="large" style={addButtonStyles}><Icon name="plus" fitted/></Button>
                       </Grid.Column>
                     </Grid.Row>
                   </Grid>
@@ -39,10 +39,10 @@ const SecondPoke = ({ secondPokeMon, secondPokeImage, viewStats, viewStatsButton
                   <Grid>
                     <Grid.Row>
                       <Grid.Column width={10}>
-                        <Button onClick={viewStatsButton} color="red" size="tiny"><Icon name="eye slash"/></Button>
+                        <Button onClick={viewStatsButton} style={styles.viewStatsStyle} color="red" size="large"><Icon name="eye slash" fitted/></Button>
                       </Grid.Column>
                       <Grid.Column width={4}>
-                        <Button onClick={addPokeMon} color="red" size="tiny" style={addButtonStyles}><Icon name="plus" fitted/></Button>
+                        <Button onClick={addPokeMon} color="red" size="large" style={addButtonStyles}><Icon name="plus" fitted/></Button>
                       </Grid.Column>
                     </Grid.Row>
                   </Grid>
@@ -66,6 +66,9 @@ const styles = {
     width: '110px',
     height: '110px',
     marginLeft: '-20px'
+  },
+  viewStatsStyle: {
+    marginLeft: '-33px'
   }
 }
 

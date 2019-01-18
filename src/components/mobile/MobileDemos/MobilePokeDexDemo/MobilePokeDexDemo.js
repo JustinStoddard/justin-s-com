@@ -418,7 +418,7 @@ const styles = {
     width: '202px'
   },
   addButtonStyles: {
-    marginLeft: '-10px'
+    marginLeft: '-23px'
   },
   myPokeDexButton: {
     width: '80px',
