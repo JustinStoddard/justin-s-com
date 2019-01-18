@@ -24,8 +24,8 @@ const SearchBar = ({ plus, minus, leftButtonMargin, buttonMargin, searchBarStyle
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Button onClick={minus} size="medium" color="red" style={leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
-              <Button onClick={plus} size="medium" color="red" style={buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
+              <Button onClick={minus} size="large" color="red" style={leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
+              <Button onClick={plus} size="large" color="red" style={buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -409,10 +409,12 @@ const styles = {
     marginLeft: '-10px'
   },
   buttonMargin: {
-    marginLeft: '10px'
+    marginLeft: '10px',
+    marginTop: '-20px'
   },
   leftButtonMargin: {
-    marginLeft: '10px'
+    marginLeft: '20px',
+    marginTop: '-20px'
   },
   searchBarStyles: {
     width: '202px'
