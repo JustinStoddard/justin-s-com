@@ -8,90 +8,114 @@ const ViewStats = ({ viewStats, secondPokeMon }) => {
         <Grid.Row>
           <Grid.Column>
             <Segment inverted>
-              <Table textAlign="center" color="red" columns="12" celled padded>
-                <Table.Header>
-                  <Table.Row>
-                    <Table.HeaderCell width="4">
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Base XP</Header>
-                    </Table.HeaderCell>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.base_experience}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Weight</Header>
-                    </Table.HeaderCell>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.weight}  LB</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Height</Header>
-                    </Table.HeaderCell>
-                  </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                  <Table.Row>
-                    <Table.Cell>
-                      {secondPokeMon.base_experience}
-                    </Table.Cell>    
-                    <Table.Cell>
-                      {secondPokeMon.weight}  LBS
-                    </Table.Cell> 
-                    <Table.Cell>
-                      {secondPokeMon.height}  FT
-                    </Table.Cell>              
-                  </Table.Row>
-                </Table.Body>
-              </Table>
-              <Table textAlign="center" color="red" columns="12" celled padded>
-                <Table.Header>
-                  <Table.Row>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.height}  FT</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Attack</Header>
-                    </Table.HeaderCell>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.stats[4].base_stat}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Defense</Header>
-                    </Table.HeaderCell>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.stats[3].base_stat}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Speed</Header>
-                    </Table.HeaderCell>
-                  </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                  <Table.Row>
-                    <Table.Cell>
-                      {secondPokeMon.stats[4].base_stat}
-                    </Table.Cell>    
-                    <Table.Cell>
-                      {secondPokeMon.stats[3].base_stat}
-                    </Table.Cell> 
-                    <Table.Cell>
-                      {secondPokeMon.stats[0].base_stat}
-                    </Table.Cell>              
-                  </Table.Row>
-                </Table.Body>
-              </Table>
-              <Table textAlign="center" color="red" columns="12" celled padded>
-                <Table.Header>
-                  <Table.Row>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.stats[0].base_stat}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Special Attack</Header>
-                    </Table.HeaderCell>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.stats[2].base_stat}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">Special Defense</Header>
-                    </Table.HeaderCell>
-                    <Table.HeaderCell width="4">
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.stats[1].base_stat}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+              <Segment color="red">
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10} verticalAlign="middle">
                       <Header as="h3">HP</Header>
-                    </Table.HeaderCell>
-                  </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                  <Table.Row>
-                    <Table.Cell>
-                      {secondPokeMon.stats[2].base_stat}
-                    </Table.Cell>    
-                    <Table.Cell>
-                      {secondPokeMon.stats[1].base_stat}
-                    </Table.Cell> 
-                    <Table.Cell>
-                      {secondPokeMon.stats[5].base_stat}
-                    </Table.Cell>              
-                  </Table.Row>
-                </Table.Body>
-              </Table>
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center">{secondPokeMon.stats[5].base_stat}</Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
             </Segment>
           </Grid.Column>
         </Grid.Row>
