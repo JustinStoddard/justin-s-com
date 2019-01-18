@@ -4,26 +4,24 @@ import { Segment, Header, Icon, Image } from 'semantic-ui-react';
 const FirstPoke = ({ firstPokeMon, firstPokeImage, pokeMonNameStyle, segmentMove }) => {
   return(
     <Fragment>
-      <Segment style={segmentMove} inverted>
-        {firstPokeImage ?
-          <Fragment>
-            <Segment>
-              <Segment color="red">
-                <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{firstPokeMon.name}</Header>
-              </Segment>
-              <Segment textAlign="center" inverted circular>
-                <Image src={firstPokeImage} size="large" circular/>
-              </Segment>
+      {firstPokeImage ?
+        <Fragment>
+          <Segment style={segmentMove}>
+            <Segment color="red">
+              <Header as="h4" textAlign="center" style={pokeMonNameStyle}>{firstPokeMon.name}</Header>
             </Segment>
-          </Fragment>
-        :
-          <Fragment>
-            <Segment textAlign="center" color="red">
-              <Icon loading name="spinner"/>
+            <Segment textAlign="center" inverted circular>
+              <Image src={firstPokeImage} size="large" circular/>
             </Segment>
-          </Fragment>
-        }
-      </Segment>
+          </Segment>
+        </Fragment>
+      :
+        <Fragment>
+          <Segment style={segmentMove} textAlign="center" color="red">
+            <Icon loading name="spinner"/>
+          </Segment>
+        </Fragment>
+      }
     </Fragment>
   )
 }

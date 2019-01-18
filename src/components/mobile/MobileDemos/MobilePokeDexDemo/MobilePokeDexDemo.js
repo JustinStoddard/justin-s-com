@@ -3,7 +3,7 @@ import axios from 'axios';
 import _ from 'lodash'
 import Loadable from 'react-loadable';
 import Loader from '../../../../Loader';
-import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
+import { Segment, Grid, Divider, Button, Icon } from 'semantic-ui-react';
 import PokeDexMain from './MobilePokeDexMain';
 const FirstPokeMon = Loadable({loader: () => import('./MobileFirstPoke'), loading: () => <Loader/>});
 const SecondPokeMon = Loadable({loader: () => import('./MobileSecondPoke'), loading: () => <Loader/>});
@@ -334,8 +334,7 @@ class ApiFunDemo extends Component {
               :
                 <Grid>
                   <Grid.Row>
-                    <Grid.Column width={4}></Grid.Column>
-                    <Grid.Column width={8}>
+                    <Grid.Column width={10}>
                       <SearchBar 
                         minus={this.minusNumber}
                         plus={this.plusNumber}
@@ -347,18 +346,15 @@ class ApiFunDemo extends Component {
                         pokeMonInput={pokeMonInput}
                       />
                     </Grid.Column>
-                    <Grid.Column width={4}>
-                      <Segment inverted>
-                        <Segment textAlign="center" color="red">
-                          <Button onClick={this.viewMyPokeDex} size="huge" color="red">My PokeDex</Button>
-                        </Segment>
+                    <Grid.Column width={6}>
+                      <Segment textAlign="center" color="red">
+                        <Button onClick={this.viewMyPokeDex} size="tiny" color="red"><Icon size="large" name="sitemap" fitted/></Button>
                       </Segment>
                     </Grid.Column>
                   </Grid.Row>
                   <Divider hidden/>
                   <Grid.Row>
-                    <Grid.Column width={2}></Grid.Column>
-                    <Grid.Column width={4}>
+                    <Grid.Column width={5}>
                       <FirstPokeMon 
                         firstPokeMon={firstPokeMon}
                         firstPokeImage={firstPokeImage} 
@@ -366,7 +362,7 @@ class ApiFunDemo extends Component {
                         segmentMove={styles.segmentMove1}
                       />
                     </Grid.Column>
-                    <Grid.Column width={4}>
+                    <Grid.Column width={6}>
                       <SecondPokeMon
                         secondPokeMon={secondPokeMon}
                         secondPokeImage={secondPokeImage}
@@ -377,7 +373,7 @@ class ApiFunDemo extends Component {
                         addButtonStyles={styles.addButtonStyles}
                       />
                     </Grid.Column>
-                    <Grid.Column width={4}>
+                    <Grid.Column width={5}>
                       <ThirdPokeMon
                         thirdPokeMon={thirdPokeMon}
                         thirdPokeImage={thirdPokeImage}
@@ -385,7 +381,6 @@ class ApiFunDemo extends Component {
                         segmentMove={styles.segmentMove1}
                       />
                     </Grid.Column>
-                    <Grid.Column width={2}></Grid.Column>
                   </Grid.Row>
                   <ViewStats 
                     viewStats={viewStats}
@@ -417,10 +412,10 @@ const styles = {
     marginLeft: '10px'
   },
   leftButtonMargin: {
-    marginLeft: '20px'
+    marginLeft: '10px'
   },
   searchBarStyles: {
-    width: '280px'
+    width: '157px'
   },
   addButtonStyles: {
     marginLeft: '-10px'
