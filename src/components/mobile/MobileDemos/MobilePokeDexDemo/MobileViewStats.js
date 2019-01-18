@@ -6,8 +6,7 @@ const ViewStats = ({ viewStats, secondPokeMon }) => {
     <Fragment>
       {viewStats ?
         <Grid.Row>
-          <Grid.Column width={3}></Grid.Column>
-          <Grid.Column width={10}>
+          <Grid.Column>
             <Segment inverted>
               <Table textAlign="center" color="red" columns="12" celled padded>
                 <Table.Header>
@@ -95,7 +94,6 @@ const ViewStats = ({ viewStats, secondPokeMon }) => {
               </Table>
             </Segment>
           </Grid.Column>
-          <Grid.Column width={3}></Grid.Column>
         </Grid.Row>
       :
       null
