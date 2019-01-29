@@ -5,9 +5,8 @@ import Loadable from 'react-loadable';
 import Loader from '../../../../Loader';
 import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
 import PokeDexMain from './PokeDexMain';
-const FirstPokeMon = Loadable({loader: () => import('./FirstPoke'), loading: () => <Loader/>});
 const SecondPokeMon = Loadable({loader: () => import('./SecondPoke'), loading: () => <Loader/>});
-const ThirdPokeMon = Loadable({loader: () => import('./ThirdPoke'), loading: () => <Loader/>});
+const SidePokeColumns = Loadable({loader: () => import('./SidePokeColumns'), loading: () => <Loader/>});
 const SearchBar = Loadable({loader: () => import('./SearchBar'), loading: () => <Loader/>});
 const ViewStats = Loadable({loader: () => import('./ViewStats'), loading: () => <Loader/>});
 const MyPokeDex = Loadable({loader: () => import('./MyPokeDex'), loading: () => <Loader/>});
@@ -44,13 +43,13 @@ class ApiFunDemo extends Component {
       .then(response => {
         const manyPokeMon = response.data.results.slice(0,500);
         this.setState({ allPokeMon: manyPokeMon });
-        // console.log("All Poke", manyPokeMon)
+        console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
   }
 
-  getFirstPokeMon = () => {
+  getFirstPokeMon = () => { //This handles data for the PokeMon in the Left Column
     const { allPokeMon, firstPokeMonNumber } = this.state
-    if (allPokeMon[firstPokeMonNumber].url !== null ) { //Re-runs this call if "pokeMonUrl" is null
+    if (allPokeMon[firstPokeMonNumber].url !== null ) { //Code Check
       const firstPokeMonUrl = allPokeMon[firstPokeMonNumber].url;
       axios.get(firstPokeMonUrl)
         .then(async response => {
@@ -69,14 +68,14 @@ class ApiFunDemo extends Component {
     }
   }
 
-  getSecondPokeMon = async () => {
+  getSecondPokeMon = async () => { //This handles data for the PokeMon in the Middle Column
     const { allPokeMon, secondPokeMonNumber } = this.state
-    if (allPokeMon[secondPokeMonNumber].url !== null) {
+    if (allPokeMon[secondPokeMonNumber].url !== null) { //Code Check
       const secondPokeMonUrl = allPokeMon[secondPokeMonNumber].url;
       axios.get(secondPokeMonUrl)
         .then(async response => {
           const secondPokeMon = response.data;
-          const secondPngImage = secondPokeMon.sprites.front_default;              //I'd preferr not to do 3 API calls but its the only way I know how to do this for now because of the way this API handles GETing data.
+          const secondPngImage = secondPokeMon.sprites.front_default;              
           await this.setState({
             secondPokeMon: secondPokeMon, 
             secondPokeImage: secondPngImage,
@@ -91,9 +90,9 @@ class ApiFunDemo extends Component {
     }
   }
 
-  getThirdPokeMon = () => {
+  getThirdPokeMon = () => { //This handles data for the PokeMon in the Right Column
     const { allPokeMon, thirdPokeMonNumber } = this.state
-    if (allPokeMon[thirdPokeMonNumber].url !== null) {
+    if (allPokeMon[thirdPokeMonNumber].url !== null) { //Code Check
       const thirdPokeMonUrl = allPokeMon[thirdPokeMonNumber].url;
       axios.get(thirdPokeMonUrl)
         .then(async response => {
@@ -150,12 +149,12 @@ class ApiFunDemo extends Component {
     this.getThirdPokeMon()
   }
 
-  plusNumber = async () => {
+  plusNumber = async (operator) => {
     const { 
       firstPokeMonNumber,
       firstPokeArrayNumber, 
       secondPokeMonNumber, 
-      thirdPokeMonNumber, 
+      thirdPokeMonNumber,
     } = this.state;
 
     if (firstPokeMonNumber === firstPokeArrayNumber) {
@@ -182,11 +181,15 @@ class ApiFunDemo extends Component {
 
     if (thirdPokeMonNumber === firstPokeArrayNumber) {
       await this.setState({ 
-        thirdPokeMonNumber: 0 
+        thirdPokeMonNumber: 0,
+        thirdPokeImage: null,
+        firstPokeImage: null
       })
     } else {
       await this.setState({ 
-        thirdPokeMonNumber: thirdPokeMonNumber + 1 
+        thirdPokeMonNumber: thirdPokeMonNumber + 1,
+        thirdPokeImage: null,
+        firstPokeImage: null
       })
     }
     this.getFirstPokeMon()
@@ -194,7 +197,8 @@ class ApiFunDemo extends Component {
     this.getThirdPokeMon()
   }
 
-  minusNumber = async () => {
+  minusNumber = async (operator) => {
+    console.log(operator)
     const { 
       firstPokeMonNumber, 
       firstPokeArrayNumber, 
@@ -233,19 +237,27 @@ class ApiFunDemo extends Component {
 
     if (thirdPokeMonNumber === 2) {
       await this.setState({ 
-        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber + 1 
+        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber + 1,
+        thirdPokeImage: null,
+        firstPokeImage: null
       })
     } else if (thirdPokeMonNumber === 1) {
       await this.setState({ 
-        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber 
+        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber,
+        thirdPokeImage: null,
+        firstPokeImage: null
       })
     } else if (thirdPokeMonNumber === 0) {
       await this.setState({ 
-        thirdPokeMonNumber: thirdPokeArrayNumber 
+        thirdPokeMonNumber: thirdPokeArrayNumber,
+        thirdPokeImage: null,
+        firstPokeImage: null
       })
     } else {
       await this.setState({ 
-        thirdPokeMonNumber: thirdPokeMonNumber - 1 
+        thirdPokeMonNumber: thirdPokeMonNumber - 1,
+        thirdPokeImage: null,
+        firstPokeImage: null
       })
     }
     this.getFirstPokeMon()
@@ -359,9 +371,9 @@ class ApiFunDemo extends Component {
                   <Grid.Row>
                     <Grid.Column width={2}></Grid.Column>
                     <Grid.Column width={4}>
-                      <FirstPokeMon 
-                        firstPokeMon={firstPokeMon}
-                        firstPokeImage={firstPokeImage} 
+                      <SidePokeColumns
+                        PokeMon={firstPokeMon}
+                        PokeImage={firstPokeImage}
                         pokeMonNameStyle={styles.pokeMonName}
                         segmentMove={styles.segmentMove1}
                       />
@@ -378,9 +390,9 @@ class ApiFunDemo extends Component {
                       />
                     </Grid.Column>
                     <Grid.Column width={4}>
-                      <ThirdPokeMon
-                        thirdPokeMon={thirdPokeMon}
-                        thirdPokeImage={thirdPokeImage}
+                      <SidePokeColumns
+                        PokeMon={thirdPokeMon}
+                        PokeImage={thirdPokeImage}
                         pokeMonNameStyle={styles.pokeMonName}
                         segmentMove={styles.segmentMove1}
                       />
