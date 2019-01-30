@@ -20,21 +20,19 @@ class ApiFunDemo extends Component {
     enterPokeDex: false,
     pokeMonInput: '',
     pokeMonSelect: [],
+    pokeArrayNumber: null,
 
-    firstPokeMon: [], //This will be cleaned up eventually, but for now the excessive use of state is for a proving a UI/UX concept, not arcitechural efficency.
+    firstPokeMon: [],
     firstPokeImage: null,
     firstPokeMonNumber: -1,
-    firstPokeArrayNumber: null,
 
     secondPokeMon: [],
     secondPokeImage: null,
     secondPokeMonNumber: 0,
-    secondPokeArrayNumber: null,
 
     thirdPokeMon: [],
     thirdPokeImage: null,
     thirdPokeMonNumber: 1,
-    thirdPokeArrayNumber: null,
   }
 
   componentDidMount() {
@@ -42,13 +40,13 @@ class ApiFunDemo extends Component {
     axios.get(apiUrl)
       .then(response => {
         const manyPokeMon = response.data.results.slice(0,500);
-        this.setState({ allPokeMon: manyPokeMon });
+        this.setState({ allPokeMon: manyPokeMon })
         console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
   }
 
   getFirstPokeMon = () => { //This handles data for the PokeMon in the Left Column
-    const { allPokeMon, firstPokeMonNumber } = this.state
+    const { allPokeMon, firstPokeMonNumber } = this.state;
     if (allPokeMon[firstPokeMonNumber].url !== null ) { //Code Check
       const firstPokeMonUrl = allPokeMon[firstPokeMonNumber].url;
       axios.get(firstPokeMonUrl)
@@ -58,18 +56,17 @@ class ApiFunDemo extends Component {
           await this.setState({
             firstPokeMon: firstPokeMon, 
             firstPokeImage: firstPngImage,
-            firstPokeArrayNumber: allPokeMon.length - 1
           })
           // console.log('first', firstPokeMon.name)
           // console.log('first', firstPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
-      this.getFirstPokeMon()
+      console.log("FirstPokeMon Block Failed")
     }
   }
 
   getSecondPokeMon = async () => { //This handles data for the PokeMon in the Middle Column
-    const { allPokeMon, secondPokeMonNumber } = this.state
+    const { allPokeMon, secondPokeMonNumber } = this.state;
     if (allPokeMon[secondPokeMonNumber].url !== null) { //Code Check
       const secondPokeMonUrl = allPokeMon[secondPokeMonNumber].url;
       axios.get(secondPokeMonUrl)
@@ -79,19 +76,19 @@ class ApiFunDemo extends Component {
           await this.setState({
             secondPokeMon: secondPokeMon, 
             secondPokeImage: secondPngImage,
-            secondPokeArrayNumber: allPokeMon.length -1
+            pokeArrayNumber: allPokeMon.length -1
           })
           // console.log(secondPokeMon)
           // console.log('second', secondPokeMon.name)
           // console.log('second', secondPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
-      this.getSecondPokeMon()
+      console.log("SecondPokeMon Block Failed")
     }
   }
 
   getThirdPokeMon = () => { //This handles data for the PokeMon in the Right Column
-    const { allPokeMon, thirdPokeMonNumber } = this.state
+    const { allPokeMon, thirdPokeMonNumber } = this.state;
     if (allPokeMon[thirdPokeMonNumber].url !== null) { //Code Check
       const thirdPokeMonUrl = allPokeMon[thirdPokeMonNumber].url;
       axios.get(thirdPokeMonUrl)
@@ -101,13 +98,12 @@ class ApiFunDemo extends Component {
           await this.setState({
             thirdPokeMon: thirdPokeMon, 
             thirdPokeImage: thirdPngImage,
-            thirdPokeArrayNumber: allPokeMon.length - 1
           })
           // console.log('third', thirdPokeMon.name)
           // console.log('third', thirdPokeMonNumber)
         }).catch(err => console.log(err))
     } else {
-      this.getThirdPokeMon()
+      console.log("ThirdPokeMon Block Failed")
     }
   }
 
@@ -115,59 +111,64 @@ class ApiFunDemo extends Component {
     const { 
       allPokeMon,
       pokeMonSelect,
-      firstPokeArrayNumber
+      pokeArrayNumber
     } = this.state
 
     const wantedPokeMon = _.findIndex(allPokeMon, function(p) {
-      const selected = p.name === pokeMonSelect
+      const selected = p.name === pokeMonSelect;
       return selected
     })
     
-    if ( wantedPokeMon === firstPokeArrayNumber ) {
+    if (wantedPokeMon === pokeArrayNumber) {
       await this.setState({
-        secondPokeMonNumber: wantedPokeMon,
         firstPokeMonNumber: wantedPokeMon - 1,
+        secondPokeMonNumber: wantedPokeMon,
         thirdPokeMonNumber: 0
       })
     } else if (wantedPokeMon === 0) {
       await this.setState({
+        firstPokeMonNumber: pokeArrayNumber,
         secondPokeMonNumber: wantedPokeMon,
-        firstPokeMonNumber: firstPokeArrayNumber,
         thirdPokeMonNumber: wantedPokeMon + 1
       })
     } else if (wantedPokeMon === -1) {
       alert(`${pokeMonSelect} Not Found`)
     } else {
       await this.setState({
-        secondPokeMonNumber: wantedPokeMon,
         firstPokeMonNumber: wantedPokeMon - 1,
+        secondPokeMonNumber: wantedPokeMon,
         thirdPokeMonNumber: wantedPokeMon + 1
       })
     }
+
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()
   }
 
-  plusNumber = async (operator) => {
+  plusNumber = async () => {
     const { 
       firstPokeMonNumber,
-      firstPokeArrayNumber, 
       secondPokeMonNumber, 
       thirdPokeMonNumber,
+      pokeArrayNumber, 
     } = this.state;
 
-    if (firstPokeMonNumber === firstPokeArrayNumber) {
+    //This statment handles moving around the array for the firstPokeMon when moving forwards.
+    if (firstPokeMonNumber === pokeArrayNumber) {
       await this.setState({ 
-        firstPokeMonNumber: 0 
+        firstPokeMonNumber: 0,
+        firstPokeImage: null
       })
     } else {
       await this.setState({ 
-        firstPokeMonNumber: firstPokeMonNumber + 1 
+        firstPokeMonNumber: firstPokeMonNumber + 1,
+        firstPokeImage: null
       })
     }
 
-    if (secondPokeMonNumber === firstPokeArrayNumber) {
+    //This statment handles moving around the array for the secondPokeMon when moving forwards.
+    if (secondPokeMonNumber === pokeArrayNumber) {
       await this.setState({ 
         secondPokeMonNumber: 0, 
         viewStats: false 
@@ -179,87 +180,87 @@ class ApiFunDemo extends Component {
       })
     }
 
-    if (thirdPokeMonNumber === firstPokeArrayNumber) {
+    //This statment handles moving around the array for the thirdPokeMon when moving forwards.
+    if (thirdPokeMonNumber === pokeArrayNumber) {
       await this.setState({ 
         thirdPokeMonNumber: 0,
-        thirdPokeImage: null,
-        firstPokeImage: null
+        thirdPokeImage: null
       })
     } else {
       await this.setState({ 
         thirdPokeMonNumber: thirdPokeMonNumber + 1,
-        thirdPokeImage: null,
-        firstPokeImage: null
+        thirdPokeImage: null
       })
     }
+
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()
   }
 
-  minusNumber = async (operator) => {
+  handleArrayMovement = async (operator) => {
     console.log(operator)
     const { 
       firstPokeMonNumber, 
-      firstPokeArrayNumber, 
       secondPokeMonNumber,
-      secondPokeArrayNumber,
       thirdPokeMonNumber, 
-      thirdPokeArrayNumber
+      pokeArrayNumber, 
     } = this.state;
 
-    if (firstPokeMonNumber === 0) {
+    //This statment handles moving around the array for the firstPokeMon when moving backwards.
+    if (firstPokeMonNumber === 0) { 
       await this.setState({ 
-        firstPokeMonNumber: firstPokeArrayNumber 
+        firstPokeMonNumber: pokeArrayNumber,
+        firstPokeImage: null
       })
     } else {
       await this.setState({ 
-        firstPokeMonNumber: firstPokeMonNumber - 1 
+        firstPokeMonNumber: operator === 'minus' ? firstPokeMonNumber - 1 : firstPokeMonNumber + 1,
+        firstPokeImage: null
       })
     }
 
-    if (secondPokeMonNumber === 1) {
+    //This statment handles moving around the array for the secondPokeMon when moving backwards.
+    if (secondPokeMonNumber === 1) { 
       await this.setState({ 
-        secondPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber, 
+        secondPokeMonNumber: 0, 
         viewStats: false 
       })
     } else if (secondPokeMonNumber === 0) {
       await this.setState({ 
-        secondPokeMonNumber: secondPokeArrayNumber, 
+        secondPokeMonNumber: pokeArrayNumber, 
         viewStats: false 
       })
     } else {
       await this.setState({ 
-        secondPokeMonNumber: secondPokeMonNumber - 1, 
+        secondPokeMonNumber: operator === 'minus' ? secondPokeMonNumber - 1 : secondPokeMonNumber + 1, 
         viewStats: false 
       })
     }
 
-    if (thirdPokeMonNumber === 2) {
+    //This statment handles moving around the array for the thirdPokeMon when moving backwards.
+    if (thirdPokeMonNumber === 2) { 
       await this.setState({ 
-        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber + 1,
-        thirdPokeImage: null,
-        firstPokeImage: null
+        thirdPokeMonNumber: 1,
+        thirdPokeImage: null
       })
     } else if (thirdPokeMonNumber === 1) {
       await this.setState({ 
-        thirdPokeMonNumber: firstPokeArrayNumber - firstPokeArrayNumber,
-        thirdPokeImage: null,
-        firstPokeImage: null
+        thirdPokeMonNumber: 0,
+        thirdPokeImage: null
       })
     } else if (thirdPokeMonNumber === 0) {
       await this.setState({ 
-        thirdPokeMonNumber: thirdPokeArrayNumber,
-        thirdPokeImage: null,
-        firstPokeImage: null
+        thirdPokeMonNumber: pokeArrayNumber,
+        thirdPokeImage: null
       })
     } else {
       await this.setState({ 
-        thirdPokeMonNumber: thirdPokeMonNumber - 1,
-        thirdPokeImage: null,
-        firstPokeImage: null
+        thirdPokeMonNumber: operator === 'minus' ? thirdPokeMonNumber - 1 : thirdPokeMonNumber + 1,
+        thirdPokeImage: null
       })
     }
+
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()
@@ -349,8 +350,7 @@ class ApiFunDemo extends Component {
                     <Grid.Column width={4}></Grid.Column>
                     <Grid.Column width={8}>
                       <SearchBar 
-                        minus={this.minusNumber}
-                        plus={this.plusNumber}
+                        movement={this.handleArrayMovement}
                         leftButtonMargin={styles.leftButtonMargin}
                         buttonMargin={styles.buttonMargin}
                         searchBarStyles={styles.searchBarStyles}

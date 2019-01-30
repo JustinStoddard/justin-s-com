@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Segment, Form, Button, Icon, Grid } from 'semantic-ui-react';
 
-const SearchBar = ({ plus, minus, leftButtonMargin, buttonMargin, searchBarStyles, submit, change, pokeMonInput }) => {
+const SearchBar = ({ movement, leftButtonMargin, buttonMargin, searchBarStyles, submit, change, pokeMonInput }) => {
   return(
     <Fragment>
       <Segment inverted>
@@ -23,8 +23,8 @@ const SearchBar = ({ plus, minus, leftButtonMargin, buttonMargin, searchBarStyle
                 </Form>
               </Grid.Column>
               <Grid.Column width={7}>
-                <Button onClick={minus} size="large" color="red" style={leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
-                <Button onClick={plus} size="large" color="red" style={buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
+                <Button onClick={() => movement('minus')} size="large" color="red" style={leftButtonMargin} circular><Icon fitted name="arrow left" size="large"/></Button>
+                <Button onClick={() => movement('plus')} size="large" color="red" style={buttonMargin} circular><Icon fitted name="arrow right" size="large"/></Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
