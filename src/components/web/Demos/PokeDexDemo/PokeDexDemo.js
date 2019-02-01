@@ -205,7 +205,7 @@ class ApiFunDemo extends Component {
         })
       } else {
         await this.setState({ 
-          firstPokeMonNumber: operator === 'minus' ? firstPokeMonNumber - 1 : firstPokeMonNumber + 1,
+          firstPokeMonNumber: firstPokeMonNumber - 1,
           firstPokeImage: null
         })
       }
@@ -223,7 +223,7 @@ class ApiFunDemo extends Component {
         })
       } else {
         await this.setState({ 
-          secondPokeMonNumber: operator === 'minus' ? secondPokeMonNumber - 1 : secondPokeMonNumber + 1, 
+          secondPokeMonNumber: secondPokeMonNumber - 1, 
           viewStats: false 
         })
       }
@@ -246,7 +246,7 @@ class ApiFunDemo extends Component {
         })
       } else {
         await this.setState({ 
-          thirdPokeMonNumber: operator === 'minus' ? thirdPokeMonNumber - 1 : thirdPokeMonNumber + 1,
+          thirdPokeMonNumber: thirdPokeMonNumber - 1,
           thirdPokeImage: null
         })
       }
