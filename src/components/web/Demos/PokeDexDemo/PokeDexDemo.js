@@ -147,7 +147,6 @@ class ApiFunDemo extends Component {
   }
 
   handleArrayMovement = async (operator) => {
-    console.log(operator)
     const { 
       firstPokeMonNumber, 
       secondPokeMonNumber,
