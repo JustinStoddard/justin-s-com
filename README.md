@@ -1,8 +1,13 @@
 ACTIVATION:
 Go to "www.thisjustin.tech" and enjoy the site!!
 
-NOTES
-This is my personal website that highlights my skills as a Frontend Developer.
+NOTES:
+This website showcases my ability to write React JS code to 
+create a friendly UI/UX experience for people wanting to know more about me.
+This project is mobile ready. So check it out on your phone!
+For those more interested in the code itself I suggest looking further into 
+the demos. They have more to offer as far as understanding of the framework, 
+functionality, and architecture then the rest of the site. Enjoy!!!
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
