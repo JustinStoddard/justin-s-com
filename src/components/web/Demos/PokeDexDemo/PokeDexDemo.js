@@ -253,7 +253,7 @@ class ApiFunDemo extends Component {
       }
 
     } else {
-      console.log("Operator Invaild")
+      console.log("Operator Invaild:", operator)
     }
     this.getFirstPokeMon()
     this.getSecondPokeMon()
