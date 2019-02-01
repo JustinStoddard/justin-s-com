@@ -146,58 +146,6 @@ class ApiFunDemo extends Component {
     this.getThirdPokeMon()
   }
 
-  plusNumber = async () => {
-    const { 
-      firstPokeMonNumber,
-      secondPokeMonNumber, 
-      thirdPokeMonNumber,
-      pokeArrayNumber, 
-    } = this.state;
-
-    //This statment handles moving around the array for the firstPokeMon when moving forwards.
-    if (firstPokeMonNumber === pokeArrayNumber) {
-      await this.setState({ 
-        firstPokeMonNumber: 0,
-        firstPokeImage: null
-      })
-    } else {
-      await this.setState({ 
-        firstPokeMonNumber: firstPokeMonNumber + 1,
-        firstPokeImage: null
-      })
-    }
-
-    //This statment handles moving around the array for the secondPokeMon when moving forwards.
-    if (secondPokeMonNumber === pokeArrayNumber) {
-      await this.setState({ 
-        secondPokeMonNumber: 0, 
-        viewStats: false 
-      })
-    } else {
-      await this.setState({ 
-        secondPokeMonNumber: secondPokeMonNumber + 1, 
-        viewStats: false 
-      })
-    }
-
-    //This statment handles moving around the array for the thirdPokeMon when moving forwards.
-    if (thirdPokeMonNumber === pokeArrayNumber) {
-      await this.setState({ 
-        thirdPokeMonNumber: 0,
-        thirdPokeImage: null
-      })
-    } else {
-      await this.setState({ 
-        thirdPokeMonNumber: thirdPokeMonNumber + 1,
-        thirdPokeImage: null
-      })
-    }
-
-    this.getFirstPokeMon()
-    this.getSecondPokeMon()
-    this.getThirdPokeMon()
-  }
-
   handleArrayMovement = async (operator) => {
     console.log(operator)
     const { 
@@ -207,60 +155,106 @@ class ApiFunDemo extends Component {
       pokeArrayNumber, 
     } = this.state;
 
-    //This statment handles moving around the array for the firstPokeMon when moving backwards.
-    if (firstPokeMonNumber === 0) { 
-      await this.setState({ 
-        firstPokeMonNumber: pokeArrayNumber,
-        firstPokeImage: null
-      })
-    } else {
-      await this.setState({ 
-        firstPokeMonNumber: operator === 'minus' ? firstPokeMonNumber - 1 : firstPokeMonNumber + 1,
-        firstPokeImage: null
-      })
-    }
+    if (operator === 'plus') {
 
-    //This statment handles moving around the array for the secondPokeMon when moving backwards.
-    if (secondPokeMonNumber === 1) { 
-      await this.setState({ 
-        secondPokeMonNumber: 0, 
-        viewStats: false 
-      })
-    } else if (secondPokeMonNumber === 0) {
-      await this.setState({ 
-        secondPokeMonNumber: pokeArrayNumber, 
-        viewStats: false 
-      })
-    } else {
-      await this.setState({ 
-        secondPokeMonNumber: operator === 'minus' ? secondPokeMonNumber - 1 : secondPokeMonNumber + 1, 
-        viewStats: false 
-      })
-    }
+      //This statment handles moving around the array for the firstPokeMon when moving forwards.
+      if (firstPokeMonNumber === pokeArrayNumber) {
+        await this.setState({ 
+          firstPokeMonNumber: 0,
+          firstPokeImage: null
+        })
+      } else {
+        await this.setState({ 
+          firstPokeMonNumber: firstPokeMonNumber + 1,
+          firstPokeImage: null
+        })
+      }
 
-    //This statment handles moving around the array for the thirdPokeMon when moving backwards.
-    if (thirdPokeMonNumber === 2) { 
-      await this.setState({ 
-        thirdPokeMonNumber: 1,
-        thirdPokeImage: null
-      })
-    } else if (thirdPokeMonNumber === 1) {
-      await this.setState({ 
-        thirdPokeMonNumber: 0,
-        thirdPokeImage: null
-      })
-    } else if (thirdPokeMonNumber === 0) {
-      await this.setState({ 
-        thirdPokeMonNumber: pokeArrayNumber,
-        thirdPokeImage: null
-      })
-    } else {
-      await this.setState({ 
-        thirdPokeMonNumber: operator === 'minus' ? thirdPokeMonNumber - 1 : thirdPokeMonNumber + 1,
-        thirdPokeImage: null
-      })
-    }
+      //This statment handles moving around the array for the secondPokeMon when moving forwards.
+      if (secondPokeMonNumber === pokeArrayNumber) {
+        await this.setState({ 
+          secondPokeMonNumber: 0, 
+          viewStats: false 
+        })
+      } else {
+        await this.setState({ 
+          secondPokeMonNumber: secondPokeMonNumber + 1, 
+          viewStats: false 
+        })
+      }
 
+      //This statment handles moving around the array for the thirdPokeMon when moving forwards.
+      if (thirdPokeMonNumber === pokeArrayNumber) {
+        await this.setState({ 
+          thirdPokeMonNumber: 0,
+          thirdPokeImage: null
+        })
+      } else {
+        await this.setState({ 
+          thirdPokeMonNumber: thirdPokeMonNumber + 1,
+          thirdPokeImage: null
+        })
+      }
+
+    } else if (operator === 'minus') {
+
+      //This statment handles moving around the array for the firstPokeMon when moving backwards.
+      if (firstPokeMonNumber === 0) { 
+        await this.setState({ 
+          firstPokeMonNumber: pokeArrayNumber,
+          firstPokeImage: null
+        })
+      } else {
+        await this.setState({ 
+          firstPokeMonNumber: operator === 'minus' ? firstPokeMonNumber - 1 : firstPokeMonNumber + 1,
+          firstPokeImage: null
+        })
+      }
+
+      //This statment handles moving around the array for the secondPokeMon when moving backwards.
+      if (secondPokeMonNumber === 1) { 
+        await this.setState({ 
+          secondPokeMonNumber: 0, 
+          viewStats: false 
+        })
+      } else if (secondPokeMonNumber === 0) {
+        await this.setState({ 
+          secondPokeMonNumber: pokeArrayNumber, 
+          viewStats: false 
+        })
+      } else {
+        await this.setState({ 
+          secondPokeMonNumber: operator === 'minus' ? secondPokeMonNumber - 1 : secondPokeMonNumber + 1, 
+          viewStats: false 
+        })
+      }
+
+      //This statment handles moving around the array for the thirdPokeMon when moving backwards.
+      if (thirdPokeMonNumber === 2) { 
+        await this.setState({ 
+          thirdPokeMonNumber: 1,
+          thirdPokeImage: null
+        })
+      } else if (thirdPokeMonNumber === 1) {
+        await this.setState({ 
+          thirdPokeMonNumber: 0,
+          thirdPokeImage: null
+        })
+      } else if (thirdPokeMonNumber === 0) {
+        await this.setState({ 
+          thirdPokeMonNumber: pokeArrayNumber,
+          thirdPokeImage: null
+        })
+      } else {
+        await this.setState({ 
+          thirdPokeMonNumber: operator === 'minus' ? thirdPokeMonNumber - 1 : thirdPokeMonNumber + 1,
+          thirdPokeImage: null
+        })
+      }
+
+    } else {
+      console.log("Operator Invaild")
+    }
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()
@@ -285,7 +279,7 @@ class ApiFunDemo extends Component {
     this.setState({
       enterPokeDex: !enterPokeDex
     })
-    this.plusNumber()
+    this.handleArrayMovement('plus')
   }
 
   handleChange = async (e) => {
