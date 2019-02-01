@@ -1,6 +1,9 @@
 ACTIVATION:
 Go to "www.thisjustin.tech" and enjoy the site!!
 
+ACTIVATION-DEV:
+Run "npm start" in the root directory of the project in a terimal window.
+
 NOTES:
 This website showcases my ability to write React JS code to 
 create a friendly UI/UX experience for people wanting to know more about me.
