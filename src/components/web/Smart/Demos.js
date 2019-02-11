@@ -2,10 +2,11 @@ import React, { Component, Fragment } from 'react';
 import Loader from '../../../Loader';
 import { Segment, Container, Divider, Grid, Header, Button, List } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
-const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader />})
-const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader />})
-const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader />})
-const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemo'),loading: () => <Loader />})
+const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader />});
+const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader />});
+const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader />});
+const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemo'),loading: () => <Loader />});
+const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader />});
 
 // const CodexDemoLoader = Loadable({
 //   loader: () => import('../CodexDemo/CodexIndex'),
@@ -13,10 +14,10 @@ const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/P
 // })
 
 class Demos extends Component {
-  state = { videoDemo: false, calculatorDemo: false, clockDemo: false, funWithApiDemo: false }
+  state = { videoDemo: false, calculatorDemo: false, clockDemo: false, PokeDexApiDemo: false }
 
   render() {
-    const { videoDemo, calculatorDemo, clockDemo, funWithApiDemo } = this.state;
+    const { videoDemo, calculatorDemo, clockDemo, PokeDexApiDemo } = this.state;
     return(
       <Container>
         <Divider hidden />
@@ -24,222 +25,83 @@ class Demos extends Component {
           <Header as="h2">Demos</Header>
         </Segment>
         <Divider hidden/>
-        { funWithApiDemo ?
-            <Segment color="blue">
-              <Button color="blue" size="large" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo })}>Hide Demo</Button>
-              <Divider hidden/>
-              <PokeDexDemoLoader />
-            </Segment>
-          :
-            <Fragment>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={13}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h2">PokeDex Demo - NEW!</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <strong>This</strong> Demo uses the Poke API to create a working PokeDex! Move through the library or use the search bar to find your favorite PokeMon and view its stats. Then add your favorites to your PokeDex, Enjoy!
-                      </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ funWithApiDemo: !funWithApiDemo, clockDemo: false, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Segment textAlign="center" inverted>
-                          <Header as="h3">TECH</Header>
-                        </Segment>
-                        <Segment color="blue">
-                          <List as="ul">
-                            <List.Item as="li">React Js</List.Item>
-                            <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">Poke API</List.Item>
-                            <List.Item as="li">Axios</List.Item>
-                          </List>
-                        </Segment>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Fragment>
-        }
-        <Divider hidden/>
-        { videoDemo ?
-            <Segment color="blue">
-              <Button color="blue" size="large" onClick={() => this.setState({ videoDemo: !videoDemo })}>Hide Demo</Button>
-              <Divider hidden/>
-              <VideoDemoLoader />
-            </Segment>
-          :
-            <Fragment>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={13}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h2">YouTube Player</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <strong>This</strong> demo showcases the ability to use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering. <strong>Also star the repo <a href="https://github.com/JustinStoddard/JustinS.com">here</a></strong>
-                      </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false, clockDemo: false, funWithApiDemo: false })}>View Demo</Button>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Segment textAlign="center" inverted>
-                          <Header as="h3">TECH</Header>
-                        </Segment>
-                        <Segment color="blue">
-                          <List as="ul">
-                            <List.Item as="li">React Js</List.Item>
-                            <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">YouTube API</List.Item>
-                            <List.Item as="li">NPM Lodash</List.Item>
-                          </List>
-                        </Segment>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Fragment>
-        }
-        <Divider hidden/>
-        { calculatorDemo ?
-            <Segment color="blue">
-              <Button color="blue" size="large" onClick={() => this.setState({ calculatorDemo: !calculatorDemo })}>Hide Demo</Button>
-              <Divider hidden/>
-              <CalculatorDemoLoader />
-            </Segment>
-          :
-            <Fragment>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={13}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h2">Calculator Demo</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <strong>This</strong> demo showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state.
-                      </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false, clockDemo: false, funWithApiDemo: false })}>View Demo</Button>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Segment textAlign="center" inverted>
-                          <Header as="h3">TECH</Header>
-                        </Segment>
-                        <Segment color="blue">
-                          <List as="ul">
-                            <List.Item as="li">React Js</List.Item>
-                            <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">ES6 JS</List.Item>
-                            <List.Item as="li">My Brain</List.Item>
-                          </List>
-                        </Segment>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column> 
-                </Grid.Row>
-              </Grid>
-            </Fragment>
-        }
-        <Divider hidden/>
-        { clockDemo ?
-            <Segment color="blue">
-              <Button color="blue" size="large" onClick={() => this.setState({ clockDemo: !clockDemo })}>Hide Demo</Button>
-              <Divider hidden/>
-              <ClockDemoLoader />
-            </Segment>
-          :
-            <Fragment>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={13}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h2">Clock Demo</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <strong>The</strong> Demo you're about to see showcases my ability to write custom css code that functions, in collaboration with React JS code, as a working analog clock. 
-                      </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ clockDemo: !clockDemo, videoDemo: false, calculatorDemo: false, funWithApiDemo: false })}>View Demo</Button>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Segment textAlign="center" inverted>
-                          <Header as="h3">TECH</Header>
-                        </Segment>
-                        <Segment color="blue">
-                          <List as="ul">
-                            <List.Item as="li">React Js</List.Item>
-                            <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">SCSS</List.Item>
-                            <List.Item as="li">My Brain</List.Item>
-                          </List>
-                        </Segment>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Fragment>
-        }
-        {/* { codexDemo ?
-            <Segment color="blue">
-              <Button color="blue" size="large" onClick={() => this.setState({ codexDemo: !codexDemo })}>Hide Demo</Button>
-              <Divider hidden/>
-              <CodexDemoLoader />
-            </Segment>
-          :
-            <Fragment>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={13}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Header as="h2">Codex Demo</Header>
-                      </Segment>
-                      <Segment textAlign="left" color="blue">
-                        <strong>This</strong> demos showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state.
-                      </Segment>
-                      <Button color="blue" size="huge" onClick={() => this.setState({ codexDemo: !codexDemo, videoDemo: false, calculatorDemo: false })}>View Demo</Button>
-                    </Segment>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Segment inverted>
-                      <Segment color="blue">
-                        <Segment textAlign="center" inverted>
-                          <Header as="h3">TECH</Header>
-                        </Segment>
-                        <Segment color="blue">
-                          <List as="ul">
-                            <List.Item as="li">React Js</List.Item>
-                            <List.Item as="li">Semantic-UI</List.Item>
-                            <List.Item as="li">ES6 JS</List.Item>
-                            <List.Item as="li">My Brain</List.Item>
-                          </List>
-                        </Segment>
-                      </Segment>
-                    </Segment>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Fragment>
-        } */}
+        <Demo 
+          DemoState={PokeDexApiDemo} //Takes in a State variable
+          DemoComponent={<PokeDexDemoLoader/>} //Takes in a Component
+          DemoActivation={() => this.setState({ PokeDexApiDemo: !PokeDexApiDemo })} //Takes in a Function
+          DemoDeActivation={() => this.setState({ PokeDexApiDemo: !PokeDexApiDemo, clockDemo: false, videoDemo: false, calculatorDemo: false })} //Takes in a Function
+          DemoHeader={"PokeDex Demo - NEW!"} //Takes in a String
+          DemoDescription={"This Demo uses the Poke API to create a working PokeDex! Move through the library or use the search bar to find your favorite PokeMon and view its stats. Then add your favorites to your PokeDex, Enjoy!"} //Takes in a String
+          DemoTechListItem1={"React Js"} //Takes in a String
+          DemoTechListItem2={"Semantic-UI"} //Takes in a String
+          DemoTechListItem3={"Poke API"} //Takes in a String
+          DemoTechListItem4={"Axios"} //Takes in a String
+        />
+        <Demo 
+          DemoState={videoDemo}
+          DemoComponent={<VideoDemoLoader />}
+          DemoActivation={() => this.setState({ videoDemo: !videoDemo })}
+          DemoDeActivation={() => this.setState({ videoDemo: !videoDemo, calculatorDemo: false, clockDemo: false, PokeDexApiDemo: false })}
+          DemoHeader={"YouTube Player"}
+          DemoDescription={"This demo showcases the ability to use YouTubes API to search for, and view videos. There is also a lot of work behind the scenes with State, Props, and Conditional Rendering."}
+          DemoTechListItem1={"React Js"}
+          DemoTechListItem2={"Semantic-UI"}
+          DemoTechListItem3={"YouTube API"}
+          DemoTechListItem4={"NPM Lodash"}
+        />
+        <Demo 
+          DemoState={calculatorDemo}
+          DemoComponent={<CalculatorDemoLoader />}
+          DemoActivation={() => this.setState({ calculatorDemo: !calculatorDemo })}
+          DemoDeActivation={() => this.setState({ calculatorDemo: !calculatorDemo, videoDemo: false, clockDemo: false, PokeDexApiDemo: false })}
+          DemoHeader={"Calculator Demo"}
+          DemoDescription={"This demo showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state."}
+          DemoTechListItem1={"React Js"}
+          DemoTechListItem2={"Semantic-UI"}
+          DemoTechListItem3={"ES6 JS"}
+          DemoTechListItem4={"My Brain"}
+        />
+        <Demo 
+          DemoState={clockDemo}
+          DemoComponent={<ClockDemoLoader />}
+          DemoActivation={() => this.setState({ clockDemo: !clockDemo })}
+          DemoDeActivation={() => this.setState({ clockDemo: !clockDemo, videoDemo: false, calculatorDemo: false, PokeDexApiDemo: false })}
+          DemoHeader={"Clock Demo"}
+          DemoDescription={"The Demo you're about to see showcases my ability to write custom css code that functions, in collaboration with React JS code, as a working analog clock."}
+          DemoTechListItem1={"React Js"}
+          DemoTechListItem2={"Semantic-UI"}
+          DemoTechListItem3={"SCSS"}
+          DemoTechListItem4={"My Brain"}
+        />
+        {/* <Demo 
+          DemoState={codexDemo}
+          DemoComponent={<CodexDemoLoader />}
+          DemoActivation={() => this.setState({ codexDemo: !codexDemo })}
+          DemoDeActivation={() => this.setState({ codexDemo: !codexDemo, videoDemo: false, calculatorDemo: false })}
+          DemoHeader={"Codex Demo"} 
+          DemoDescription={"This demos showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state."} 
+          DemoTechListItem1={"React Js"} 
+          DemoTechListItem2={"Semantic-UI"} 
+          DemoTechListItem3={"ES6 JS"} 
+          DemoTechListItem4={"My Brain"} 
+        /> */}
       </Container>
     )
   }
 }
 
 export default Demos;
+
+//---------Below is the Boiler Plate for the Demo Component
+{/* <Demo 
+  DemoState={} //Takes in a State variable
+  DemoComponent={} //Takes in a Component
+  DemoActivation={} //Takes in a Function
+  DemoDeActivation={} //Takes in a Function
+  DemoHeader={""} //Takes in a String
+  DemoDescription={""} //Takes in a String
+  DemoTechListItem1={""} //Takes in a String
+  DemoTechListItem2={""} //Takes in a String
+  DemoTechListItem3={""} //Takes in a String
+  DemoTechListItem4={""} //Takes in a String
+/> */}
