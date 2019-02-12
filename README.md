@@ -1,21 +1,19 @@
-ACTIVATION:
+## ACTIVATION:
 Go to "www.thisjustin.tech" and enjoy the site!!
 
-ACTIVATION-DEV:
+## ACTIVATION-DEV:
 Run "npm start" in the root directory of the project in a terimal window.
 
-NOTES:
+## RECENT UPDATES:
+thisjustin.tech now uses ReactJs v16.8.0 (hooks)
+
+## NOTES:
 This website showcases my ability to write React JS code to 
 create a friendly UI/UX experience for people wanting to know more about me.
 This project is mobile ready. So check it out on your phone!
 For those more interested in the code itself I suggest looking further into 
 the demos. They have more to offer as far as understanding of the framework, 
 functionality, and architecture then the rest of the site. Enjoy!!!
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
 
