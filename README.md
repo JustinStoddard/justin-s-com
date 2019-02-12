@@ -1,8 +1,8 @@
 ## Activation:
-Go to "www.thisjustin.tech" and enjoy the site!!
+Go to www.thisjustin.tech and enjoy the site!!
 
 ## Activation-Dev:
-Run "npm start" in the root directory of the project in a terimal window.
+Run `npm start` in the root directory of the project in a terimal window.
 
 ## Recent Updates:
 2/8/2019 - www.thisjustin.tech now uses ReactJs v16.8.0 (hooks)
