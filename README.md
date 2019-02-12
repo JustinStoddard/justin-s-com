@@ -1,13 +1,13 @@
-## ACTIVATION:
+## Activation:
 Go to "www.thisjustin.tech" and enjoy the site!!
 
-## ACTIVATION-DEV:
+## Activation-Dev:
 Run "npm start" in the root directory of the project in a terimal window.
 
-## RECENT UPDATES:
-thisjustin.tech now uses ReactJs v16.8.0 (hooks)
+## Recent Updates:
+2/8/2019 - www.thisjustin.tech now uses ReactJs v16.8.0 (hooks)
 
-## NOTES:
+## Notes:
 This website showcases my ability to write React JS code to 
 create a friendly UI/UX experience for people wanting to know more about me.
 This project is mobile ready. So check it out on your phone!
