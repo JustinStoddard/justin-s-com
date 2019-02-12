@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Segment, Divider, Grid, Header, Button, List } from 'semantic-ui-react';
 
 const Demo = ({ 
@@ -16,7 +16,7 @@ const Demo = ({
   return (
     DemoState ?
       <Segment color="blue">
-        <Button color="blue" size="large" onClick={DemoActivation}>Hide Demo</Button>
+        <Button color="blue" size="large" onClick={DemoDeActivation}>Hide Demo</Button>
         <Divider hidden/>
         {DemoComponent}
       </Segment>
@@ -32,7 +32,7 @@ const Demo = ({
               <Segment textAlign="left" color="blue">
                 {DemoDescription}
               </Segment>
-              <Button color="blue" size="huge" onClick={DemoDeActivation}>View Demo</Button>
+              <Button color="blue" size="huge" onClick={DemoActivation}>View Demo</Button>
             </Segment>
           </Grid.Column>
           <Grid.Column width={3}>

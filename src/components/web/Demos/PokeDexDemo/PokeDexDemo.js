@@ -36,10 +36,10 @@ class ApiFunDemo extends Component {
   }
 
   componentDidMount() {
-    const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20";
+    const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=500&offset=";
     axios.get(apiUrl)
       .then(response => {
-        const manyPokeMon = response.data.results.slice(0,500);
+        const manyPokeMon = response.data.results;
         this.setState({ allPokeMon: manyPokeMon })
         console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
@@ -57,6 +57,7 @@ class ApiFunDemo extends Component {
             firstPokeMon: firstPokeMon, 
             firstPokeImage: firstPngImage,
           })
+          // console.log(firstPokeMon)
           // console.log('first', firstPokeMon.name)
           // console.log('first', firstPokeMonNumber)
         }).catch(err => console.log(err))
@@ -65,7 +66,7 @@ class ApiFunDemo extends Component {
     }
   }
 
-  getSecondPokeMon = async () => { //This handles data for the PokeMon in the Middle Column
+  getSecondPokeMon = () => { //This handles data for the PokeMon in the Middle Column
     const { allPokeMon, secondPokeMonNumber } = this.state;
     if (allPokeMon[secondPokeMonNumber].url !== null) { //Code Check
       const secondPokeMonUrl = allPokeMon[secondPokeMonNumber].url;
