@@ -141,7 +141,6 @@ class ApiFunDemo extends Component {
         thirdPokeMonNumber: wantedPokeMon + 1
       })
     }
-
     this.getFirstPokeMon()
     this.getSecondPokeMon()
     this.getThirdPokeMon()

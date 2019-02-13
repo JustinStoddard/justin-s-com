@@ -21,10 +21,10 @@ const Demos = () => {
   const [ PokeDexApiDemo, setPokeDexApiDemo ] = useState(false);
 
   const handleDemoStateChange = (demo) => {
-    demo === 'pokeDex' ? setPokeDexApiDemo(true): setPokeDexApiDemo(false);
-    demo === 'calculator' ? setCalculatorDemo(true): setCalculatorDemo(false);
-    demo === 'clock' ? setClockDemo(true): setClockDemo(false);
-    demo === 'video' ? setVideoDemo(true): setVideoDemo(false); 
+    demo === 'pokeDex' ? setPokeDexApiDemo(true) : setPokeDexApiDemo(false);
+    demo === 'calculator' ? setCalculatorDemo(true) : setCalculatorDemo(false);
+    demo === 'clock' ? setClockDemo(true) : setClockDemo(false);
+    demo === 'video' ? setVideoDemo(true) : setVideoDemo(false); 
   }
 
   const demos = [

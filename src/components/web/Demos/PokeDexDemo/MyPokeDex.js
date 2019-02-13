@@ -6,7 +6,6 @@ import { Grid, Segment, Button, Card, Image, Header } from 'semantic-ui-react';
 const PokeMon = Loadable({loader: () => import('./PokeMon'), loading: () => <Loader/>})
 
 const MyPokeDex = ({ myPokeMon, viewMyPokeDex, deletePokeMon }) => {
-  console.log(myPokeMon)
   return(
     <Grid>
       <Grid.Row>
