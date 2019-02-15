@@ -5,7 +5,6 @@ import Loadable from 'react-loadable';
 import Loader from '../../../../Loader';
 import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
 import PokeDexMain from './PokeDexMain';
-// const SecondPokeMon = Loadable({loader: () => import('./SecondPoke'), loading: () => <Loader/>});
 const SidePokeColumns = Loadable({loader: () => import('./SidePokeColumns'), loading: () => <Loader/>});
 const SearchBar = Loadable({loader: () => import('./SearchBar'), loading: () => <Loader/>});
 const ViewStats = Loadable({loader: () => import('./ViewStats'), loading: () => <Loader/>});
