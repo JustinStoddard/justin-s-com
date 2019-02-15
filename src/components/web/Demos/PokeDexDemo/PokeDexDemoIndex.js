@@ -4,8 +4,8 @@ import _ from 'lodash'
 import Loadable from 'react-loadable';
 import Loader from '../../../../Loader';
 import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
-import PokeDexMain from './PokeDexMain';
-const SidePokeColumns = Loadable({loader: () => import('./SidePokeColumns'), loading: () => <Loader/>});
+import PokeDexMain from './PokeDexEnter';
+const PokeColumns = Loadable({loader: () => import('./PokeColumns'), loading: () => <Loader/>});
 const SearchBar = Loadable({loader: () => import('./SearchBar'), loading: () => <Loader/>});
 const ViewStats = Loadable({loader: () => import('./ViewStats'), loading: () => <Loader/>});
 const MyPokeDex = Loadable({loader: () => import('./MyPokeDex'), loading: () => <Loader/>});
@@ -389,7 +389,7 @@ class ApiFunDemo extends Component {
                     <Grid.Column width={2}></Grid.Column>
                       {pokeColumns.map(poke => {
                         return(
-                          <SidePokeColumns
+                          <PokeColumns
                             PokeMon={poke.PokeMon}
                             PokeImage={poke.PokeImage}
                             viewStats={poke.viewStats}

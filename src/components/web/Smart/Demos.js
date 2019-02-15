@@ -5,7 +5,7 @@ import Loadable from 'react-loadable';
 const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader />});
 const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader />});
 const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader />});
-const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemo'),loading: () => <Loader />});
+const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'),loading: () => <Loader />});
 const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader />});
 
 // const CodexDemoLoader = Loadable({
