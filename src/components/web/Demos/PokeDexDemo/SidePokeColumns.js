@@ -1,14 +1,21 @@
 import React, { Fragment } from 'react';
-import { Segment, Header, Icon, Image } from 'semantic-ui-react';
+import { Segment, Header, Icon, Image, Grid, Button, Divider } from 'semantic-ui-react';
 
 const ThirdPoke = ({ 
   PokeMon, 
   PokeImage, 
   pokeMonNameStyle, 
-  segmentMove 
+  segmentMove,
+
+  viewComponent,
+  viewStats,
+  viewStatsButton,
+  addPokeMon,
+  addButtonStyles 
 }) => {
   return(
     <Fragment>
+      <Grid.Column width={4}>
       <Segment style={segmentMove} inverted>
           <Fragment>
             <Segment>
@@ -26,9 +33,25 @@ const ThirdPoke = ({
                     <Icon loading size="massive" name="spinner"/>
                 }
               </Segment>
+              <Divider hidden/>
+              {viewComponent ?
+                  <Grid>
+                    <Grid.Row>
+                      <Grid.Column width={10}>
+                        <Button onClick={viewStatsButton} color="red" size="large"><Icon name={`eye${viewStats ? ' slash' : ''}`}/>{!viewStats ? 'Stats' : 'Hide'}</Button>
+                      </Grid.Column>
+                      <Grid.Column width={4}>
+                        <Button onClick={addPokeMon} color="red" size="large" style={addButtonStyles}><Icon name="plus" fitted/></Button>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                :
+                  null
+              }
             </Segment>
           </Fragment>
       </Segment>
+      </Grid.Column>
     </Fragment>
   )
 }

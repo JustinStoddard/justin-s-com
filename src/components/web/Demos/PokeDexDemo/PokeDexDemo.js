@@ -5,7 +5,7 @@ import Loadable from 'react-loadable';
 import Loader from '../../../../Loader';
 import { Segment, Grid, Divider, Button } from 'semantic-ui-react';
 import PokeDexMain from './PokeDexMain';
-const SecondPokeMon = Loadable({loader: () => import('./SecondPoke'), loading: () => <Loader/>});
+// const SecondPokeMon = Loadable({loader: () => import('./SecondPoke'), loading: () => <Loader/>});
 const SidePokeColumns = Loadable({loader: () => import('./SidePokeColumns'), loading: () => <Loader/>});
 const SearchBar = Loadable({loader: () => import('./SearchBar'), loading: () => <Loader/>});
 const ViewStats = Loadable({loader: () => import('./ViewStats'), loading: () => <Loader/>});
@@ -36,7 +36,7 @@ class ApiFunDemo extends Component {
   }
 
   componentDidMount() {
-    const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=500&offset=";
+    const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=500&offset=0";
     axios.get(apiUrl)
       .then(response => {
         const manyPokeMon = response.data.results;
@@ -327,6 +327,31 @@ class ApiFunDemo extends Component {
       myPokeMon
     } = this.state
 
+    const pokeColumns = [
+      { //Object for first column
+        PokeMon: firstPokeMon,
+        PokeImage: firstPokeImage,
+        pokeMonNameStyle: styles.pokeMonName,
+        segmentMove: styles.segmentMove1
+      },
+      { //Object for second column
+        PokeMon: secondPokeMon,
+        PokeImage: secondPokeImage,
+        viewStats: viewStats,
+        viewStatsButton: this.viewStats,
+        addPokeMon: this.addPokeMon,
+        viewComponent: true,
+        pokeMonNameStyle: styles.pokeMonName,
+        addButtonStyles: styles.addButtonStyless
+      },
+      { //Object for third column
+        PokeMon: thirdPokeMon,
+        PokeImage: thirdPokeImage,
+        pokeMonNameStyle: styles.pokeMonName,
+        segmentMove: styles.segmentMove1
+      }
+    ]
+
     return(
       <Fragment>
         {enterPokeDex ?
@@ -363,33 +388,21 @@ class ApiFunDemo extends Component {
                   <Divider hidden/>
                   <Grid.Row>
                     <Grid.Column width={2}></Grid.Column>
-                    <Grid.Column width={4}>
-                      <SidePokeColumns
-                        PokeMon={firstPokeMon}
-                        PokeImage={firstPokeImage}
-                        pokeMonNameStyle={styles.pokeMonName}
-                        segmentMove={styles.segmentMove1}
-                      />
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                      <SecondPokeMon
-                        secondPokeMon={secondPokeMon}
-                        secondPokeImage={secondPokeImage}
-                        viewStats={viewStats}
-                        viewStatsButton={this.viewStats}
-                        addPokeMon={this.addPokeMon}
-                        pokeMonNameStyle={styles.pokeMonName}
-                        addButtonStyles={styles.addButtonStyles}
-                      />
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                      <SidePokeColumns
-                        PokeMon={thirdPokeMon}
-                        PokeImage={thirdPokeImage}
-                        pokeMonNameStyle={styles.pokeMonName}
-                        segmentMove={styles.segmentMove1}
-                      />
-                    </Grid.Column>
+                      {pokeColumns.map(poke => {
+                        return(
+                          <SidePokeColumns
+                            PokeMon={poke.PokeMon}
+                            PokeImage={poke.PokeImage}
+                            viewStats={poke.viewStats}
+                            viewStatsButton={poke.viewStatsButton}
+                            addPokeMon={poke.addPokeMon}
+                            viewComponent={poke.viewComponent}
+                            pokeMonNameStyle={poke.pokeMonNameStyle}
+                            addButtonStyles={poke.addButtonStyles}
+                            segmentMove={poke.segmentMove}
+                          />
+                        )
+                      })}
                     <Grid.Column width={2}></Grid.Column>
                   </Grid.Row>
                   <ViewStats 
