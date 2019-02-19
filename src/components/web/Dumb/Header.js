@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Container, Grid, Divider, Button, Image, Responsive } from 'semantic-ui-react';
+import "../../../CSS/header.css";
 import JustinLogo from '../../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
 import Loader from '../../../Loader';
 
@@ -8,6 +9,69 @@ const HeaderComp = () => {
   return(
     <Container>
       <Divider hidden />
+
+
+      <Grid className="main">
+        <Grid.Row>
+          <Grid.Column width={4}>
+            <Segment textAlign="center" inverted>
+              { JustinLogo ?
+                  <Link to="/">
+                    <Image src={JustinLogo} size="medium"/>
+                  </Link>
+                :
+                  <Fragment>
+                    <Loader />
+                  </Fragment>
+              }
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <Link to="/">
+              <button className="header-buttons">
+                <h5>Home</h5>
+              </button>
+            </Link>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <Link to="/about">
+              <button className="header-buttons">
+                <h4>About</h4>
+              </button>
+            </Link>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <Link to="/contact">
+              <button className="header-buttons">
+                <h4>Contact</h4>
+              </button>
+            </Link>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <Link to="/demos">
+              <button className="header-buttons">
+                <h4>Demos</h4>
+              </button>
+            </Link>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <Link to="/projects">
+              <button className="header-buttons">
+                <h4>Projects</h4>
+              </button>
+            </Link>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <Link to="/services">
+              <button className="header-buttons">
+                <h5>Services</h5>
+              </button>
+            </Link>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+
+
       <Responsive as={Grid}>
         <Grid.Row>
         <Grid.Column width={3}>
@@ -15,7 +79,7 @@ const HeaderComp = () => {
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="small" color="black">
-                    <h5 style={styles.navStyles}>Home</h5>
+                    <h5>Home</h5>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -26,7 +90,7 @@ const HeaderComp = () => {
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>About</h4>
+                    <h4>About</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -36,7 +100,7 @@ const HeaderComp = () => {
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Contact</h4>
+                    <h4>Contact</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -60,7 +124,7 @@ const HeaderComp = () => {
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Demos</h4>
+                    <h4>Demos</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -70,7 +134,7 @@ const HeaderComp = () => {
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="medium" color="black">
-                    <h4 style={styles.navStyles}>Projects</h4>
+                    <h4>Projects</h4>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -81,7 +145,7 @@ const HeaderComp = () => {
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
                   <Responsive as={Button} size="small" color="black">
-                    <h5 style={styles.navStyles}>Services</h5>
+                    <h5>Services</h5>
                   </Responsive>
                 </Responsive>
               </Responsive>
@@ -91,12 +155,6 @@ const HeaderComp = () => {
       </Responsive>
     </Container>
   )
-}
-
-const styles = {
-  navStyles: {
-    fontFamily: 'century gothic'
-  },
 }
 
 export default HeaderComp;

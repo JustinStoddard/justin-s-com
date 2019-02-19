@@ -1,0 +1,25 @@
+.main {
+  background-color: black;
+  opacity: 0.75;
+}
+
+.header-buttons {
+  width: 115px;
+  height: 45px;
+  border-radius: 35px;
+  border-color: black;
+  background-image: linear-gradient(to right, #25274D, #29648A);
+}
+.header-buttons:hover {
+  border-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.header-buttons:active {
+  width: 115px;
+  height: 45px;
+  border-radius: 35px;
+  border-color: white;
+  background-image: linear-gradient(to right, #25274D, #29648A);
+}
