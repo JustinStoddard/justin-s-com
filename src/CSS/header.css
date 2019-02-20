@@ -15,7 +15,9 @@
   cursor: pointer;
   transition: all 0.3s;
 }
-
+.header-buttons:focus {
+  outline: 0;
+}
 .header-buttons:active {
   width: 115px;
   height: 45px;

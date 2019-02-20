@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import Loader from '../../../Loader';
 import { Segment, Container, Divider, Header } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
-const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader />});
-const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader />});
-const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader />});
-const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'),loading: () => <Loader />});
-const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader />});
+const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader/>});
+const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader/>});
+const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader/>});
+const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'),loading: () => <Loader/>});
+const ContentEditorLoader = Loadable({loader : () => import('../Demos/ContentEditorDemo/ContentEditorIndex'), loading: () => <Loader/>})
+const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader/>});
 
 // const CodexDemoLoader = Loadable({
 //   loader: () => import('../CodexDemo/CodexIndex'),
@@ -19,12 +20,14 @@ const Demos = () => {
   const [ clockDemo, setClockDemo ] = useState(false);
   const [ calculatorDemo, setCalculatorDemo ] = useState(false);
   const [ PokeDexApiDemo, setPokeDexApiDemo ] = useState(false);
+  const [ ContentEdit, setContentEdit ] = useState(false);
 
   const handleDemoStateChange = (demo) => {
     demo === 'pokeDex' ? setPokeDexApiDemo(true) : setPokeDexApiDemo(false);
     demo === 'calculator' ? setCalculatorDemo(true) : setCalculatorDemo(false);
     demo === 'clock' ? setClockDemo(true) : setClockDemo(false);
-    demo === 'video' ? setVideoDemo(true) : setVideoDemo(false); 
+    demo === 'video' ? setVideoDemo(true) : setVideoDemo(false);
+    demo === 'content' ? setContentEdit(true) : setContentEdit(false); 
   }
 
   const demos = [
@@ -39,6 +42,30 @@ const Demos = () => {
       demoTechListItem2: "Semantic-UI",
       demoTechListItem3: "Poke API",
       demoTechListItem4: "Axios"
+    },
+    {
+      demoState: ContentEdit,
+      demoComponent: <ContentEditorLoader/>,
+      demoActivation: () => handleDemoStateChange('content'),
+      demoDeActivation: () => handleDemoStateChange(''),
+      demoHeader: "Content Editor Demo - NEW!",
+      demoDescription: "This Demo is a proof of concept for the company I currently work for. I'm trying to test a custom theoretical content editior for our distributers. This is also connected to a firebase DB. Enjoy!",
+      demoTechListItem1: "React JS",
+      demoTechListItem2: "FireBase DB",
+      demoTechListItem3: "Axios",
+      demoTechListItem4: "Semantic-UI"
+    },
+    {
+      demoState: clockDemo,
+      demoComponent: <ClockDemoLoader/>,
+      demoActivation: () => handleDemoStateChange('clock'),
+      demoDeActivation: () => handleDemoStateChange(''),
+      demoHeader: "Clock Demo",
+      demoDescription: "The Demo you're about to see showcases my ability to write custom css code that functions, in collaboration with React JS code, as a working analog clock.",
+      demoTechListItem1: "React Js",
+      demoTechListItem2: "Semantic-UI",
+      demoTechListItem3: "SCSS",
+      demoTechListItem4: "My Brain"
     },
     {
       demoState: videoDemo,
@@ -62,18 +89,6 @@ const Demos = () => {
       demoTechListItem1: "React Js",
       demoTechListItem2: "Semantic-UI",
       demoTechListItem3: "ES6 JS",
-      demoTechListItem4: "My Brain"
-    },
-    {
-      demoState: clockDemo,
-      demoComponent: <ClockDemoLoader/>,
-      demoActivation: () => handleDemoStateChange('clock'),
-      demoDeActivation: () => handleDemoStateChange(''),
-      demoHeader: "Clock Demo",
-      demoDescription: "The Demo you're about to see showcases my ability to write custom css code that functions, in collaboration with React JS code, as a working analog clock.",
-      demoTechListItem1: "React Js",
-      demoTechListItem2: "Semantic-UI",
-      demoTechListItem3: "SCSS",
       demoTechListItem4: "My Brain"
     }
   ]

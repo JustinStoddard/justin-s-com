@@ -11,7 +11,7 @@ const HeaderComp = () => {
       <Divider hidden />
 
 
-      <Grid className="main">
+      {/* <Grid className="main">
         <Grid.Row>
           <Grid.Column width={4}>
             <Segment textAlign="center" inverted>
@@ -69,7 +69,7 @@ const HeaderComp = () => {
             </Link>
           </Grid.Column>
         </Grid.Row>
-      </Grid>
+      </Grid> */}
 
 
       <Responsive as={Grid}>
