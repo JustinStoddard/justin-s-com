@@ -7,8 +7,6 @@ const BannerContentLoader = Loadable({loader: () => import('./BannerContent'), l
 const NavigationCompLoader = Loadable({loader: () => import('./NavigationComp'), loading: () => <Loader/>});
 const CountrySelectorLoader = Loadable({loader: () => import('./CountrySelector'), loading: () => <Loader/>});
 
-
-
 const ContentEditorIndex = () => {
   return(
     <Fragment>
@@ -16,15 +14,16 @@ const ContentEditorIndex = () => {
         <Header as="h1">Under Contruction</Header>
         <Icon name="warning sign" size="large"/>
       </Segment>
+
       {/* The code for this Demo should go below here */}
       <Container>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={8}> {/* This row can be one component */}
+            <Grid.Column width={8}>
               <NavigationCompLoader/>
             </Grid.Column>
             <Grid.Column width={4}></Grid.Column>
-            <Grid.Column width={3}> {/* This row can be one component */}
+            <Grid.Column width={3}>
               <CountrySelectorLoader/>
             </Grid.Column>
           </Grid.Row>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Segment, Divider, Image } from 'semantic-ui-react';
+import { Grid, Segment, Divider, Image, Button } from 'semantic-ui-react';
 
 const BannerContent = () => {
   return(
@@ -16,6 +16,9 @@ const BannerContent = () => {
         <Divider hidden/>
         <Divider hidden/>
         <Divider hidden/>
+        <Segment textAlign="right" basic>
+          <Button>Edit</Button>
+        </Segment>
       </Segment>
     </Grid.Column>
   )
