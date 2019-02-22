@@ -36,6 +36,7 @@ const ColumnsContent = () => {
       buttonText: buttonText1,
       editMode: editMode1,
       setEditMode: editMode1 === true ? () => setEditMode1(false) : () => setEditMode1(true),
+      columnNumber: "Column 1",
       value1: image1,
       value2: header1,
       value3: description1,
@@ -55,6 +56,7 @@ const ColumnsContent = () => {
       buttonText: buttonText2,
       editMode: editMode2,
       setEditMode: editMode2 === true ? () => setEditMode2(false) : () => setEditMode2(true),
+      columnNumber: "Column 2",
       value1: image2,
       value2: header2,
       value3: description2,
@@ -74,6 +76,7 @@ const ColumnsContent = () => {
       buttonText: buttonText3,
       editMode: editMode3,
       setEditMode: editMode3 === true ? () => setEditMode3(false) : () => setEditMode3(true),
+      columnNumber: "Column 3",
       value1: image3,
       value2: header3,
       value3: description3,
@@ -94,7 +97,8 @@ const ColumnsContent = () => {
           {column.editMode ? 
               <Fragment>
                 <Segment textAlign="left" basic>
-                  <ColumnsFormComp 
+                  <ColumnsFormComp
+                    column={column.columnNumber} 
                     value1={column.value1}
                     value2={column.value2}
                     value3={column.value3}
