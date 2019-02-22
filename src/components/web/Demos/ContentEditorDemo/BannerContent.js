@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Grid, Segment, Image, Button, Header, Icon } from 'semantic-ui-react';
+import { Grid, Segment, Image, Button, Icon } from 'semantic-ui-react';
 import BannerFormComp from './BannerFormComp';
 
 const BannerContent = () => {
@@ -62,7 +62,7 @@ const BannerContent = () => {
                 onChange4={imagesEditor[0].onChange4}
               />
               <Segment textAlign="right" basic>
-                <Button onClick={() => setEditMode(false)}>Save</Button>
+                <Button onClick={() => setEditMode(false)}><Icon name="save"/>Save</Button>
               </Segment>
             </Segment>
           </Fragment>
@@ -77,7 +77,7 @@ const BannerContent = () => {
                 <Icon name="chevron circle right" color="orange" size="large" fitted/>
               </Button>
               <Segment textAlign="right" basic>
-                <Button onClick={() => setEditMode(true)} style={styles.editButtonStyle}>Edit</Button>
+                <Button onClick={() => setEditMode(true)} style={styles.editButtonStyle}><Icon name="edit"/>Edit</Button>
               </Segment>
             </Segment>
           </Fragment>

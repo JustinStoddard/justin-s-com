@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Segment, Grid, Image, Button, Form, Divider, Icon, Header } from 'semantic-ui-react';
+import { Segment, Grid, Image, Button, Icon } from 'semantic-ui-react';
 import ColumnsFormComp from './ColumnsFormComp';
 
 const ColumnsContent = () => {
@@ -107,7 +107,7 @@ const ColumnsContent = () => {
                     onChange5={column.onChange5}
                   />
                   <Segment textAlign="right" basic>
-                    <Button onClick={column.setEditMode}>Save</Button>
+                    <Button onClick={column.setEditMode}><Icon name="save"/>Save</Button>
                   </Segment>
                 </Segment>
               </Fragment>
@@ -131,7 +131,7 @@ const ColumnsContent = () => {
                     }
                   </Segment>
                   <Segment textAlign="right" basic>
-                    <Button onClick={column.setEditMode}>Edit</Button>
+                    <Button onClick={column.setEditMode}><Icon name="edit"/>Edit</Button>
                   </Segment>
                 </Segment>
               </Fragment>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Segment } from 'semantic-ui-react';
+import { Form, Segment, Grid } from 'semantic-ui-react';
 
 const BannerFormComp = ({
   value1,
@@ -23,7 +23,25 @@ const BannerFormComp = ({
         onChange={onChange1}
       />
       {/* <Segment>
-        stuff
+        <Grid>
+          <Grid.Column width={10}>
+            <Grid.Row>
+              <Grid.Column width={4}>
+                Temp 1
+              </Grid.Column>
+              <Grid.Column width={4}>
+                Temp 2
+              </Grid.Column>
+              <Grid.Column width={4}>
+                Temp 3
+              </Grid.Column>
+              <Grid.Column width={4}>
+                Temp 4
+              </Grid.Column>
+            </Grid.Row>
+          </Grid.Column>  
+          <Grid.Column width={6}></Grid.Column>
+        </Grid>
       </Segment> */}
       <Form.Input 
         placeholder="Image2 Link ..."
