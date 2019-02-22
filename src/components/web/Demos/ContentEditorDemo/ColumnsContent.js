@@ -3,7 +3,6 @@ import { Segment, Grid, Image, Button, Form, Divider, Icon, Header } from 'seman
 import ColumnsFormComp from './ColumnsFormComp';
 
 const ColumnsContent = () => {
-
   const [ image1, setImage1 ] = useState("http://s3-us-west-2.amazonaws.com/unicity.com/uploads/sites/2/Image-1.jpg");
   const [ image2, setImage2 ] = useState("http://s3-us-west-2.amazonaws.com/unicity.com/uploads/sites/2/Image-2-02.png");
   const [ image3, setImage3 ] = useState("http://s3-us-west-2.amazonaws.com/unicity.com/uploads/sites/2/Image-3.jpg");
@@ -37,7 +36,6 @@ const ColumnsContent = () => {
       buttonText: buttonText1,
       editMode: editMode1,
       setEditMode: editMode1 === true ? () => setEditMode1(false) : () => setEditMode1(true),
-
       value1: image1,
       value2: header1,
       value3: description1,
@@ -57,7 +55,6 @@ const ColumnsContent = () => {
       buttonText: buttonText2,
       editMode: editMode2,
       setEditMode: editMode2 === true ? () => setEditMode2(false) : () => setEditMode2(true),
-
       value1: image2,
       value2: header2,
       value3: description2,
@@ -77,7 +74,6 @@ const ColumnsContent = () => {
       buttonText: buttonText3,
       editMode: editMode3,
       setEditMode: editMode3 === true ? () => setEditMode3(false) : () => setEditMode3(true),
-
       value1: image3,
       value2: header3,
       value3: description3,
@@ -95,27 +91,29 @@ const ColumnsContent = () => {
     columnsData.map((column, index) => {
       return(
         <Grid.Column key={index} width={5}>
-          <Segment textAlign="center" basic>
-            {column.editMode ? 
-                <Fragment>
-                    <ColumnsFormComp 
-                      value1={column.value1}
-                      value2={column.value2}
-                      value3={column.value3}
-                      value4={column.value4}
-                      value5={column.value5}
-                      onChange1={column.onChange1}
-                      onChange2={column.onChange2}
-                      onChange3={column.onChange3}
-                      onChange4={column.onChange4}
-                      onChange5={column.onChange5}
-                    />
+          {column.editMode ? 
+              <Fragment>
+                <Segment textAlign="left" basic>
+                  <ColumnsFormComp 
+                    value1={column.value1}
+                    value2={column.value2}
+                    value3={column.value3}
+                    value4={column.value4}
+                    value5={column.value5}
+                    onChange1={column.onChange1}
+                    onChange2={column.onChange2}
+                    onChange3={column.onChange3}
+                    onChange4={column.onChange4}
+                    onChange5={column.onChange5}
+                  />
                   <Segment textAlign="right" basic>
                     <Button onClick={column.setEditMode}>Save</Button>
                   </Segment>
-                </Fragment>
-              :
-                <Fragment>
+                </Segment>
+              </Fragment>
+            :
+              <Fragment>
+                <Segment textAlign="center" basic>
                   <Image src={column.image} style={styles.imageSize} size="medium"/>
                   <Segment textAlign="left" style={styles.headerStyle} basic>
                     {column.header}
@@ -135,9 +133,9 @@ const ColumnsContent = () => {
                   <Segment textAlign="right" basic>
                     <Button onClick={column.setEditMode}>Edit</Button>
                   </Segment>
-                </Fragment>
-            }
-          </Segment>
+                </Segment>
+              </Fragment>
+          }
         </Grid.Column>
       )
     })

@@ -1,9 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import { Grid, Segment, Image, Button, Header } from 'semantic-ui-react';
+import { Grid, Segment, Image, Button, Header, Icon } from 'semantic-ui-react';
 import BannerFormComp from './BannerFormComp';
 
 const BannerContent = () => {
-
   const [ url1, setUrl1 ] = useState("http://s3-us-west-2.amazonaws.com/unicity.com/uploads/sites/2/Artboard-2%403x.jpg");
   const [ url2, setUrl2 ] = useState("http://www.unicity.com/usa/wp-content/uploads/sites/2/Banner-2-GetFit21-web.png");
   const [ url3, setUrl3 ] = useState("http://www.unicity.com/usa/wp-content/uploads/sites/2/Banner-4-Bios-7-web1.png");
@@ -12,18 +11,10 @@ const BannerContent = () => {
   const [ editMode, setEditMode ] = useState(false);
 
   const pageImages = [
-    {
-      url: url1,
-    },
-    {
-      url: url2,
-    },
-    {
-      url: url3,
-    },
-    {
-      url: url4,
-    },
+    {url: url1},
+    {url: url2},
+    {url: url3},
+    {url: url4},
   ]
 
   const imagesEditor = [
@@ -77,12 +68,16 @@ const BannerContent = () => {
           </Fragment>
         :
           <Fragment>
-            <Segment textAlign="center">
+            <Segment textAlign="center" style={styles.bannerStyles} basic>
               <Image src={pageImages[imagePosition].url} style={styles.imageStyles} size="massive"/>
-              <Button onClick={() => galleryMovement("minus")}>Back</Button>
-              <Button onClick={() => galleryMovement("plus")}>Forward</Button>
+              <Button onClick={() => galleryMovement("minus")} style={styles.imageMovementButtonLeft} size="small" circular compact>
+                <Icon name="chevron circle left" color="orange" size="large" fitted/>
+              </Button>
+              <Button onClick={() => galleryMovement("plus")} style={styles.imageMovementButtonRight} size="small" circular compact>
+                <Icon name="chevron circle right" color="orange" size="large" fitted/>
+              </Button>
               <Segment textAlign="right" basic>
-                <Button onClick={() => setEditMode(true)}>Edit</Button>
+                <Button onClick={() => setEditMode(true)} style={styles.editButtonStyle}>Edit</Button>
               </Segment>
             </Segment>
           </Fragment>
@@ -95,6 +90,23 @@ const styles = {
   imageStyles: {
     width: '1000px',
     height: '582.22px'
+  },
+  imageMovementButtonRight: {
+    position: 'relative',
+    left: '430px',
+    top: '-300px'
+  },
+  imageMovementButtonLeft: {
+    position: 'relative',
+    left: '-430px',
+    top: '-300px'
+  },
+  editButtonStyle: {
+    position: 'relative',
+    top: '-115px'
+  },
+  bannerStyles: {
+    marginBottom: '-125px'
   }
 }
 
