@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Segment, Grid, Image, Button, Form, Divider, Icon, Header } from 'semantic-ui-react';
-import FormComp from './FormComp';
+import ColumnsFormComp from './ColumnsFormComp';
 
 const ColumnsContent = () => {
 
@@ -24,9 +24,9 @@ const ColumnsContent = () => {
   const [ buttonText2, setButtonText2 ] = useState("LEARN MORE");
   const [ buttonText3, setButtonText3 ] = useState("COMING FEBRUARY 2019");
 
-  const [ editMode1, setEditMode1 ] = useState(false)
-  const [ editMode2, setEditMode2 ] = useState(false)
-  const [ editMode3, setEditMode3 ] = useState(false)
+  const [ editMode1, setEditMode1 ] = useState(false);
+  const [ editMode2, setEditMode2 ] = useState(false);
+  const [ editMode3, setEditMode3 ] = useState(false);
 
   const columnsData = [
     {
@@ -98,7 +98,7 @@ const ColumnsContent = () => {
           <Segment textAlign="center" basic>
             {column.editMode ? 
                 <Fragment>
-                    <FormComp 
+                    <ColumnsFormComp 
                       value1={column.value1}
                       value2={column.value2}
                       value3={column.value3}

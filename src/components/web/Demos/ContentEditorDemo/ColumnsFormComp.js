@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'semantic-ui-react';
 
-const FormComp = ({
+const ColumnsFormComp = ({
   value1,
   value2,
   value3,
@@ -54,4 +54,4 @@ const FormComp = ({
   )
 }
 
-export default FormComp;
+export default ColumnsFormComp;

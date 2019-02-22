@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import Loadable from 'react-loadable';
 import { Header, Segment, Icon, Grid, Container } from 'semantic-ui-react';
 import Loader from '../../../../Loader';
