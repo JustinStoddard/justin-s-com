@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Grid, Segment, Image, Button, Icon, Header } from 'semantic-ui-react';
+import { Grid, Segment, Image, Button, Icon } from 'semantic-ui-react';
 import BannerFormComp from './BannerFormComp';
 
 const BannerContent = () => {

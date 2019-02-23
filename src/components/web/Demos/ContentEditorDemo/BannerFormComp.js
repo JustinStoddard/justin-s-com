@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Form, Segment, Grid, Divider, Header } from 'semantic-ui-react';
+import { Form, Divider, Header } from 'semantic-ui-react';
 
 const BannerFormComp = ({
   layout,
