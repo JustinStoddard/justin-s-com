@@ -127,7 +127,7 @@ const ColumnsContent = () => {
                   </Segment>
                   <Segment textAlign="left" style={styles.buttonSpacing} basic>
                     {column.link === "" ? 
-                        <span style={styles.buttonTextStyle}>{column.buttonText}</span>
+                        <span style={styles.nonLinkStyles}>{column.buttonText}</span>
                       :
                         <a href={column.link} target="_blank">
                           <span style={styles.buttonTextStyle}>{column.buttonText}</span>
@@ -166,6 +166,10 @@ const styles = {
   buttonTextStyle: {
     fontWeight: 'bold',
     color: 'orange'
+  },
+  nonLinkStyles: {
+    fontWeight: 'bold',
+    color: 'grey'
   }
 }
 

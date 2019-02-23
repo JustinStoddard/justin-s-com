@@ -37,7 +37,7 @@ const ColumnsFormComp = ({
           value={value2}
           onChange={onChange2}
         />
-        <Form.Input 
+        <Form.TextArea 
           placeholder="Description ..."
           size="huge"
           name="description"
