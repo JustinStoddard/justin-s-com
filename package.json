@@ -14,12 +14,23 @@
     "react-scripts": "1.1.5",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-react": "^0.82.3",
+    "simple-type-assert": "^1.0.9",
     "youtube-api-search": "0.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.0.0",
+    "@storybook/addon-actions": "^5.0.0",
+    "@storybook/addon-links": "^5.0.0",
+    "@storybook/addons": "^5.0.0",
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5"
   }
 }
