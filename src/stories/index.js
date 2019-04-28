@@ -3,32 +3,30 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import styles from '../components/web/Demos/PokeDexDemo/PokeDexDemoIndex'
+import { text, boolean, object, array, number } from '@storybook/addon-knobs';
+//Dont use an array if you are expecting an array of objects, use object so it doesnt break.
 
-import { Button, Welcome } from '@storybook/react/demo';
 import PokeDexColumns from '../components/web/Demos/PokeDexDemo/PokeColumns';
 
 storiesOf('Poke Dex Components', module)
-  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
   .add('Poke Columns', () => 
-    <PokeDexColumns
-      PokeMon={poke.PokeMon}
-      PokeImage={poke.PokeImage}
-      viewStats={poke.viewStats}
-      viewStatsButton={poke.viewStatsButton}
-      addPokeMon={poke.addPokeMon}
-      viewComponent={poke.viewComponent}
-      pokeMonNameStyle={poke.pokeMonNameStyle}
-      addButtonStyles={poke.addButtonStyles}
-      segmentMove={poke.segmentMove}
-    /> 
+    <div style={Styles}>
+      <PokeDexColumns
+        PokeMon={text("PokeMon", "Pikachu")}
+        PokeImage={text("PokeImage", "Image")}
+        viewStats={boolean("viewStats", true)}
+        viewStatsButton={action("View Stats")}
+        addPokeMon={action("Added PokeMon")}
+        viewComponent={boolean("viewComponent", true)}
+        pokeMonNameStyle={object("pokeMonNameStyle", styles.pokeMonName)}
+        addButtonStyles={object("addButtonStyle", styles.addButtonStyles)}
+        segmentMove={object("segmentMove", styles.segmentMove1)}
+      /> 
+    </div>
   );
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+  const Styles = {
+    height: '400px',
+    width: '300px'
+  }

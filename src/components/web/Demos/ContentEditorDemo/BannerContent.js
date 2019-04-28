@@ -4,6 +4,7 @@ import { Grid, Segment, Image, Button, Icon } from 'semantic-ui-react';
 import BannerFormComp from './BannerFormComp';
 
 const BannerContent = () => {
+
   const [ url1, setUrl1 ] = useState("http://s3-us-west-2.amazonaws.com/unicity.com/uploads/sites/2/Artboard-2%403x.jpg");
   const [ header1, setHeader1 ] = useState("");
   const [ subHeader1, setSubHeader1 ] = useState("");

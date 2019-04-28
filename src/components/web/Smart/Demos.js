@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import Loader from '../../../Loader';
 import { Segment, Container, Divider, Header } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
-const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'),loading: () => <Loader/>});
+const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'), loading: () => <Loader/>});
 const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader/>});
-const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'),loading: () => <Loader/>});
-const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'),loading: () => <Loader/>});
-const ContentEditorLoader = Loadable({loader : () => import('../Demos/ContentEditorDemo/ContentEditorIndex'), loading: () => <Loader/>})
+const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'), loading: () => <Loader/>});
+const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'), loading: () => <Loader/>});
+const ContentEditorLoader = Loadable({loader: () => import('../Demos/ContentEditorDemo/ContentEditorIndex'), loading: () => <Loader/>});
+const VexClanDemo = Loadable({loader: () => import('../Demos/VexClanDemo/VexClanIndex'), loading: () => <Loader/>});
 const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader/>});
-
-// const CodexDemoLoader = Loadable({
-//   loader: () => import('../CodexDemo/CodexIndex'),
-//   loading: () => <Loader/>
-// })
+// const CodexDemoLoader = Loadable({loader: () => import('../CodexDemo/CodexIndex'), loading: () => <Loader/>})
 
 const Demos = () => {
 
@@ -21,6 +18,7 @@ const Demos = () => {
   const [ calculatorDemo, setCalculatorDemo ] = useState(false);
   const [ PokeDexApiDemo, setPokeDexApiDemo ] = useState(false);
   const [ ContentEdit, setContentEdit ] = useState(false);
+  const [ vexClan, setVexClan ] = useState(false);
 
   const handleDemoStateChange = (demo) => {
     demo === 'pokeDex' ? setPokeDexApiDemo(true) : setPokeDexApiDemo(false);
@@ -28,6 +26,7 @@ const Demos = () => {
     demo === 'clock' ? setClockDemo(true) : setClockDemo(false);
     demo === 'video' ? setVideoDemo(true) : setVideoDemo(false);
     demo === 'content' ? setContentEdit(true) : setContentEdit(false); 
+    demo === 'vex' ? setVexClan(true) : setVexClan(false);
   }
 
   const demos = [
@@ -50,6 +49,18 @@ const Demos = () => {
       demoDeActivation: () => handleDemoStateChange(''),
       demoHeader: "Content Editor Demo - NEW!",
       demoDescription: "This Demo is a proof of concept for the company I currently work for. I'm trying to test a custom theoretical content editior for our distributers. This is also connected to a firebase DB. Enjoy!",
+      demoTechListItem1: "React JS",
+      demoTechListItem2: "FireBase DB",
+      demoTechListItem3: "Axios",
+      demoTechListItem4: "Semantic-UI"
+    },
+    {
+      demoState: vexClan,
+      demoComponent: <VexClanDemo/>,
+      demoActivation: () => handleDemoStateChange('vex'),
+      demoDeActivation: () => handleDemoStateChange(''),
+      demoHeader: "Vex Clan Archive Demo",
+      demoDescription: "This demo is a proof of concept for a new website I want to build that helps clans organize and archive information. This is more of a UI experience.",
       demoTechListItem1: "React JS",
       demoTechListItem2: "FireBase DB",
       demoTechListItem3: "Axios",
@@ -100,6 +111,7 @@ const Demos = () => {
         <Header as="h2">Demos</Header>
       </Segment>
       <Divider hidden/>
+
       {demos.map(demo => {
         return(
           <Demo 
@@ -124,15 +136,15 @@ const Demos = () => {
 export default Demos;
 
 //------ Below is code for another demo concept
-//<Demo 
-//  DemoState={codexDemo}
-//  DemoComponent={<CodexDemoLoader />}
-//  DemoActivation={() => this.setState({ codexDemo: !codexDemo })}
-//  DemoDeActivation={() => this.setState({ codexDemo: !codexDemo, videoDemo: false, calculatorDemo: false })}
-//  DemoHeader={"Codex Demo"} 
-//  DemoDescription={"This demos showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state."} 
-//  DemoTechListItem1={"React Js"} 
-//  DemoTechListItem2={"Semantic-UI"} 
-//  DemoTechListItem3={"ES6 JS"} 
-//  DemoTechListItem4={"My Brain"} 
-///>
+{/* <Demo 
+ DemoState={codexDemo}
+ DemoComponent={<CodexDemoLoader />}
+ DemoActivation={() => this.setState({ codexDemo: !codexDemo })}
+ DemoDeActivation={() => this.setState({ codexDemo: !codexDemo, videoDemo: false, calculatorDemo: false })}
+ DemoHeader={"Codex Demo"} 
+ DemoDescription={"This demos showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state."} 
+ DemoTechListItem1={"React Js"} 
+ DemoTechListItem2={"Semantic-UI"} 
+ DemoTechListItem3={"ES6 JS"} 
+ DemoTechListItem4={"My Brain"} 
+/> */}
