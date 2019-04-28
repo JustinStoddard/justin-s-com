@@ -1,0 +1,128 @@
+/*================Start Of Left Column Styles*/
+.left-column {
+  padding-top: 15px;
+  height: 900px;
+  background: #333333;
+  border: 1px solid #333333;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.picture-row-left {
+  height: 150px;
+}
+
+.bio-row-left {
+  padding: 10px 10px;
+  height: 100px;
+  text-align: right;
+  border-top: 2px solid white;
+}
+.bio-header-left {
+  padding-top: 5px;
+  font-family: Geneva;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.experience-row-left {
+  padding: 10px 10px;
+  height: 100px;
+  text-align: right;
+  border-top: 2px solid white;
+}
+.experience-header-left {
+  padding-top: 5px;
+  font-family: Geneva;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.education-row-left {
+  padding: 10px 10px;
+  height: 100px;
+  text-align: right;
+  border-top: 2px solid white;
+}
+.education-header-left {
+  padding-top: 5px;
+  font-family: Geneva;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.expertise-row-left {
+  padding: 10px 10px;
+  height: 100px;
+  text-align: right;
+  border-top: 2px solid white;
+}
+.expertise-header-left {
+  padding-top: 5px;
+  font-family: Geneva;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+/*================End Of Left Column Styles*/
+
+/*================Start Of Right Column Styles*/
+.right-column {
+  padding-top: 15px;
+  height: 900px;
+  background: white;
+  border: 1px solid white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.header-row-right {
+  height: 150px;
+}
+.header-right {
+  font-family: Geneva;
+  font-size: 35px;
+  color: #333333;
+  text-transform: uppercase;
+}
+.contact-subheaders {
+  font-family: Geneva;
+  font-weight: bold;
+  font-size: 12px;
+}
+.contact-icons {
+  margin-top: 12px;
+}
+.social-icons {
+  margin-top: 25px;
+}
+
+.bio-row-right {
+  border-top: 2px solid #333333;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.bio-content {
+  font-family: Geneva;
+  font-size: 12px;
+}
+
+.experience-row-right {
+  border-top: 2px solid #333333;
+  height: 100px;
+}
+
+.education-row-right {
+  border-top: 2px solid #333333;
+  height: 100px;
+}
+
+.expertise-row-right {
+  border-top: 2px solid #333333;
+  height: 100px;
+}
+/*================End Of Right Column Styles*/
