@@ -16,17 +16,17 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Route exact path="/resume" component={Resume}/>
+        <HeaderComp />
         <Switch>
-          <HeaderComp />
+          <Route exact path="/resume" component={Resume}/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/projects" component={Projects}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/services" component={Services}/>
           <Route exact path="/demos" component={Demos}/>
-          <Footer />
         </Switch>
+        <Footer />
       </Fragment>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import "../../../../CSS/vex.css";
-import { Segment, Divider, Header, Grid, Icon } from 'semantic-ui-react';
+import { Segment, Header, Grid, Icon } from 'semantic-ui-react';
 
 const VexClan = () => {
   return(
