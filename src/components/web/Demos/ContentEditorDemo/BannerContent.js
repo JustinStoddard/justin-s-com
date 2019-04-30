@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import Type from 'simple-type-assert';
 import { Grid, Segment, Image, Button, Icon } from 'semantic-ui-react';
 import BannerFormComp from './BannerFormComp';
 
@@ -126,7 +125,6 @@ const BannerContent = () => {
 
 
   const galleryMovement = (operator) => {
-    Type.assert(operator, String)
     if (operator === "plus") {
       if (imagePosition === 3) {
         setImagePosition(0)
@@ -143,7 +141,6 @@ const BannerContent = () => {
   }
 
   const setBannerLayout = (layout) => {
-    Type.assert(layout, String)
     if (layout.includes("L1")) {
       if (layout === "L1-header") {
         return layouts.L1.header
