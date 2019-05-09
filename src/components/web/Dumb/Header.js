@@ -14,7 +14,7 @@ const HeaderComp = () => {
             <Link to="/">
               <Responsive as={Segment} textAlign="center" inverted>
                 <Responsive as={Segment} color="blue">
-                  <Responsive as={Button} size="small" color="black">
+                  <Responsive as={Button} size="small" color="black" type="submit">
                     <h5>Home</h5>
                   </Responsive>
                 </Responsive>

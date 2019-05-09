@@ -38,7 +38,7 @@ const ResumeIndex = () => {
               }
               {experienceState ? 
                   <Grid.Row className="experience-row-left-open"> {/* Experience Open*/}
-                    <a onClick={() => setExperienceState(false)} className="anchor-styles">
+                    <a id="experience" onClick={() => setExperienceState(false)} className="anchor-styles">
                       <span className="experience-header-left">Experience</span>
                       <span className="icon-align"><Icon name="angle down" size="large" className="ico-styles-open"/></span>
                     </a>
