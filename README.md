@@ -6,6 +6,9 @@ Run `npm install` in the root directory of the project.
 After dependancies are installed run `npm start` in the
 same directory within a terminal window of your choice.
 
+##Activation-Cypress:
+Run `npm run cypress:open` in a terminal window to start Cypress.
+
 ## Recent Updates:
 * 2/8/2019 - www.thisjustin.tech now uses ReactJs v16.8.0 (hooks)
 * 2/8/2019 - www.thisjustin.tech v3.1.0 was released.
