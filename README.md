@@ -6,7 +6,7 @@ Run `npm install` in the root directory of the project.
 After dependancies are installed run `npm start` in the
 same directory within a terminal window of your choice.
 
-##Activation-Cypress:
+## Activation-Cypress:
 Run `npm run cypress:open` in a terminal window to start Cypress.
 
 ## Recent Updates:
