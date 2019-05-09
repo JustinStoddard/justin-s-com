@@ -1,27 +1,27 @@
-.main {
-  background-color: black;
-  opacity: 0.75;
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header-buttons {
-  width: 115px;
-  height: 45px;
-  border-radius: 35px;
-  border-color: black;
-  background-image: linear-gradient(to right, #25274D, #29648A);
+.tab-row-align {
+  margin-top: 25px;
 }
-.header-buttons:hover {
-  border-color: white;
+.tab-design {
+  margin: 0px 15px 0px 15px;
+  font-family: Geneva;
+  font-size: 25px;
+  color: black;
+  transition: 0.5s;
   cursor: pointer;
-  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
 }
-.header-buttons:focus {
-  outline: 0;
-}
-.header-buttons:active {
-  width: 115px;
-  height: 45px;
-  border-radius: 35px;
-  border-color: white;
-  background-image: linear-gradient(to right, #25274D, #29648A);
+.tab-design:hover {
+  font-family: Geneva;
+  font-size: 25px;
+  color: #29648A;
+  border-bottom: 2px solid #29648A;
+  transition: 0.5s;
 }

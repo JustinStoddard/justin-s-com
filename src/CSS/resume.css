@@ -71,7 +71,7 @@
 
 .experience-row-left-open {
   padding: 10px 10px;
-  height: 440px;
+  height: 500px;
   text-align: right;
   border-top: 2px solid #d6bea7;
   transition: 0.8s;
@@ -246,7 +246,7 @@
 
 .experience-row-right-open {
   border-top: 2px solid #333333;
-  height: 440px;
+  height: 500px;
   transition: 0.8s;
   overflow: hidden;
 }
@@ -268,6 +268,9 @@
 .content-font {
   font-family: Geneva;
   font-size: 13px;
+}
+.space-between-bullets {
+  margin-bottom: 5px;
 }
 .content-font {
   font-family: Geneva;

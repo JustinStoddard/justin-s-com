@@ -113,7 +113,7 @@ const Demos = () => {
       <Divider hidden/>
 
       {demos.map(demo => {
-        return(
+        return (
           <Demo 
             key={demo.demoHeader}
             DemoState={demo.demoState} //Takes in a State variable

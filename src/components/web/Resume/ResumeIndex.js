@@ -10,7 +10,7 @@ const ResumeIndex = () => {
   const [ educationState, setEducationState ] = useState(false);
   const [ projectState, setProjectState ] = useState(false);
 
-  return (
+  return(
     <Fragment>
       <div className="godfather-container"> 
       <Divider hidden/>
@@ -21,7 +21,7 @@ const ResumeIndex = () => {
               <Grid.Row className="picture-row-left"> {/* Picture */}
                 <Image src={ProfilePic} className="picture-dimensions"/>
               </Grid.Row>
-              { bioState ? 
+              {bioState ? 
                   <Grid.Row className="bio-row-left-open"> {/* Bio Open */}
                     <a onClick={() => setBioState(false)} className="anchor-styles">
                       <span className="bio-header-left">Bio</span>
@@ -36,7 +36,7 @@ const ResumeIndex = () => {
                     </a>
                   </Grid.Row>
               }
-              { experienceState ? 
+              {experienceState ? 
                   <Grid.Row className="experience-row-left-open"> {/* Experience Open*/}
                     <a onClick={() => setExperienceState(false)} className="anchor-styles">
                       <span className="experience-header-left">Experience</span>
@@ -51,7 +51,7 @@ const ResumeIndex = () => {
                     </a>
                   </Grid.Row>
               }
-              { educationState ?
+              {educationState ?
                   <Grid.Row className="education-row-left-open"> {/* Education Open*/}
                     <a onClick={() => setEducationState(false)} className="anchor-styles">
                       <span className="education-header-left">Education</span>
@@ -158,27 +158,37 @@ const ResumeIndex = () => {
                             <List.List as="ul">
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I create user friendly UI with custom and architecturally modern .LESS</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I create user friendly UI with custom and architecturally modern .LESS</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I work with REST API's to CRUD, structure, and manipulate data</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I work with REST API's to CRUD, structure, and manipulate data</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I work with multiple frontend javascript libraries such as ReactJS and AngularJS</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I work with multiple frontend javascript libraries such as ReactJS and AngularJS</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Maintain Agile flow architecture with GitHub and bi-weekly sprint meetings</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Maintain Agile flow architecture with GitHub and bi-weekly sprint meetings</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Occassionaly help backend developers update/create endpoints using NodeJS</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Occassionaly help backend developers update/create endpoints using NodeJS</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
@@ -192,27 +202,37 @@ const ResumeIndex = () => {
                             <List.List as="ul">
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I create POST API payloads with data that comes from ssh tunnels</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I create POST API payloads with data that comes from ssh tunnels</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Parse ssh data into JSON format for API use.</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Parse ssh data into JSON format for API use.</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Validate ssh responses to maintain security</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Validate ssh responses to maintain security</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Work with Frontend Developers to specify the format of JSON objects</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Work with Frontend Developers to specify the format of JSON objects</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Maintain an Agile architecture with GitHub and weekly sprint meetings</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Maintain an Agile architecture with GitHub and weekly sprint meetings</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
@@ -226,27 +246,37 @@ const ResumeIndex = () => {
                             <List.List as="ul">
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I created REST API endpoints for data to be used on the Frontend of applications</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I created REST API endpoints for data to be used on the Frontend of applications</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Created reliable backend architecture for scalability and fluid maintenance</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Created reliable backend architecture for scalability and fluid maintenance</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I worked with multiple backend technologies such as NodeJS and Ruby On Rails</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I worked with multiple backend technologies such as NodeJS and Ruby On Rails</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I worked with multiple database technologies such as Postgress and MySQL</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">I worked with multiple database technologies such as Postgress and MySQL</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Created relationships between data/ tables</span></List.Description>
+                                  <List.Description className="space-between-bullets">
+                                    <span className="content-font">Created relationships between data/ tables</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
@@ -267,27 +297,37 @@ const ResumeIndex = () => {
                             <List.List as="ul">
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I create user friendly UI with custom and architecturally modern .LESS</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I create user friendly UI with custom and architecturally modern .LESS</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I work with REST API's to CRUD, structure, and manipulate data</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I work with REST API's to CRUD, structure, and manipulate data</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I work with multiple frontend javascript libraries such as ReactJS and AngularJS</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I work with multiple frontend javascript libraries such as ReactJS and AngularJS</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Maintain Agile flow architecture with GitHub and bi-weekly sprint meetings</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Maintain Agile flow architecture with GitHub and bi-weekly sprint meetings</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Occassionaly help backend developers update/create endpoints using NodeJS</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Occassionaly help backend developers update/create endpoints using NodeJS</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
@@ -301,27 +341,37 @@ const ResumeIndex = () => {
                             <List.List as="ul">
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I create POST API payloads with data that comes from ssh tunnels</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I create POST API payloads with data that comes from ssh tunnels</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Parse ssh data into JSON format for API use.</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Parse ssh data into JSON format for API use.</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Validate ssh responses to maintain security</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Validate ssh responses to maintain security</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Work with Frontend Developers to specify the format of JSON objects</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Work with Frontend Developers to specify the format of JSON objects</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Maintain an Agile architecture with GitHub and weekly sprint meetings</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Maintain an Agile architecture with GitHub and weekly sprint meetings</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
@@ -335,27 +385,37 @@ const ResumeIndex = () => {
                             <List.List as="ul">
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I created REST API endpoints for data to be used on the Frontend of applications</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I created REST API endpoints for data to be used on the Frontend of applications</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Created reliable backend architecture for scalability and fluid maintenance</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Created reliable backend architecture for scalability and fluid maintenance</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I worked with multiple backend technologies such as NodeJS and Ruby On Rails</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I worked with multiple backend technologies such as NodeJS and Ruby On Rails</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">I worked with multiple database technologies such as Postgress and MySQL</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">I worked with multiple database technologies such as Postgress and MySQL</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Created relationships between data/ tables</span></List.Description>
+                                  <List.Description>
+                                    <span className="content-font">Created relationships between data/ tables</span>
+                                  </List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
