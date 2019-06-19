@@ -4,7 +4,6 @@ import ProfilePic from '../../../Images/58639038_1107873832746290_33844172168825
 import { List, Grid, Divider, Image, Icon } from 'semantic-ui-react';
 
 const ResumeIndex = () => {
-
   const [ bioState, setBioState ] = useState(true);
   const [ experienceState, setExperienceState ] = useState(false);
   const [ educationState, setEducationState ] = useState(false);

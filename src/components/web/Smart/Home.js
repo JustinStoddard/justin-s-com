@@ -9,10 +9,16 @@ import expertiseImage5 from '../../../Images/nodejs image.png';
 import expertiseImage6 from '../../../Images/HTML5 image.png';
 import expertiseImage7 from '../../../Images/CSS.3 image.png';
 import expertiseImage8 from '../../../Images/semantic image.png';
+import Loadable from 'react-loadable';
+import Loader from '../../../Loader';
 import { Segment, Container, Grid, Divider, Header, Image, Responsive } from 'semantic-ui-react';
+const Resume = Loadable({loader: () => import('../Resume/ResumeIndex'), loading: () => <Loader/>});
 
 class Home extends Component {
-  state = { reactPic: true, reduxPic: true }
+  state = { 
+    reactPic: true, 
+    reduxPic: true 
+  }
 
   onClickReact = () => {
     const { reactPic } = this.state;
@@ -32,40 +38,9 @@ class Home extends Component {
         <Responsive as={Segment} textAlign="center" inverted>
           <Header as="h1">Home</Header>
         </Responsive>
-        <Divider hidden/>
         <Responsive as={Grid}>
           <Grid.Row>
-            <Grid.Column width={8}>
-              <Responsive as={Segment} textAlign="center" inverted>
-              <Responsive as={Segment} color="blue">
-                <Header as="h1">Resumé</Header>
-              </Responsive>
-                <Divider hidden />
-                <Responsive as={Segment} color="blue">
-                  <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-                    <Image src={ResumeImage} size="large" style={styles.marginFixer}/>
-                  </a>
-                  <Divider hidden />
-                  <Divider hidden />
-                </Responsive>
-                <a href="https://docs.google.com/document/d/1dYnCcCfJKsHuxqHiNBoLZpWeIVUbquj40Dk-I-yqDCA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Check Out Source</a>
-              </Responsive>
-            </Grid.Column>
-            
-            <Grid.Column width={8}>
-              <Segment textAlign="center" inverted>
-                <Segment color="blue">
-                  <Header as="h1">Cover Letter</Header>
-                </Segment>
-                <Divider hidden />
-                <Segment color="blue">
-                  <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">
-                    <Responsive as={Image} src={CoverImage} size="medium" style={styles.marginFixer}/>
-                  </a>
-                </Segment>
-                <a href="https://github.com/JustinStoddard/New-Cover-Letter" target="_blank" rel="noopener noreferrer">Check Out Source</a>
-              </Segment>
-            </Grid.Column>
+            <Resume/>
           </Grid.Row>
         </Responsive>
         <Divider hidden/>

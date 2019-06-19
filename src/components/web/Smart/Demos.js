@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Loader from '../../../Loader';
 import { Segment, Container, Divider, Header } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
-const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'), loading: () => <Loader/>});
+
+const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'), loading: () => null});
 const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader/>});
 const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'), loading: () => <Loader/>});
 const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'), loading: () => <Loader/>});
