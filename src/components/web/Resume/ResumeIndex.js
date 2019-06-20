@@ -186,7 +186,7 @@ const ResumeIndex = () => {
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description className="space-between-bullets">
-                                    <span className="content-font">Occassionaly help backend developers update/create endpoints using NodeJS</span>
+                                    <span className="content-font">Occasionally help backend developers update/create endpoints using NodeJS</span>
                                   </List.Description>
                                 </List.Content>
                               </List.Item>
@@ -325,7 +325,7 @@ const ResumeIndex = () => {
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description>
-                                    <span className="content-font">Occassionaly help backend developers update/create endpoints using NodeJS</span>
+                                    <span className="content-font">Occasionally help backend developers update/create endpoints using NodeJS</span>
                                   </List.Description>
                                 </List.Content>
                               </List.Item>
