@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import ResumeImage from '../../../Images/B4B87BEE-6F42-43A4-92FC-857790185640.jpg';
-import CoverImage from '../../../Images/New cover picture';
 import expertiseImage1 from '../../../Images/React Image.png';
 import expertiseImage2 from '../../../Images/redux image.png';
 import expertiseImage3 from '../../../Images/ruby image.png';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import "../../../CSS/header.css";
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const HeaderV2 = () => {
   return (

@@ -10,7 +10,6 @@ const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/P
 const ContentEditorLoader = Loadable({loader: () => import('../Demos/ContentEditorDemo/ContentEditorIndex'), loading: () => <Loader/>});
 const VexClanDemo = Loadable({loader: () => import('../Demos/VexClanDemo/VexClanIndex'), loading: () => <Loader/>});
 const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader/>});
-// const CodexDemoLoader = Loadable({loader: () => import('../CodexDemo/CodexIndex'), loading: () => <Loader/>})
 
 const Demos = () => {
 
@@ -135,17 +134,3 @@ const Demos = () => {
 }
 
 export default Demos;
-
-//------ Below is code for another demo concept
-{/* <Demo 
- DemoState={codexDemo}
- DemoComponent={<CodexDemoLoader />}
- DemoActivation={() => this.setState({ codexDemo: !codexDemo })}
- DemoDeActivation={() => this.setState({ codexDemo: !codexDemo, videoDemo: false, calculatorDemo: false })}
- DemoHeader={"Codex Demo"} 
- DemoDescription={"This demos showcases a Homemade Calculator that does exactly what you expect! It calculates things! This little demo also showcases my ability write ES6 JavaScript using React JS, my understanding of DOM Manipulation, and working with local state."} 
- DemoTechListItem1={"React Js"} 
- DemoTechListItem2={"Semantic-UI"} 
- DemoTechListItem3={"ES6 JS"} 
- DemoTechListItem4={"My Brain"} 
-/> */}

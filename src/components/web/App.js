@@ -10,7 +10,7 @@ import About from './Dumb/About';
 import Contact from './Dumb/Contact';
 import Services from './Smart/Services';
 import Demos from './Smart/Demos'
-import HeaderV2 from './Dumb/HeaderV2';
+// import HeaderV2 from './Dumb/HeaderV2';
 const Resume = Loadable({loader: () => import('../web/Resume/ResumeIndex'), loading: () => <Loader/>});
 
 const App = () => {

@@ -104,7 +104,7 @@ const ResumeIndex = () => {
                       </Grid.Row>
                       <Grid.Row className="contact-icons">
                         <Icon name="home" size="large"/>
-                        <span className="contact-subheaders">1329 w 7125 s, West Jordan, UT</span>
+                        <span className="contact-subheaders">1329 w 7125 s, Taylorsville, UT</span>
                       </Grid.Row>
                     </Grid.Column>
                     <Grid.Column width={8}>
@@ -112,17 +112,17 @@ const ResumeIndex = () => {
                         <Grid.Row className="social-icons">
                           <Grid.Column width={4}>
                             <a href="https://www.facebook.com/people/Justin-Stoddard/100005710514833" target="_blank" rel="noopener noreferrer">
-                              <Icon link="true" name="facebook square" size="huge" color="black"/>
+                              <Icon link={true} name="facebook square" size="huge" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
                             <a href="https://github.com/JustinStoddard" target="_blank" rel="noopener noreferrer">
-                              <Icon link="true" name="github square" size="huge" color="black"/>
+                              <Icon link={true} name="github square" size="huge" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
                             <a href="https://www.linkedin.com/in/justin-stoddard-65171015a/" target="_blank" rel="noopener noreferrer">
-                              <Icon link="true" name="linkedin" size="huge" color="black"/>
+                              <Icon link={true} name="linkedin" size="huge" color="black"/>
                             </a>
                           </Grid.Column>
                         </Grid.Row>
@@ -557,7 +557,45 @@ const ResumeIndex = () => {
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Not Production Ready</span></List.Description>
+                                  <List.Description><span className="content-font">In Production with InfiniPharm Software</span></List.Description>
+                                </List.Content>
+                              </List.Item>
+                            </List.List>
+                          </List.Content>
+                        </List.Item>
+
+                        <List.Item>
+                          <List.Content>
+                            <List.Header><span className="uni-content-header">Simple Type Assert (NPM Package)</span></List.Header>
+                            <List.Description><span className="content-font">Built by Justin Stoddard and Luke Fairchild</span></List.Description>
+                            <List.List as="ul">
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font">Built with NodeJS v10.6.0</span></List.Description>
+                                </List.Content>
+                              </List.Item>
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font"></span>https://www.npmjs.com/package/simple-type-assert</List.Description>
+                                </List.Content>
+                              </List.Item>
+                            </List.List>
+                          </List.Content>
+                        </List.Item>
+
+                        <List.Item>
+                          <List.Content>
+                            <List.Header><span className="uni-content-header">Unicity Shop</span></List.Header>
+                            <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
+                            <List.List as="ul">
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font">Built with AngularJS v1.4.0</span></List.Description>
+                                </List.Content>
+                              </List.Item>
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font"></span>https://shop.unicity.com/#/home</List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
@@ -678,7 +716,45 @@ const ResumeIndex = () => {
                               </List.Item>
                               <List.Item as="li">
                                 <List.Content>
-                                  <List.Description><span className="content-font">Not Production Ready</span></List.Description>
+                                  <List.Description><span className="content-font">In Production with InfiniPharm Software</span></List.Description>
+                                </List.Content>
+                              </List.Item>
+                            </List.List>
+                          </List.Content>
+                        </List.Item>
+
+                        <List.Item>
+                          <List.Content>
+                            <List.Header><span className="uni-content-header">Simple Type Assert (NPM Package)</span></List.Header>
+                            <List.Description><span className="content-font">Built by Justin Stoddard and Luke Fairchild</span></List.Description>
+                            <List.List as="ul">
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font">Built with NodeJS v10.6.0</span></List.Description>
+                                </List.Content>
+                              </List.Item>
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font"></span>https://www.npmjs.com/package/simple-type-assert</List.Description>
+                                </List.Content>
+                              </List.Item>
+                            </List.List>
+                          </List.Content>
+                        </List.Item>
+
+                        <List.Item>
+                          <List.Content>
+                            <List.Header><span className="uni-content-header">Unicity Shop</span></List.Header>
+                            <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
+                            <List.List as="ul">
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font">Built with AngularJS v1.4.0</span></List.Description>
+                                </List.Content>
+                              </List.Item>
+                              <List.Item as="li">
+                                <List.Content>
+                                  <List.Description><span className="content-font"></span>https://shop.unicity.com/#/home</List.Description>
                                 </List.Content>
                               </List.Item>
                             </List.List>
