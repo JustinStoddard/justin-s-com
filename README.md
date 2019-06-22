@@ -1,5 +1,5 @@
 ## Activation:
-Go to www.thisjustin.tech and enjoy the site!!
+Go to https://www.thisjustin.tech and enjoy the site!!
 
 ## Activation-Dev:
 Run `npm install` in the root directory of the project.
