@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Segment, Container, Grid, Divider, Button, Image, Responsive } from 'semantic-ui-react';
 import JustinLogo from '../../../Images/208CCDAF-9F9E-4882-9062-123D14A09196.jpg';
 import Loader from '../../../Loader';
+import HS from '../../../CSS/HeaderStyles';
 
 const HeaderComp = () => {
   return(

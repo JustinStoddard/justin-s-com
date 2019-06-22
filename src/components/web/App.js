@@ -16,7 +16,6 @@ const Resume = Loadable({loader: () => import('../web/Resume/ResumeIndex'), load
 const App = () => {
   return (
     <Fragment>
-      {/* <HeaderV2/> */}
       <HeaderComp/>
       <Switch>
         <Route exact path="/" component={Home}/>
@@ -28,7 +27,7 @@ const App = () => {
         <Route exact path="/services" component={Services}/>
         <Route exact path="/demos" component={Demos}/>
       </Switch>
-      <Footer/>
+      {/* <Footer/> This is being commented out until I have a better use for it.*/}
     </Fragment>
   );
 }

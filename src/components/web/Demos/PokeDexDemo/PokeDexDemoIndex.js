@@ -40,7 +40,7 @@ class ApiFunDemo extends Component {
       .then(response => {
         const manyPokeMon = response.data.results;
         this.setState({ allPokeMon: manyPokeMon })
-        console.log("All Poke", manyPokeMon)
+        // console.log("All Poke", manyPokeMon)
       }).catch(err => console.log(err))
   }
 
@@ -387,9 +387,10 @@ class ApiFunDemo extends Component {
                   <Divider hidden/>
                   <Grid.Row>
                     <Grid.Column width={2}></Grid.Column>
-                      {pokeColumns.map(poke => {
+                      {pokeColumns.map((poke, index) => {
                         return(
                           <PokeColumns
+                            key={index}
                             PokeMon={poke.PokeMon}
                             PokeImage={poke.PokeImage}
                             viewStats={poke.viewStats}

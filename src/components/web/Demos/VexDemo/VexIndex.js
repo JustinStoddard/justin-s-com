@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import "../../../../CSS/vex.css";
 import * as tf from '@tensorflow/tfjs';
-import { Segment, Header, Grid, Icon } from 'semantic-ui-react';
+import { Segment, Header, Icon } from 'semantic-ui-react';
 
 const VexClan = () => {
   // Define a model for linear regression.
