@@ -9,7 +9,7 @@ import Projects from './Smart/Projects';
 import About from './Dumb/About';
 import Contact from './Dumb/Contact';
 import Services from './Smart/Services';
-import Demos from './Smart/Demos'
+import Demos from './Smart/Demos';
 // import HeaderV2 from './Dumb/HeaderV2';
 const Resume = Loadable({loader: () => import('../web/Resume/ResumeIndex'), loading: () => <Loader/>});
 
@@ -19,8 +19,9 @@ const App = () => {
       {/* <HeaderV2/> */}
       <HeaderComp/>
       <Switch>
-        <Route exact path="/resume" component={Resume}/>
         <Route exact path="/" component={Home}/>
+        <Route exact path="/webar"/>
+        <Route exact path="/resume" component={Resume}/>
         <Route exact path="/projects" component={Projects}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/contact" component={Contact}/>
