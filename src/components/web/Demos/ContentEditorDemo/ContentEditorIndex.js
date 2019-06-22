@@ -15,7 +15,6 @@ const ContentEditorIndex = () => {
         <Icon name="warning sign" size="large"/>
       </Segment>
 
-      {/* The code for this Demo should go below here */}
       <Container>
         <Grid>
           <Grid.Row>

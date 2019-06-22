@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Loader from '../../../Loader';
-import { Segment, Container, Divider, Header } from 'semantic-ui-react';
 import Loadable from 'react-loadable';
+import { Segment, Container, Divider, Header } from 'semantic-ui-react';
 
-const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'), loading: () => null});
+const VideoDemoLoader = Loadable({loader: () => import('./VideoIndex'), loading: () => <Loader/>});
 const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/CalculatorDemo/CalculatorIndex'),loading: () => <Loader/>});
 const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'), loading: () => <Loader/>});
 const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'), loading: () => <Loader/>});
@@ -12,7 +12,6 @@ const VexDemo = Loadable({loader: () => import('../Demos/VexDemo/VexIndex'), loa
 const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader/>});
 
 const Demos = () => {
-
   const [ videoDemo, setVideoDemo ] = useState(false);
   const [ clockDemo, setClockDemo ] = useState(false);
   const [ calculatorDemo, setCalculatorDemo ] = useState(false);
@@ -63,7 +62,7 @@ const Demos = () => {
       demoDescription: "This Demo is an attempt at creating a Q-Learning A.I. with TensorFlowJS. My Goal is to eventually create a Prescriptive A.I. that tells you when you buy and sell Crypto.",
       demoTechListItem1: "React JS",
       demoTechListItem2: "TensorFlow",
-      demoTechListItem3: "CoinBase API",
+      demoTechListItem3: "CoinBaseAPI",
       demoTechListItem4: "Semantic-UI"
     },
     {
@@ -111,7 +110,6 @@ const Demos = () => {
         <Header as="h2">Demos</Header>
       </Segment>
       <Divider hidden/>
-
       {demos.map(demo => {
         return (
           <Demo 
