@@ -8,7 +8,7 @@ const CalculatorDemoLoader = Loadable({loader: () => import('../Demos/Calculator
 const ClockDemoLoader = Loadable({loader: () => import('../Demos/ClockDemo/Clock'), loading: () => <Loader/>});
 const PokeDexDemoLoader = Loadable({loader: () => import('../Demos/PokeDexDemo/PokeDexDemoIndex'), loading: () => <Loader/>});
 const ContentEditorLoader = Loadable({loader: () => import('../Demos/ContentEditorDemo/ContentEditorIndex'), loading: () => <Loader/>});
-const VexClanDemo = Loadable({loader: () => import('../Demos/VexClanDemo/VexClanIndex'), loading: () => <Loader/>});
+const VexDemo = Loadable({loader: () => import('../Demos/VexDemo/VexIndex'), loading: () => <Loader/>});
 const Demo = Loadable({loader: () => import('../Dumb/Demo'), loading: () => <Loader/>});
 
 const Demos = () => {
@@ -56,14 +56,14 @@ const Demos = () => {
     },
     {
       demoState: vexClan,
-      demoComponent: <VexClanDemo/>,
+      demoComponent: <VexDemo/>,
       demoActivation: () => handleDemoStateChange('vex'),
       demoDeActivation: () => handleDemoStateChange(''),
-      demoHeader: "Vex Clan Archive Demo",
-      demoDescription: "This demo is a proof of concept for a new website I want to build that helps clans organize and archive information. This is more of a UI experience.",
+      demoHeader: "Vex A.I. Demo",
+      demoDescription: "This Demo is an attempt at creating a Q-Learning A.I. with TensorFlowJS. My Goal is to eventually create a Prescriptive A.I. that tells you when you buy and sell Crypto.",
       demoTechListItem1: "React JS",
-      demoTechListItem2: "FireBase DB",
-      demoTechListItem3: "Axios",
+      demoTechListItem2: "TensorFlow",
+      demoTechListItem3: "CoinBase API",
       demoTechListItem4: "Semantic-UI"
     },
     {
