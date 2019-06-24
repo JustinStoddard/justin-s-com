@@ -28,14 +28,6 @@ const HeaderComp = () => {
           </div>
         </Link>
       </div>
-        <Grid.Row>
-          <Grid.Column width={2}></Grid.Column>
-          <Grid.Column width={7}>
-            
-          </Grid.Column>
-          
-          <Grid.Column width={3}></Grid.Column>
-        </Grid.Row>
       </Responsive>
     </Container>
   )
