@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ProfilePic from '../../../Images/58639038_1107873832746290_3384417216882540544_n.jpg';
 import '../../../CSS/HomeStyles.css';
+import { Link } from 'react-router-dom';
 import { Container, Grid, Image } from 'semantic-ui-react';
 
 const Home = () => {
-
   const [ phaseHeader1, setPhaseHeader1 ] = useState(false);
   const [ phaseHeader2, setPhaseHeader2 ] = useState(false);
   const [ phaseHeader3, setPhaseHeader3 ] = useState(false);
@@ -13,6 +13,7 @@ const Home = () => {
   const [ phaseHeader6, setPhaseHeader6 ] = useState(false);
   const [ phaseHeader7, setPhaseHeader7 ] = useState(false);
   const [ phaseHeader8, setPhaseHeader8 ] = useState(false);
+  const [ phaseHeader9, setPhaseHeader9 ] = useState(false);
 
   if (window.location.pathname === "/") {
     setTimeout(() => {
@@ -39,6 +40,9 @@ const Home = () => {
     setTimeout(() => {
       setPhaseHeader8(true);
     }, 7300);
+    setTimeout(() => {
+      setPhaseHeader9(true);
+    }, 8300);
   }
 
   return(
@@ -46,12 +50,9 @@ const Home = () => {
       <Grid>
         <Grid.Row className="homeRow">
           <div className="homeContainer">
-            <Grid.Column width={8}>
               <div className="pictureColumn">
-                <Image src={ProfilePic} size="large"/>
+                <Image src={ProfilePic} className="picture-dimensions"/>
               </div>
-            </Grid.Column>
-            <Grid.Column width={8}>
               <div className="contentColumn">
                 {phaseHeader1 ?
                     <h6 className="contentHeader1Open">Welcome, </h6>
@@ -93,8 +94,16 @@ const Home = () => {
                   : 
                     <h6 className="contentHeader8Closed">Domain</h6>
                 }
+                {phaseHeader9 ?
+                    <Link to="/resume">
+                      <h6 className="contentHeader9Open">Discover More</h6>
+                    </Link>
+                  : 
+                    <Link to="/resume">
+                      <h6 className="contentHeader9Closed">Discover More</h6>
+                    </Link>
+                }
               </div>
-            </Grid.Column>
           </div>
         </Grid.Row>
       </Grid>
