@@ -1,6 +1,7 @@
 .godfather-container {
   width: 769px;
   margin: 0 auto;
+  margin-top: 200px;
 }
 
 .ico-styles-open {
@@ -42,7 +43,7 @@
   display: flex;
   justify-content: center;
 }
-.picture-dimensions {
+.picture-dimensions-resume {
   height: 130px;
   width: 140px;
 }

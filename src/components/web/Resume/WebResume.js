@@ -18,7 +18,7 @@ const WebResume = () => {
 
             <Grid.Column width={4} className="left-column"> {/* Left Column */}
               <Grid.Row className="picture-row-left"> {/* Picture */}
-                <Image src={ProfilePic} className="picture-dimensions"/>
+                <Image src={ProfilePic} className="picture-dimensions-resume"/>
               </Grid.Row>
               {bioState ? 
                   <Grid.Row className="bio-row-left-open"> {/* Bio Open */}
