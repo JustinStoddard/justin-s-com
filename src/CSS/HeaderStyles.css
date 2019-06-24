@@ -17,6 +17,11 @@
   left: 35px;
   top: 50px;
 }
+@media (max-width: 590px) {
+  .outerLogo {
+    left: 0px;
+  }
+}
 .innerLogo {
   color: white;
   font-size: 30px;
@@ -42,15 +47,11 @@
   align-items: center;
   transition: 0.3s;
   border-radius: 0px;
-  /* border-top: 0px solid rgba(102, 102, 102, 0); */
-  /* border-bottom: 0px solid rgba(102, 102, 102, 0); */
   margin-bottom: 5px;
   margin-right: 40px;
   margin-top: 10px;
 }
 .navButtons:hover {
-  /* border-top: 2px solid rgba(255, 255, 255, 1); */
-  /* border-bottom: 2px solid rgba(255, 255, 255, 1); */
   height: 100px;
   transition: 0.3s;
 }
