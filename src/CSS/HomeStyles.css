@@ -118,6 +118,7 @@
   left: 225px;
   transition: 0.8s;
   opacity: 1;
+  width: 90px;
 }
 @media (max-width: 990px) {
   .contentHeader2Open {
@@ -142,6 +143,7 @@
   left: 225px;
   transition: 0.8s;
   opacity: 0;
+  width: 90px;
 }
 @media (max-width: 990px) {
   .contentHeader2Closed {
@@ -179,6 +181,7 @@
     font-size: 35px;
     top: -186px;
     left: 33px;
+    width: 200px;
   }
 }
 .contentHeader3Closed {
@@ -204,6 +207,7 @@
     font-size: 35px;
     top: -280px;
     left: 33px;
+    width: 200px;
   }
 }
 
@@ -439,6 +443,7 @@
     font-size: 57px;
     top: -587px;
     left: 23px;
+    width: 235px;
   }
 }
 .contentHeader8Closed {
@@ -467,6 +472,7 @@
     font-size: 57px;
     top: -587px;
     left: 23px;
+    width: 235px;
   }
 }
 

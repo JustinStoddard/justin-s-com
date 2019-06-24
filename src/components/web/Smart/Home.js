@@ -33,16 +33,16 @@ const Home = () => {
     }, 4500);
     setTimeout(() => {
       setPhaseHeader6(true);
-    }, 5500);
+    }, 5000);
     setTimeout(() => {
       setPhaseHeader7(true);
-    }, 6000);
+    }, 5500);
     setTimeout(() => {
       setPhaseHeader8(true);
-    }, 7300);
+    }, 6500);
     setTimeout(() => {
       setPhaseHeader9(true);
-    }, 8300);
+    }, 7500);
   }
 
   return(

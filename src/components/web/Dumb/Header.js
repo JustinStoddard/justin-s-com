@@ -6,7 +6,7 @@ import '../../../CSS/HeaderStyles.css';
 const HeaderComp = () => {
   return(
     <Container>
-      <Divider hidden />
+      <Divider hidden/>
       <Responsive as={Grid}>
       <div className="outerLogo">
         <h5 className="innerLogo">JST</h5>

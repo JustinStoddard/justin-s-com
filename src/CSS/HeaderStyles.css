@@ -19,7 +19,8 @@
 }
 @media (max-width: 590px) {
   .outerLogo {
-    left: 0px;
+    left: 30%;
+    top: 20px;
   }
 }
 .innerLogo {
@@ -39,6 +40,13 @@
   justify-content: space-around;
   align-items: center;
   margin-left: 45px;
+}
+@media (max-width: 590px) {
+  .navButtonsContainer {
+    left: 15%;
+    margin-left: 0px;
+    top: 116px;
+  }
 }
 .navButtons {
   height: 50px;
