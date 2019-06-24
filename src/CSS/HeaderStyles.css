@@ -1,33 +1,72 @@
-.pictureEdit {
-  width: 350px;
-  height: 300px;
+.outerLogo {
+  width: 75px;
+  height: 75px;
+  background: #191919;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  left: 35px;
+  top: 50px;
+}
+.innerLogo {
+  color: white;
+  font-size: 30px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.navButtonsContainer {
+  position: absolute;
+  right: 15px;
+  top: 60px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 45px;
 }
 .navButtons {
-  background: black;
   height: 50px;
-  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s;
-  border: 2px solid white;
   border-radius: 0px;
+  border-top: 0px solid rgba(102, 102, 102, 0);
+  border-bottom: 0px solid rgba(102, 102, 102, 0);
   margin-bottom: 5px;
+  margin-right: 40px;
+  margin-top: 10px;
 }
 .navButtons:hover {
-  background: darkgray;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 50px;
-  border-color: #2185d0;
+  border-top: 2px solid rgba(255, 255, 255, 1);
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+  height: 100px;
   transition: 0.3s;
-  border-width: 8px;
-  margin-left: 15px;
-  width: 300px;
 }
 .navButtonText {
-  color: white;
+  font-family: Geneva;
+  color: #666666;
   font-size: 20px;
   transition: 0.3s;
+}
+.navButtonText:active {
+  color: #666666;
+  font-size: 25px;
+}
+.navButtonText:focus {
+  color: #666666;
+  font-size: 25px;
 }
 .navButtons:hover .navButtonText {
   color: white;

@@ -1,0 +1,234 @@
+.picture-dimensions {
+  height: 400px;
+  width: 440px;
+}
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  margin-left: 140px;
+}
+.homeRow {
+  margin-top: 185px;
+}
+.pictureColumn {
+}
+.contentColumn {
+  background: #191919;
+  height: 450px;
+  width: 450px;
+}
+.contentHeader1Open {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 35px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: 30px;
+  left: 20px;
+  transition: 0.5s;
+  opacity: 1;
+}
+.contentHeader1Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 35px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -55px;
+  left: 20px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.contentHeader2Open {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 35px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -71px;
+  left: 225px;
+  transition: 0.8s;
+  opacity: 1;
+}
+.contentHeader2Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 35px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -155px;
+  left: 225px;
+  transition: 0.8s;
+  opacity: 0;
+}
+
+.contentHeader3Open {
+  color: white;
+  font-family: Geneva;
+  font-size: 50px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -115px;
+  left: 55px;
+  transition: 0.6s;
+  opacity: 1;
+}
+.contentHeader3Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 35px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -255px;
+  left: 55px;
+  transition: 0.6s;
+  opacity: 0;
+}
+
+.contentHeader4Open {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 20px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -140px;
+  left: 45px;
+  transition: 0.6s;
+  opacity: 1;
+  width: 50px;
+}
+.contentHeader4Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 20px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -140px;
+  left: 45px;
+  transition: 0.6s;
+  opacity: 0;
+  width: 50px;
+}
+
+.contentHeader5Open {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 20px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -205px;
+  left: 100px;
+  transition: 0.6s;
+  opacity: 1;
+  width: 50px;
+}
+.contentHeader5Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 20px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -205px;
+  left: 100px;
+  transition: 0.6s;
+  opacity: 0;
+  width: 50px;
+}
+
+.contentHeader6Open {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 16px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -262px;
+  left: 160px;
+  transition: 0.6s;
+  opacity: 1;
+  width: 50px;
+}
+.contentHeader6Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 16px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -262px;
+  left: 160px;
+  transition: 0.6s;
+  opacity: 0;
+  width: 50px;
+}
+
+.contentHeader7Open {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 25px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -339px;
+  left: 194px;
+  transition: 0.6s;
+  opacity: 1;
+  width: 50px;
+}
+.contentHeader7Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 25px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -339px;
+  left: 194px;
+  transition: 0.6s;
+  opacity: 0;
+  width: 50px;
+}
+
+.contentHeader8Open {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Geneva;
+  font-size: 70px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -418px;
+  left: 91px;
+  transition: 0.6s;
+  opacity: 1;
+  width: 280px;
+  height: 60px;
+  padding-top: 20px;
+}
+.contentHeader8Closed {
+  color: #999999;
+  font-family: Geneva;
+  font-size: 70px;
+  font-weight: 50;
+  text-transform: uppercase;
+  position: relative;
+  top: -418px;
+  left: 91px;
+  transition: 0.6s;
+  opacity: 0;
+  width: 280px;
+  height: 60px;
+  padding-top: 20px;
+}

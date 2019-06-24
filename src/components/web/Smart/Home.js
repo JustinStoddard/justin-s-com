@@ -1,156 +1,105 @@
-import React, { Component, Fragment } from 'react';
-import expertiseImage1 from '../../../Images/React Image.png';
-import expertiseImage2 from '../../../Images/redux image.png';
-import expertiseImage3 from '../../../Images/ruby image.png';
-import expertiseImage4 from '../../../Images/RubyRails image.png';
-import expertiseImage5 from '../../../Images/nodejs image.png';
-import expertiseImage6 from '../../../Images/HTML5 image.png';
-import expertiseImage7 from '../../../Images/CSS.3 image.png';
-import expertiseImage8 from '../../../Images/semantic image.png';
-import Loadable from 'react-loadable';
-import Loader from '../../../Loader';
-import { Segment, Container, Grid, Divider, Header, Image, Responsive } from 'semantic-ui-react';
-const Resume = Loadable({loader: () => import('../Resume/ResumeIndex'), loading: () => <Loader/>});
+import React, { useState } from 'react';
+import ProfilePic from '../../../Images/58639038_1107873832746290_3384417216882540544_n.jpg';
+import '../../../CSS/HomeStyles.css';
+import { Container, Grid, Image } from 'semantic-ui-react';
 
-class Home extends Component {
-  state = { 
-    reactPic: true, 
-    reduxPic: true 
+const Home = () => {
+
+  const [ phaseHeader1, setPhaseHeader1 ] = useState(false);
+  const [ phaseHeader2, setPhaseHeader2 ] = useState(false);
+  const [ phaseHeader3, setPhaseHeader3 ] = useState(false);
+  const [ phaseHeader4, setPhaseHeader4 ] = useState(false);
+  const [ phaseHeader5, setPhaseHeader5 ] = useState(false);
+  const [ phaseHeader6, setPhaseHeader6 ] = useState(false);
+  const [ phaseHeader7, setPhaseHeader7 ] = useState(false);
+  const [ phaseHeader8, setPhaseHeader8 ] = useState(false);
+
+  if (window.location.pathname === "/") {
+    setTimeout(() => {
+      setPhaseHeader1(true);
+    }, 1000);
+    setTimeout(() => {
+      setPhaseHeader2(true);
+    }, 2000);
+    setTimeout(() => {
+      setPhaseHeader3(true);
+    }, 3000);
+    setTimeout(() => {
+      setPhaseHeader4(true);
+    }, 4000);
+    setTimeout(() => {
+      setPhaseHeader5(true);
+    }, 4500);
+    setTimeout(() => {
+      setPhaseHeader6(true);
+    }, 5500);
+    setTimeout(() => {
+      setPhaseHeader7(true);
+    }, 6000);
+    setTimeout(() => {
+      setPhaseHeader8(true);
+    }, 7300);
   }
 
-  onClickReact = () => {
-    const { reactPic } = this.state;
-    this.setState({ reactPic: !reactPic })
-  }
-
-  onClickRedux = () => {
-    const { reduxPic } = this.state;
-    this.setState({ reduxPic: !reduxPic })
-  }
-
-  render() {
-    const { reactPic, reduxPic } = this.state;
-    return(
-      <Container>
-        <Divider hidden/>
-        <Responsive as={Segment} textAlign="center" inverted>
-          <Header as="h1">Home</Header>
-        </Responsive>
-        <Responsive as={Grid}>
-          <Grid.Row>
-            <Resume/>
-          </Grid.Row>
-        </Responsive>
-        <Divider hidden/>
-        <Segment textAlign="center" inverted>
-          <Header as="h1">Expertise</Header>
-        </Segment>
-        <Responsive as={Grid}>
-          <Grid.Row>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  { reactPic ?
-                      <Responsive as={Image} src={expertiseImage1} size="medium" onClick={this.onClickReact}/>
-                    :
-                      <Fragment>
-                        <Responsive as={Image} src={expertiseImage1} size="medium" onClick={this.onClickReact}/>
-                        <Segment inverted>
-                          <Header as="h4">This is React!</Header>
-                        </Segment>
-                      </Fragment>
-                  }
-                </Responsive>
-              </Responsive>
+  return(
+    <Container>
+      <Grid>
+        <Grid.Row className="homeRow">
+          <div className="homeContainer">
+            <Grid.Column width={8}>
+              <div className="pictureColumn">
+                <Image src={ProfilePic} size="large"/>
+              </div>
             </Grid.Column>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted {...Responsive.onlyComputer}>
-                <Responsive as={Segment} color="blue">
-                  { reduxPic ?
-                      <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>    
-                    :
-                      <Fragment>
-                        <Responsive as={Image} src={expertiseImage2} size="medium" onClick={this.onClickRedux}/>
-                        <Segment inverted>
-                          <Header as="h4">This is Redux!</Header>
-                        </Segment>
-                      </Fragment>
-                  }
-                </Responsive>
-              </Responsive>
+            <Grid.Column width={8}>
+              <div className="contentColumn">
+                {phaseHeader1 ?
+                    <h6 className="contentHeader1Open">Welcome, </h6>
+                  : 
+                    <h6 className="contentHeader1Closed">Welcome, </h6>
+                }
+                {phaseHeader2 ?
+                    <h6 className="contentHeader2Open">Human</h6>
+                  : 
+                    <h6 className="contentHeader2Closed">Human</h6>
+                }
+                {phaseHeader3 ?
+                    <h6 className="contentHeader3Open">I'm Justin.</h6>
+                  : 
+                    <h6 className="contentHeader3Closed">I'm Justin.</h6>
+                }
+                {phaseHeader4 ?
+                    <h6 className="contentHeader4Open">And</h6>
+                  : 
+                    <h6 className="contentHeader4Closed">And</h6>
+                }
+                {phaseHeader5 ?
+                    <h6 className="contentHeader5Open">This,</h6>
+                  : 
+                    <h6 className="contentHeader5Closed">This,</h6>
+                }
+                {phaseHeader6 ?
+                    <h6 className="contentHeader6Open">Is</h6>
+                  : 
+                    <h6 className="contentHeader6Closed">Is</h6>
+                }
+                {phaseHeader7 ?
+                    <h6 className="contentHeader7Open">My</h6>
+                  : 
+                    <h6 className="contentHeader7Closed">My</h6>
+                }
+                {phaseHeader8 ?
+                    <h6 className="contentHeader8Open">Domain</h6>
+                  : 
+                    <h6 className="contentHeader8Closed">Domain</h6>
+                }
+              </div>
             </Grid.Column>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  <Divider hidden/>
-                  <Divider hidden/>
-                    <Responsive as={Image} src={expertiseImage3} size="medium"/>
-                </Responsive>
-              </Responsive>
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  <Responsive as={Image} src={expertiseImage4} size="medium" style={styles.railsImage}/>
-                </Responsive>
-              </Responsive>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  <Divider hidden/>
-                  <Divider hidden/>
-                  <Divider hidden/>
-                    <Responsive as={Image} src={expertiseImage5} size="large"/>
-                  <Divider hidden/>
-                  <Divider hidden/>
-                  <Divider hidden/>
-                </Responsive>
-              </Responsive>
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  <Responsive as={Image} src={expertiseImage6} size="medium"/>
-                </Responsive>
-              </Responsive>
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  <Responsive as={Image} src={expertiseImage7} size="small" style={styles.cssImage}/>
-                </Responsive>
-              </Responsive>
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Responsive as={Segment} textAlign="center" inverted>
-                <Responsive as={Segment} color="blue">
-                  <Responsive as={Image} src={expertiseImage8} size="medium"/>
-                </Responsive>
-              </Responsive>
-            </Grid.Column>
-          </Grid.Row>
-        </Responsive>
-        <Divider hidden/>
-      </Container>
-    )
-  }
-} 
-
-const styles = {
-  marginFixer: {
-    display: 'inline-block'
-  },
-  cssImage: {
-    display: 'inline-block',
-    height: '203px'
-  },
-  railsImage: {
-    height: '205px'
-  }
+          </div>
+        </Grid.Row>
+      </Grid>
+    </Container>
+  )
 }
 
 export default Home;
