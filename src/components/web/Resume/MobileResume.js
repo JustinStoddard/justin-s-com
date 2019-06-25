@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import '../../../CSS/resume.css';
+import '../../../CSS/mobileResume.css';
 import ProfilePic from '../../../Images/58639038_1107873832746290_3384417216882540544_n.jpg';
 import { List, Grid, Divider, Image, Icon } from 'semantic-ui-react';
 
-const ResumeIndex = () => {
+const MobileResume = () => {
   const [ bioState, setBioState ] = useState(true);
   const [ experienceState, setExperienceState ] = useState(false);
   const [ educationState, setEducationState ] = useState(false);
@@ -14,11 +14,10 @@ const ResumeIndex = () => {
       <div className="godfather-container"> 
       <Divider hidden/>
         <Grid>
-          <Grid.Row>
-
-            <Grid.Column width={4} className="left-column"> {/* Left Column */}
+          <Grid.Row className="row-control">
+            <Grid.Column width={8} className="left-column"> {/* Left Column */}
               <Grid.Row className="picture-row-left"> {/* Picture */}
-                <Image src={ProfilePic} className="picture-dimensions"/>
+                <Image src={ProfilePic} className="picture-dimensions-resume"/>
               </Grid.Row>
               {bioState ? 
                   <Grid.Row className="bio-row-left-open"> {/* Bio Open */}
@@ -38,14 +37,14 @@ const ResumeIndex = () => {
               {experienceState ? 
                   <Grid.Row className="experience-row-left-open"> {/* Experience Open*/}
                     <a onClick={() => setExperienceState(false)} className="anchor-styles">
-                      <span className="experience-header-left">Experience</span>
+                      <span className="experience-header-left">Expertise</span>
                       <span className="icon-align"><Icon name="angle down" size="large" className="ico-styles-open"/></span>
                     </a>
                   </Grid.Row>
                 :
                   <Grid.Row className="experience-row-left-closed"> {/* Experience Closed*/}
                     <a onClick={() => setExperienceState(true)} className="anchor-styles">
-                      <span className="experience-header-left">Experience</span>
+                      <span className="experience-header-left">Expertise</span>
                       <span className="icon-align"><Icon name="angle down" size="large" className="ico-styles-closed"/></span>
                     </a>
                   </Grid.Row>
@@ -53,14 +52,14 @@ const ResumeIndex = () => {
               {educationState ?
                   <Grid.Row className="education-row-left-open"> {/* Education Open*/}
                     <a onClick={() => setEducationState(false)} className="anchor-styles">
-                      <span className="education-header-left">Education</span>
+                      <span className="education-header-left">Awards</span>
                       <span className="icon-align"><Icon name="angle down" size="large" className="ico-styles-open"/></span>
                     </a>
                   </Grid.Row> 
                 :
                   <Grid.Row className="education-row-left-closed"> {/* Education Closed*/}
                     <a onClick={() => setEducationState(true)} className="anchor-styles">
-                      <span className="education-header-left">Education</span>
+                      <span className="education-header-left">Awards</span>
                       <span className="icon-align"><Icon name="angle down" size="large" className="ico-styles-closed"/></span>
                     </a>
                   </Grid.Row> 
@@ -82,18 +81,21 @@ const ResumeIndex = () => {
               }
             </Grid.Column>
 
-            <Grid.Column width={12} className="right-column"> {/* Right Column */}
+            <Grid.Column width={8} className="right-column"> {/* Right Column */}
               <Grid.Row className="header-row-right">
               
                 <Grid.Row>
                   <Grid.Column>
-                    <span className="header-right">Justin Stoddard</span>
+                    <span className="header-right-top">Justin</span>
+                    <br/>
+                    <br/>
+                    <span className="header-right-bottom">Stoddard</span>
                   </Grid.Column>
                 </Grid.Row>
 
                 <Grid.Row>
                   <Grid>  
-                    <Grid.Column width={8}>
+                    <Grid.Column width={16}>
                       <Grid.Row className="contact-icons">
                         <Icon name="mail" size="large"/>
                         <span className="contact-subheaders">Stoddard.j.t@gmail.com</span>
@@ -104,25 +106,25 @@ const ResumeIndex = () => {
                       </Grid.Row>
                       <Grid.Row className="contact-icons">
                         <Icon name="home" size="large"/>
-                        <span className="contact-subheaders">1329 w 7125 s, Taylorsville, UT</span>
+                        <span className="contact-subheaders">1329 w 7125 s</span>
+                        <br/>
+                        <span className="contact-subheaders-alt">Taylorsville, UT</span>
                       </Grid.Row>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
                       <Grid>
                         <Grid.Row className="social-icons">
                           <Grid.Column width={4}>
                             <a href="https://www.facebook.com/people/Justin-Stoddard/100005710514833" target="_blank" rel="noopener noreferrer">
-                              <Icon link={true} name="facebook square" size="huge" color="black"/>
+                              <Icon link={true} name="facebook square" size="big" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
                             <a href="https://github.com/JustinStoddard" target="_blank" rel="noopener noreferrer">
-                              <Icon link={true} name="github square" size="huge" color="black"/>
+                              <Icon link={true} name="github square" size="big" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
                             <a href="https://www.linkedin.com/in/justin-stoddard-65171015a/" target="_blank" rel="noopener noreferrer">
-                              <Icon link={true} name="linkedin" size="huge" color="black"/>
+                              <Icon link={true} name="linkedin" size="big" color="black"/>
                             </a>
                           </Grid.Column>
                         </Grid.Row>
@@ -154,7 +156,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Unicity International - 2018 to Present</span></List.Header>
                             <List.Description><span className="content-font">Frontend Web Developer, Orem UT</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description className="space-between-bullets">
@@ -198,7 +200,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Upengo LLC (Remote) - 2019 to Present</span></List.Header>
                             <List.Description><span className="content-font">Backend Developer, Bluffdale UT</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description className="space-between-bullets">
@@ -492,7 +494,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">www.thisjustin.tech</span></List.Header>
                             <List.Description><span className="content-font">Personal Project</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with ReactJS v16.8.0</span></List.Description>
@@ -511,7 +513,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Unicity Portal (In House Software)</span></List.Header>
                             <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with ReactJS v16.8.6</span></List.Description>
@@ -530,7 +532,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">MyUnicity</span></List.Header>
                             <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with ReactJS v15.4.0</span></List.Description>
@@ -549,7 +551,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Dspencer</span></List.Header>
                             <List.Description><span className="content-font">Built by Upengo LLC</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with NodeJS v10.6.0</span></List.Description>
@@ -568,7 +570,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Simple Type Assert (NPM Package)</span></List.Header>
                             <List.Description><span className="content-font">Built by Justin Stoddard and Luke Fairchild</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with NodeJS v10.6.0</span></List.Description>
@@ -587,7 +589,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Unicity Shop</span></List.Header>
                             <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with AngularJS v1.4.0</span></List.Description>
@@ -606,7 +608,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Unicity Office</span></List.Header>
                             <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with AngularJS v1.4.0</span></List.Description>
@@ -625,7 +627,7 @@ const ResumeIndex = () => {
                           <List.Content>
                             <List.Header><span className="uni-content-header">Unicity Library</span></List.Header>
                             <List.Description><span className="content-font">Built by Unicity International</span></List.Description>
-                            <List.List as="ul">
+                            <List.List as="ul" className="list-fix">
                               <List.Item as="li">
                                 <List.Content>
                                   <List.Description><span className="content-font">Built with AngularJS v1.4.0</span></List.Description>
@@ -812,4 +814,4 @@ const ResumeIndex = () => {
   )
 }
 
-export default ResumeIndex;
+export default MobileResume;

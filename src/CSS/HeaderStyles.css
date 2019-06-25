@@ -1,0 +1,84 @@
+.outerLogo {
+  width: 75px;
+  height: 75px;
+  background: #191919;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  left: 35px;
+  top: 50px;
+}
+@media (max-width: 590px) {
+  .outerLogo {
+    left: 30%;
+    top: 20px;
+  }
+}
+.innerLogo {
+  color: white;
+  font-size: 30px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.navButtonsContainer {
+  position: absolute;
+  right: 15px;
+  top: 56px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 45px;
+}
+@media (max-width: 590px) {
+  .navButtonsContainer {
+    left: 15%;
+    margin-left: 0px;
+    top: 116px;
+  }
+}
+.navButtons {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  border-radius: 0px;
+  margin-bottom: 5px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+.navButtons:hover {
+  height: 100px;
+  transition: 0.3s;
+}
+.navButtonText {
+  font-family: Geneva;
+  color: #666666;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.navButtonText:active {
+  color: #666666;
+  font-size: 25px;
+}
+.navButtonText:focus {
+  color: #666666;
+  font-size: 25px;
+}
+.navButtons:hover .navButtonText {
+  color: white;
+  font-size: 25px;
+  transition: 0.3s;
+}
