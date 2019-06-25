@@ -5,7 +5,8 @@ import Loadable from 'react-loadable';
 import { isMobile } from 'react-device-detect';
 import Home from './Smart/Home';
 import HeaderComp from './Dumb/Header';
-const Demos = Loadable({loader: () => import('../web/Smart/Demos'), loading: () => <Loader/>})
+const WebDemos = Loadable({loader: () => import('../web/Smart/Demos'), loading: () => <Loader/>});
+const MobileDemos = Loadable({loader: () => import('../mobile/MobileSmart/mobileDemos'), loading: () => <Loader/>});
 const WebResume = Loadable({loader: () => import('./Resume/WebResume'), loading: () => <Loader/>});
 const MobileResume = Loadable({loader: () => import('./Resume/MobileResume'), loading: () => <Loader/>});
 
@@ -17,6 +18,13 @@ const App = () => {
       return WebResume;
     }
   };
+  const renderDemos = () => {
+    if (isMobile) {
+      return MobileDemos;
+    } else {
+      return WebDemos;
+    }
+  };
   return (
     <Fragment>
       <HeaderComp/>
@@ -24,7 +32,7 @@ const App = () => {
         <Route exact path="/" component={Home}/>
         <Route exact path="/webar"/>
         <Route exact path="/resume" component={renderResume()}/>
-        <Route exact path="/demos" component={Demos}/>
+        <Route exact path="/demos" component={renderDemos()}/>
       </Switch>
     </Fragment>
   );

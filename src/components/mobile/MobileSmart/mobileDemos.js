@@ -14,6 +14,18 @@ class Demos extends Component {
     return(
       <Container>
         <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
         <Segment textAlign="center" inverted>
           <Header as="h2">Demos</Header>
         </Segment>
