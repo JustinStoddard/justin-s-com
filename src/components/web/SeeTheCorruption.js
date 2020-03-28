@@ -23,7 +23,7 @@ const SeeTheCorruption = () => {
     <Container>
       <Grid style={styles}>
         <Segment textAlign="center" circular>
-          <a href="https://www.google.com" target="_blank">
+          <a href="https://digitalcommons.law.scu.edu/cgi/viewcontent.cgi?article=3104&context=historical" target="_blank">
             <Icon style={iconStyles} color="black" size="huge" name="download" link />
           </a>
         </Segment>
