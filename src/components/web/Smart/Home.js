@@ -95,11 +95,11 @@ const Home = () => {
                     <h6 className="contentHeader8Closed">Domain</h6>
                 }
                 {phaseHeader9 ?
-                    <Link to="/resume">
+                    <Link to="/see-the-corruption">
                       <h6 className="contentHeader9Open">Discover More</h6>
                     </Link>
                   : 
-                    <Link to="/resume">
+                    <Link to="/see-the-corruption">
                       <h6 className="contentHeader9Closed">Discover More</h6>
                     </Link>
                 }

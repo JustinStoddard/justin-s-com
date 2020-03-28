@@ -96,32 +96,32 @@ const WebResume = () => {
                     <Grid.Column width={8}>
                       <Grid.Row className="contact-icons">
                         <Icon name="mail" size="large"/>
-                        <span className="contact-subheaders">Stoddard.j.t@gmail.com</span>
+                        <span className="contact-subheaders">...</span>
                       </Grid.Row>
                       <Grid.Row className="contact-icons">
                         <Icon name="phone" size="large"/>
-                        <span className="contact-subheaders">801-209-4087</span>
+                        <span className="contact-subheaders">...</span>
                       </Grid.Row>
                       <Grid.Row className="contact-icons">
                         <Icon name="home" size="large"/>
-                        <span className="contact-subheaders">1329 w 7125 s, Taylorsville, UT</span>
+                        <span className="contact-subheaders">...</span>
                       </Grid.Row>
                     </Grid.Column>
                     <Grid.Column width={8}>
                       <Grid>
                         <Grid.Row className="social-icons">
                           <Grid.Column width={4}>
-                            <a href="https://www.facebook.com/people/Justin-Stoddard/100005710514833" target="_blank" rel="noopener noreferrer">
+                            <a href="*" target="_blank" rel="noopener noreferrer">
                               <Icon link={true} name="facebook square" size="huge" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
-                            <a href="https://github.com/JustinStoddard" target="_blank" rel="noopener noreferrer">
+                            <a href="*" target="_blank" rel="noopener noreferrer">
                               <Icon link={true} name="github square" size="huge" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
-                            <a href="https://www.linkedin.com/in/justin-stoddard-65171015a/" target="_blank" rel="noopener noreferrer">
+                            <a href="*" target="_blank" rel="noopener noreferrer">
                               <Icon link={true} name="linkedin" size="huge" color="black"/>
                             </a>
                           </Grid.Column>

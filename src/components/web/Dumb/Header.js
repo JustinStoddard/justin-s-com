@@ -8,26 +8,28 @@ const HeaderComp = () => {
     <Container>
       <Divider hidden/>
       <Responsive as={Grid}>
-      <div className="outerLogo">
-        <h5 className="innerLogo">JST</h5>
-      </div>
-      <div className="navButtonsContainer">
         <Link to="/">
-          <div className="navButtons">
-            <h5 className="navButtonText">HOME</h5>
+          <div className="outerLogo">
+            <h5 className="innerLogo">JST</h5>
           </div>
         </Link>
-        <Link to="/resume">
-          <div className="navButtons">
-            <h5 className="navButtonText">RESUME</h5>
-          </div>
-        </Link>
-        <Link to="/demos">
-          <div className="navButtons">
-            <h4 className="navButtonText">DEMOS</h4>
-          </div>
-        </Link>
-      </div>
+        {/* <div className="navButtonsContainer">
+          <Link to="/">
+            <div className="navButtons">
+              <h5 className="navButtonText">HOME</h5>
+            </div>
+          </Link>
+          <Link to="/resume">
+            <div className="navButtons">
+              <h5 className="navButtonText">RESUME</h5>
+            </div>
+          </Link>
+          <Link to="/demos">
+            <div className="navButtons">
+              <h4 className="navButtonText">DEMOS</h4>
+            </div>
+          </Link>
+        </div> */}
       </Responsive>
     </Container>
   )

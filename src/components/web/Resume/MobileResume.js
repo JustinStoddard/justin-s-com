@@ -86,10 +86,10 @@ const MobileResume = () => {
               
                 <Grid.Row>
                   <Grid.Column>
-                    <span className="header-right-top">Justin</span>
+                    <span className="header-right-top">...</span>
                     <br/>
                     <br/>
-                    <span className="header-right-bottom">Stoddard</span>
+                    <span className="header-right-bottom">...</span>
                   </Grid.Column>
                 </Grid.Row>
 
@@ -98,32 +98,32 @@ const MobileResume = () => {
                     <Grid.Column width={16}>
                       <Grid.Row className="contact-icons">
                         <Icon name="mail" size="large"/>
-                        <span className="contact-subheaders">Stoddard.j.t@gmail.com</span>
+                        <span className="contact-subheaders">...</span>
                       </Grid.Row>
                       <Grid.Row className="contact-icons">
                         <Icon name="phone" size="large"/>
-                        <span className="contact-subheaders">801-209-4087</span>
+                        <span className="contact-subheaders">...</span>
                       </Grid.Row>
                       <Grid.Row className="contact-icons">
                         <Icon name="home" size="large"/>
-                        <span className="contact-subheaders">1329 w 7125 s</span>
+                        <span className="contact-subheaders">...</span>
                         <br/>
-                        <span className="contact-subheaders-alt">Taylorsville, UT</span>
+                        <span className="contact-subheaders-alt">...</span>
                       </Grid.Row>
                       <Grid>
                         <Grid.Row className="social-icons">
                           <Grid.Column width={4}>
-                            <a href="https://www.facebook.com/people/Justin-Stoddard/100005710514833" target="_blank" rel="noopener noreferrer">
+                            <a href="*" target="_blank" rel="noopener noreferrer">
                               <Icon link={true} name="facebook square" size="big" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
-                            <a href="https://github.com/JustinStoddard" target="_blank" rel="noopener noreferrer">
+                            <a href="*" target="_blank" rel="noopener noreferrer">
                               <Icon link={true} name="github square" size="big" color="black"/>
                             </a>
                           </Grid.Column>
                           <Grid.Column width={4}>
-                            <a href="https://www.linkedin.com/in/justin-stoddard-65171015a/" target="_blank" rel="noopener noreferrer">
+                            <a href="*" target="_blank" rel="noopener noreferrer">
                               <Icon link={true} name="linkedin" size="big" color="black"/>
                             </a>
                           </Grid.Column>
